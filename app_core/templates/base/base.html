@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% block title %} Pestalozzi Maricá {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'global/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href={% url "home" %}><img src={% static "img/logo.png" %} alt="Pestalozzi"/></a>
+        <ul class="nav-links">
+            <li><a href={% url "sobre" %}>Sobre</a></li>
+            <li><a href={% url "projeto" %}>Projetos</a></li>
+            <li><a href={% url "app_portal:comunicados" %}>Portal de Comunicados</a></li>
+            <li><a href={% url "voluntario" %}>Voluntário</a></li>
+        </ul>
+
+        <!-- Botão do menu hambúrguer -->
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+            ☰
+        </button>
+    </nav>
+
+    <!-- Sidebar que aparece ao clicar no hambúrguer -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebar" aria-label="Fechar menu">×</button>
+        <ul class="sidebar-menu">
+            <li><a href={% url "sobre" %}>Sobre</a></li>
+            <li><a href={% url "projeto" %}>Projetos</a></li>
+            <li><a href={% url "app_portal:comunicados" %}>Portal de Comunicados</a></li>
+            <li><a href={% url "voluntario" %}>Voluntário</a></li>
+        </ul>
+    </div>
+
+    {% block content %}{% endblock content %}
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Sobre</h3>
+                <p>A Pestalozzi de Maricá atua pela inclusão e dignidade das pessoas com deficiência.</p>
+            </div>
+            <div>
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#transparencia">Transparência</a></li>
+                    <li><a href="#plano">Plano de Trabalho</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                </ul>
+            </div>
+              <div>
+                <h3>Redes Sociais</h3>
+                <ul>
+                    <li><a href="#https://www.instagram.com/pestalozzimarica/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#https://www.facebook.com/pestalozzimarica/"><i class="fab fa-facebook"></i></a></li>
+                </ul>
+            </div>
+            <div class="mapa">
+                <h3>Localização</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.715397507965!2d-42.82922072386465!3d-22.923865938483303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99ed7f33cd68ef%3A0xf7937052c652bc62!2sAssocia%C3%A7%C3%A3o%20Pestalozzi%20de%20Maric%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1747800398801!5m2!1spt-BR!2sbr"
+                    width="100%" height="200" style="border:0; border-radius: 12px;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        <p>&copy; 2025 Pestalozzi Maricá. Todos os direitos reservados.</p>
+    </footer>
+
+
+
+
+    <script>
+        lucide.createIcons();
+
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+
+        // Cria o overlay para fechar clicando fora do menu
+        const overlay = document.createElement('div');
+        overlay.id = 'overlay';
+        document.body.appendChild(overlay);
+
+        function openSidebar() {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+            hamburger.textContent = '×';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            hamburger.textContent = '☰';
+        }
+
+        hamburger.addEventListener('click', () => {
+            if (sidebar.classList.contains('active')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+
+        overlay.addEventListener('click', () => {
+            closeSidebar();
+        });
+
+        // Fecha o menu ao clicar em um item do menu
+        document.querySelectorAll('.sidebar-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                closeSidebar();
+            });
+        });
+
+        // Fecha o menu ao redimensionar a janela (ex: quando o usuário gira o celular)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeSidebar();
+            }
+        });
+    </script>
+
+</body>
+</html>

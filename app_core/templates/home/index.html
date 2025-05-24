@@ -1,0 +1,97 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}Pestalozzi Maricá{% endblock %}
+{% block content %}
+        <section class="hero">
+        <div class="hero-content">
+            <img src={% static "img/logo_nome.png" %} title="Logo Pestalozzi" alt="Pestalozzi Maricá" class="logo">
+            <div>
+            <h2>Transforme vidas com a Pestalozzi Maricá</h2>
+            <p>Junte-se a nós na inclusão e no cuidado de pessoas com deficiência.</p>
+            <a href={% url "voluntario" %} class="btn-cta">Quero ser voluntário</a>
+            </div>
+        </div>
+    </section>
+    <section class="container fade-in">
+    <h2 class="section-title"><i data-lucide="info"></i> Sobre a Instituição</h2>
+</section>
+    <section id="sobre" class="container fade-in">
+        <p>No dia 29/11/1984, em reunião realizada na Prefeitura de Maricá, foi fundada a Pestalozzi de Maricá, de natureza jurídica de direito privado sem fins lucrativos.
+            Nestes anos de atuação, a APM tem participação ativa nos Conselhos Municipais (Saúde- CMS, Assistência - CMAS, Direitos da Criança e do Adolescente - CMDCA e Direitos da Pessoa com Deficiência- CMDCA), assim em outros espaços de Garantia de Direito.
+        Com o objetivo de oferecer Planos Individuais de Atendimento de Prevenção, Habilitação e Reabilitação no âmbito da Norma Operacional Básica do Sistema Único de Assistência Social-NOB/SUAS, aos recém-nato de risco; crianças com atraso no desenvolvimento; crianças e adolescentes com deficiência (física/intelectual/transtorno global do desenvolvimento) e/ou com transtorno de aprendizagem; abrangendo as suas famílias, a fim de promover e assegurar o desfrute pleno e equitativo de todos os seus direitos, a interação social, a autonomia e melhoria da qualidade de vida dessas pessoas. <br>
+        <button type="submit">Saiba mais</button></p>
+
+        <img src={% static "img/fachada 1.jpg" %} alt="Fachada da Pestalozzi Maricá" title="Fachada da Pestalozzi Maricá">
+    </section>
+
+    <!-- <section id="historia" class="container fade-in">
+        <h2 class="section-title"><i data-lucide="book-open"></i> Nossa História</h2>
+        <p>Fundada há mais de 30 anos, a Pestalozzi de Maricá tem atuado na educação, reabilitação e apoio às famílias de pessoas com deficiência.</p>
+    </section> -->
+
+    <section id="transparencia" class="container fade-in">
+        <h2 class="section-title"><i data-lucide="file-text"></i> Transparência</h2>
+        <p>Comprometemo-nos com a transparência total de nossas ações e recursos. Acesse relatórios e balancetes:</p>
+        <a href="/portal/comunicados.html" class="btn">Ver documentos</a>
+    </section>
+
+    <section id="plano" class="container fade-in">
+        <h2 class="section-title"><i data-lucide="target"></i> Plano de Trabalho</h2>
+        <p>Confira nossas metas e estratégias de atuação:</p>
+        <a href="/portal/comunicados.html" class="btn">Ver plano</a>
+    </section>
+
+    <section id="contato" class="container fade-in">
+      <h2 class="section-title"><i data-lucide="mail"></i> Seja Volutário</h2>
+      <!-- <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form> -->
+
+      <div class="voluntariesse">
+
+        <img src={% static "img/logo_cropped.png" %} alt="Logo Pestalozzi" title="Logo Pestalozzi Marica">
+
+
+        <div ><p>Aguarde futuro contato via e-mail assim que tivermos a próxima ação. As vagas são limitadas e as campanhas são sazonais, mas você sempre pode nos ajudar divulgando nosso trabalho de conscientização!
+        </p> 
+
+<form action="/voluntarios.html" method="post">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="exemplo@exemplo.com.br">
+
+            <label for="telefone">Telefone</label>
+            <div class="telefone-group">
+            <input type="text" name="telefone" maxlength="9" placeholder="DDD + Número" required>
+            </div>
+
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <div class="cidade-estado">
+            <input type="text" name="cidade" placeholder="Cidade" required>
+            <input type="text" name="estado" placeholder="Estado" required>
+            </div>
+        
+            </select>
+
+            <button type="submit">Enviar</button>
+        </form>
+        
+        </div>
+           
+        
+        </div> <!--volutariesse-->
+    </section>
+{% endblock content %}

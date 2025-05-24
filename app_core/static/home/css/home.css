@@ -1,0 +1,429 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--vinho);
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Ícone do menu hamburguer */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+
+/* Sidebar oculta por padrão */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: var(--vinho);
+  color: white;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  float: right;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--vinho);
+  padding: 10px 20px;
+}
+
+.navbar img {
+  width: 50px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background: var(--laranja);
+  border-radius: 4px;
+}
+
+/* === HAMBURGUER BUTTON === */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* === SIDEBAR MENU === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 260px;
+  height: 100%;
+  background-color: var(--vinho);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-menu li {
+  margin: 15px 0;
+}
+
+.sidebar-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  color: white;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Oculta o menu horizontal se a tela for pequena */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+  }
+
+  .navbar.open .nav-links {
+    display: none;
+  }
+}
+
+/* Estilo do overlay escuro atrás da sidebar */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+/* Mostra o overlay quando ativo */
+#overlay.active {
+  display: block;
+}
+
+/*yago mexendo=======================================================*/
+
+
+.voluntariesse{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.voluntariesse button{
+  margin-top:15px ;
+}
+.voluntariesse img{
+  width: 500px;
+  height: 600px;
+}
+
+#sobre p{
+  font-size: 15px;
+  margin-top: 10px;
+}
+#sobre img{
+  box-shadow: grey 1px 0 14px;
+}
+#sobre button{
+  margin-top: 70px;
+}
+#sobre {
+  justify-content: space-between;
+  display:flex ;
+  gap: 20px;
+}
+
+.hero-content img{
+  width: 200px;
+  height: 100px;
+}
+.hero-content{
+  justify-content: left;
+  display: flex;
+  gap: 3%;
+}
+
+ div {
+        background-color: var(--bege-claro);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-family: var(--font-padrao);
+    }
+
+    h3 {
+        color: var(--marrom-escuro);
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+    }
+
+    ul li a {
+        font-size: 28px;
+        color: var(--marrom-escuro);
+        text-decoration: none;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    ul li a:hover {
+        transform: scale(2.1); /* Aumenta o ícone ao passar o mouse */
+    }
+
+    .fab.fa-instagram:hover {
+        color: var(--vinho);
+    }
+
+    .fab.fa-facebook:hover {
+        color: var(--azul-facebook, #1877F2);
+    }
+
+    .opcoes {
+      list-style: none; 
+      padding: 0;
+      display: flex; 
+      gap: 20px; 
+  }
+  
+  .opcoes {
+    list-style: none; /* Remove os pontos de lista */
+    padding: 0;
+    display: flex; /* Usando flexbox */
+    flex-direction: column; /* Alinha os itens na vertical */
+    gap: 10px; /* Espaço entre os itens */
+}
+
+.opcoes li a {
+    color: var(--vinho); /* Cor inicial vinho */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.opcoes li a:hover {
+    color: var(--amarelo); /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Efeito de aumento */
+}
+
+
+
+
+
+
+
+/* Responsividade ================================================================================= */
+
+@media (max-width: 768px) {
+  /* HERO Section */
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content img {
+    width: 100px;
+    height: auto;
+  }
+
+  .hero-content div {
+    padding: 10px;
+  }
+
+  /* SOBRE Section */
+  #sobre {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  #sobre img {
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  #sobre button {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  /* VOLUNTARIESSE Section */
+  .voluntariesse {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .voluntariesse img {
+    width: 90%;
+    height: auto;
+  }
+
+  .voluntariesse form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .cidade-estado {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-grid div {
+    width: 90%;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul li a {
+    font-size: 20px;
+  }
+}
+
+/* Ajuste geral para inputs */
+input, textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Botões responsivos */
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
