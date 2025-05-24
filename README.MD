@@ -1,10 +1,10 @@
 <div align="center">
   <br>
-  <img src="base_statics/global/imgs/logo_pestalozzi.png" width="180" alt="Logo Pestalozzi de Maricá" style="margin-bottom:16px;"/>
+  <img src="app_core/static/img/logo_nome.png" width="180" alt="Logo Pestalozzi de Maricá" style="margin-bottom:16px;"/>
   <p>
-    <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/gabrielhierro/Atividade-Extensionista?color=0E6BA8">
-    <img alt="Último commit" src="https://img.shields.io/github/last-commit/gabrielhierro/Atividade-Extensionista?color=0E6BA8">
-    <img alt="Licença" src="https://img.shields.io/github/license/gabrielhierro/Atividade-Extensionista?color=0E6BA8">
+    <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/gabrielhierro/Atividade-Extensionista?color=F2E49B">
+    <img alt="Último commit" src="https://img.shields.io/github/last-commit/gabrielhierro/Atividade-Extensionista?color=F2E49B">
+    <img alt="Licença" src="https://img.shields.io/github/license/gabrielhierro/Atividade-Extensionista?color=F2E49B">
   </p>
   <br>
 </div>
@@ -41,8 +41,6 @@ A proposta vai além da aparência: buscamos tornar o site mais funcional, objet
 - ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white) **HTML5**
 - ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white) **CSS3**
 - ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) **JavaScript**
-- ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white) **Node.js**
-- ![Express](https://img.shields.io/badge/-Express-000000?style=flat&logo=express&logoColor=white) **Express**
 - ![SQLite](https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white) **SQLite**
 
 ---
