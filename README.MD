@@ -1,6 +1,6 @@
 <div align="center">
   <br>
-  <img src="app_core/static/img/logo_nome.png" width="180" alt="Logo Pestalozzi de Maricá" style="margin-bottom:16px;"/>
+  <img src="app_core/static/img/logo_nome.png" width="240" alt="Logo Pestalozzi de Maricá" style="margin-bottom:16px;"/>
   <p>
     <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/gabrielhierro/Atividade-Extensionista?color=F2E49B">
     <img alt="Último commit" src="https://img.shields.io/github/last-commit/gabrielhierro/Atividade-Extensionista?color=F2E49B">
