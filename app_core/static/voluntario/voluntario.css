@@ -1,0 +1,35 @@
+.introducao{
+    display: flex;
+    justify-content: space-around;
+}
+
+.div_introducao{
+    padding: 0px;
+    width: 95%;
+    height: 550px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--branco);
+}
+
+.text_introducao{
+    padding: 100px 130px;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: none;
+    width: 50%;
+}
+.text_introducao h1{
+    
+    font-size: clamp(28px,5vw,48px);
+}
+
+.img_introducao{
+    padding: 0px;
+    border-radius: 0px 10px 10px 0px;
+    width: 50%;
+    box-shadow: none;
+}
+.img_introducao img{
+    width: 100%;
+    height: 100%;
+}

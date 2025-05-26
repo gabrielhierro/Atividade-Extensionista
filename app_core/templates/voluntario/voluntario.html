@@ -2,5 +2,20 @@
 {% load static %}
 {% block title %}Seja Voluntário{% endblock title %}
 {% block content %}
-<h1>Voluntarios</h1>
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}" />
+<link rel="stylesheet" href="{% static 'voluntario/voluntario.css' %}"/>
+
+<section id="introducao" class="introducao">
+        <div class="div_introducao">
+            <div class="text_introducao">
+                <h1>Seja a mundança que você<br> quer ver no mundo.</h1>
+                <button type="button" href="/home.html">Voluntarie-se já</button>
+            </div>
+            <div class="img_introducao">    
+                <img src="{% static 'img/proj_brincando_reabilitando.jpg' %}" alt="proj_brincando_reabilitando" title="proj_brincando_reabilitando"/>
+            </div>
+        </div>
+</section>
+
+
 {% endblock content %}
