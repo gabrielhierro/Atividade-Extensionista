@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.comunicado {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+
+.comunicado h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.comunicado p {
+    margin: 0 0 10px;
+}
+
+.comunicado small {
+    color: #888;
+}
+
+.comunicado-img {
+    width: 150px;
+    height: auto;
+    max-height: 200px;
+    margin-right: 20px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.comunicado-text {
+    flex: 1; /* faz o texto ocupar o restante do espaço */
+}
+
+.card-body.d-flex {
+    display: flex;
+    align-items: flex-start; /* alinha topo da imagem com o texto */
+}
