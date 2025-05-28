@@ -22,3 +22,6 @@ urlpatterns = [
     path('', include('app_core.urls')),
     path('portal/', include('app_portal.urls', namespace='app_portal')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
