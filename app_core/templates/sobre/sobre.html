@@ -7,98 +7,431 @@
 {% block content %}
 
 <section class="hero">
-  <div class="hero-content">
-    <img src="{% static 'img/logo_nome.png' %}" alt="Pestalozzi Maricá" title="Logo Pestalozzi Maricá" class="logo">
-    <div>
-      <h2>Transforme vidas com a Pestalozzi Maricá</h2>
-      <p>Junte-se a nós na inclusão e no cuidado de pessoas com deficiência.</p>
-      <a href="{% url 'voluntario' %}" class="btn-cta">Quero ser voluntário</a>
+    <div class="hero-content">
+        <img src="{% static 'img/logo_nome.png' %}" alt="Pestalozzi Maricá" title="Logo Pestalozzi Maricá" class="logo">
+        <div>
+            <h2>Transforme vidas com a Pestalozzi Maricá</h2>
+            <p>Junte-se a nós na inclusão e no cuidado de pessoas com deficiência.</p>
+            <a href="{% url 'voluntario' %}" class="btn btn-primary">Quero ser voluntário</a>
+        </div>
     </div>
-  </div>
 </section>
 
-<section class="container fade-in">
-  <h2 class="section-title"><i data-lucide="info"></i> Sobre a Instituição</h2>
+<section id="introducao-sobre" class="container fade-in">
+    <h2 class="section-title"><i data-lucide="info"></i> Sobre a Instituição</h2>
+    <div class="sobre-introducao-content">
+        <p>
+            A Pestalozzi de Maricá, fundada em 29/11/1984, é uma instituição de direito privado sem fins lucrativos, dedicada a promover o desenvolvimento e a inclusão de pessoas com deficiência. Nosso trabalho se estende por diversas frentes, sempre com o compromisso de garantir o pleno desfrute de seus direitos e a melhoria de sua qualidade de vida.
+        </p>
+        <img src="{% static 'img/fachada.jpg' %}" alt="Fachada da Pestalozzi Maricá" title="Fachada da Pestalozzi Maricá">
+    </div>
 </section>
 
-<section id="sobre" class="container fade-in">
-  <p>
-    No dia 29/11/1984, em reunião realizada na Prefeitura de Maricá, foi fundada a Pestalozzi de Maricá, de natureza jurídica de direito privado sem fins lucrativos.
-    Nestes anos de atuação, a APM tem participação ativa nos Conselhos Municipais (Saúde- CMS, Assistência - CMAS, Direitos da Criança e do Adolescente - CMDCA e Direitos da Pessoa com Deficiência- CMDCA), assim em outros espaços de Garantia de Direito.
-    Com o objetivo de oferecer Planos Individuais de Atendimento de Prevenção, Habilitação e Reabilitação no âmbito da Norma Operacional Básica do Sistema Único de Assistência Social-NOB/SUAS, aos recém-nato de risco; crianças com atraso no desenvolvimento; crianças e adolescentes com deficiência (física/intelectual/transtorno global do desenvolvimento) e/ou com transtorno de aprendizagem; abrangendo as suas famílias, a fim de promover e assegurar o desfrute pleno e equitativo de todos os seus direitos, a interação social, a autonomia e melhoria da qualidade de vida dessas pessoas.
-  </p>
-  <img src="{% static 'img/fachada.jpg' %}" alt="Fachada da Pestalozzi Maricá" title="Fachada da Pestalozzi Maricá">
+<section id="nossa-historia" class="content-section fade-in">
+    <div class="container">
+        <h2 class="section-title text-light"><i data-lucide="book-open-text"></i> Nossa História</h2>
+        <div class="history-carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide active">
+                    <h3>1984: A Fundação</h3>
+                    <p>
+                        No dia 29/11/1984, em reunião realizada na Prefeitura de Maricá, foi fundada a Pestalozzi de Maricá, de natureza jurídica de direito privado sem fins lucrativos. A instituição, desde o seu início, demonstrou um compromisso significativo com o atendimento a pessoas com deficiência.
+                    </p>
+                </div>
+                <div class="carousel-slide">
+                    <h3>2001-2002: Desafios e o Resgate</h3>
+                    <p>
+                        Após anos de trabalho expressivo, a instituição passou por um período de desativação em 2001 devido a fatores administrativos e políticos. No entanto, em junho de 2002, uma nova Diretoria foi eleita, iniciando um processo de resgate de sua funcionalidade e retomando os atendimentos essenciais.
+                    </p>
+                </div>
+                <div class="carousel-slide">
+                    <h3>2004-2008: Reestruturação e Legalização</h3>
+                    <p>
+                        Em 2004, com apoio da Federação das Associações Pestalozzi do Estado do Rio de Janeiro, o estatuto foi alterado, mudando o nome para Associação Pestalozzi de Maricá (APM). Eventos beneficentes e telemarketing ajudaram a sanar dívidas e regularizar a instituição junto aos órgãos competentes, incluindo o Título de Utilidade Pública Estadual.
+                    </p>
+                </div>
+                <div class="carousel-slide">
+                    <h3>2009-2015: Grandes Conquistas</h3>
+                    <p>
+                        A partir de 2009, a APM obteve o Título de Utilidade Pública Federal e iniciou a contratação de funcionários. Em 2011, o IBAMA cedeu o imóvel por 20 anos. O Rio Solidário/LOTERJ doou um veículo adaptado em 2012. Em 2013, o "Projeto Brincando e Reabilitando" foi patrocinado pela Petrobrás, e em 2014, a APM recebeu o CEBAS.
+                    </p>
+                </div>
+                <div class="carousel-slide">
+                    <h3>2016 em diante: Continuidade e Expansão</h3>
+                    <p>
+                        Em 2015, a Pestalozzi de Maricá foi contemplada com a possibilidade de aquisição de equipamentos via Emenda Parlamentar, concretizada entre 2016 e 2018. Essas conquistas fortaleceram a capacidade da instituição de continuar oferecendo atendimento especializado e ampliando seu impacto na comunidade.
+                    </p>
+                </div>
+            </div>
+            <button class="carousel-button prev"><i data-lucide="chevron-left"></i></button>
+            <button class="carousel-button next"><i data-lucide="chevron-right"></i></button>
+            <div class="carousel-dots"></div>
+        </div>
+    </div>
 </section>
 
-<section class="faq-section container fade-in">
-  <h2 class="section-title"><i data-lucide="help-circle"></i> Perguntas Frequentes</h2>
-
-  <div class="faq-category">
-    <h3>Sobre Nós</h3>
-    <div class="accordion">
-      <div class="accordion-item">
-        <button class="accordion-button">Qual é a missão da Pestalozzi Maricá?</button>
-        <div class="accordion-content">
-          <p>Nossa missão é promover a inclusão e o cuidado de pessoas com deficiência, oferecendo atendimento de qualidade e apoio às suas famílias.</p>
+<section id="mvv" class="content-section fade-in">
+    <div class="container">
+        <h2 class="section-title"><i data-lucide="gem"></i> Missão, Visão e Valores</h2>
+        <div class="tabs-container">
+            <div class="tabs-buttons">
+                <button class="tab-button active" data-tab="missao">Missão</button>
+                <button class="tab-button" data-tab="visao">Visão</button>
+                <button class="tab-button" data-tab="valores">Valores</button>
+            </div>
+            <div class="tabs-content">
+                <div id="missao" class="tab-pane active">
+                    <p>Oferecer atendimento multiprofissional com ética e responsabilidade, visando à interação social, contribuindo para a melhoria da qualidade de vida do ser humano, promovendo o exercício pleno da cidadania.</p>
+                </div>
+                <div id="visao" class="tab-pane">
+                    <p>Ser reconhecida como referência em programas de habilitação e reabilitação.</p>
+                </div>
+                <div id="valores" class="tab-pane">
+                    <ul class="values-list">
+                        <li><i data-lucide="check-circle"></i> Honestidade</li>
+                        <li><i data-lucide="check-circle"></i> Transparência</li>
+                        <li><i data-lucide="check-circle"></i> Ética</li>
+                        <li><i data-lucide="check-circle"></i> Respeito às pessoas</li>
+                        <li><i data-lucide="check-circle"></i> Valorização da família</li>
+                        <li><i data-lucide="check-circle"></i> Humanização no atendimento</li>
+                        <li><i data-lucide="check-circle"></i> Competência profissional</li>
+                        <li><i data-lucide="check-circle"></i> Comunicação</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-button">Como surgiu a instituição?</button>
-        <div class="accordion-content">
-          <p>A Pestalozzi de Maricá foi fundada em 29 de novembro de 1984, em uma reunião realizada na Prefeitura de Maricá, com o objetivo de atender pessoas com deficiência e suas famílias.</p>
-        </div>
-      </div>
     </div>
-  </div>
+</section>
 
-  <div class="faq-category">
-    <h3>Doações</h3>
-    <div class="accordion">
-      <div class="accordion-item">
-        <button class="accordion-button">Como posso fazer uma doação?</button>
-        <div class="accordion-content">
-          <p>Você pode fazer uma doação através do nosso site, clicando no botão "Doe Agora" e seguindo as instruções para transferência bancária ou PIX.</p>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-button">As doações são dedutíveis do imposto de renda?</button>
-        <div class="accordion-content">
-          <p>Sim, as doações feitas à Pestalozzi Maricá podem ser deduzidas do imposto de renda, conforme a legislação vigente. Consulte seu contador para mais informações.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="atendimentos-programas" class="content-section image-background-section fade-in">
+    <div class="section-overlay"></div>
+    <div class="container services-container">
+        <div class="services-content-card">
+            <h2 class="section-title"><i data-lucide="graduation-cap"></i> Nossos Atendimentos e Programas</h2>
+            <h3>Público-Alvo</h3>
+            <p>
+                Atendemos recém-natos de risco, crianças com atraso no desenvolvimento neuropsicomotor, e crianças, adolescentes e jovens (0 a 22 anos) com deficiência (física, intelectual, Transtorno do Espectro Autista - TEA), além daqueles com distúrbios de aprendizagem. Nossas famílias também recebem atenção e apoio contínuos.
+            </p>
 
-  <div class="faq-category">
-    <h3>Voluntariado</h3>
-    <div class="accordion">
-      <div class="accordion-item">
-        <button class="accordion-button">Como posso me tornar voluntário?</button>
-        <div class="accordion-content">
-          <p>Para se tornar voluntário, acesse a página de voluntariado em nosso site e preencha o formulário de inscrição. Entraremos em contato com mais informações.</p>
+            <h3>Programas Atualmente Suspensos (2002 a Dez/2023 - aguardando recurso financeiro)</h3>
+            <ul class="suspended-programs-list">
+                <li><i data-lucide="circle-dashed"></i> Intervenção Precoce (0 a 5 anos e 11 meses)</li>
+                <li><i data-lucide="circle-dashed"></i> Reabilitação (6 a 18 anos)</li>
+                <li><i data-lucide="circle-dashed"></i> Recursos Terapêuticos e Educacionais (6 a 14 anos)</li>
+                <li><i data-lucide="circle-dashed"></i> Assistência à Família</li>
+            </ul>
+
+            <h3>Oficinas Atuais (Desde Junho/2023)</h3>
+            <p>
+                Oferecemos sessões individuais e oficinas diversificadas para um atendimento integral aos nossos assistidos e seus familiares:
+            </p>
+            <ul class="services-list">
+                <li><i data-lucide="sparkles"></i> Oficina de Corpo: Foco no desenvolvimento motor e consciência corporal.</li>
+                <li><i data-lucide="music"></i> Oficina de Musicalização: Estímulo através da música e ritmo.</li>
+                <li><i data-lucide="palette"></i> Oficina de Artes: Expressão criativa e desenvolvimento de habilidades artísticas.</li>
+            </ul>
+            <p>
+                Disponibilizamos também **Serviço de Psicologia** para fomentar a autonomia dos autodefensores e dar suporte às famílias, promovendo o autocuidado e fortalecimento de vínculos.
+            </p>
+            <h3>Dias e Horários de Atendimento ao Público</h3>
+            <p>
+                Terças, quintas e sextas-feiras, nos períodos das 8h às 12h e das 13h às 17h.
+            </p>
         </div>
-      </div>
-      <div class="accordion-item">
-        <button class="accordion-button">Quais são as áreas de atuação para voluntários?</button>
-        <div class="accordion-content">
-          <p>Os voluntários podem atuar em diversas áreas, como apoio pedagógico, eventos, campanhas de arrecadação, entre outras. Entre em contato para saber mais.</p>
-        </div>
-      </div>
     </div>
-  </div>
+</section>
+
+
+<section id="faq-section" class="faq-section container fade-in">
+    <h2 class="section-title"><i data-lucide="help-circle"></i> Perguntas Frequentes</h2>
+
+    <div class="faq-tabs">
+        <button class="faq-tab-button active" data-category="sobre-a-instituicao">Sobre a Pestalozzi</button>
+        <button class="faq-tab-button" data-category="historia-estrutura">História e Estrutura</button>
+        <button class="faq-tab-button" data-category="atendimentos-programas">Atendimentos e Programas</button>
+        <button class="faq-tab-button" data-category="participacao-eventos">Participação e Eventos</button>
+        <button class="faq-tab-button" data-category="voluntariado-doacoes">Voluntariado e Doações</button>
+    </div>
+
+    <div class="faq-content">
+        <div class="faq-category-pane active" data-category-pane="sobre-a-instituicao">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">Qual é a natureza jurídica da Pestalozzi de Maricá?</button>
+                    <div class="accordion-content">
+                        <p>A Pestalozzi de Maricá é uma organização de direito privado sem fins lucrativos, enquadrada como OSC (Organização da Sociedade Civil).</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Quem administra a Associação Pestalozzi de Maricá?</button>
+                    <div class="accordion-content">
+                        <p>É administrada por uma Diretoria, com apoio e supervisão dos Conselhos Administrativo e Fiscal. Todos os membros são associados eleitos para um mandato de 03 anos.</p>
+                    </div>
+                </div>
+                   <div class="accordion-item">
+                    <button class="accordion-button">A Pestalozzi de Maricá segue alguma diretriz nacional?</button>
+                    <div class="accordion-content">
+                        <p>Sim, segue as diretrizes do Movimento Pestalozziano, sob orientação e supervisão da Federação Nacional das Associações Pestalozzi (FENAPESTALOZZI) e da Federação das Associações Pestalozzi do Estado do Rio de Janeiro (FEASPERJ).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-category-pane" data-category-pane="historia-estrutura">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">Quais foram as principais conquistas da Pestalozzi de Maricá ao longo dos anos?</button>
+                    <div class="accordion-content">
+                        <p>Dentre as diversas conquistas, destacam-se a obtenção do Título de Utilidade Pública Estadual e Federal, a regularização junto aos órgãos competentes, a cessão do imóvel pelo IBAMA por 20 anos, a doação de um veículo adaptado pelo Rio Solidário/LOTERJ, o patrocínio do Projeto Brincando e Reabilitando pela Petrobrás, e a obtenção do Certificado de Entidade Beneficente de Assistência Social (CEBAS).</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Quem é a atual presidente da Associação Pestalozzi de Maricá?</button>
+                    <div class="accordion-content">
+                        <p>A atual presidente é Maria Aparecida de Carvalho Siqueira Garcia, mais conhecida como Cida, que atua na instituição desde 2001 e está na presidência desde 2008.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-category-pane" data-category-pane="atendimentos-programas">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">Qual é o público-alvo dos atendimentos da Pestalozzi de Maricá?</button>
+                    <div class="accordion-content">
+                        <p>Nosso público-alvo são recém-natos de risco, crianças com atraso no desenvolvimento neuropsicomotor, crianças, adolescentes e jovens (0 a 22 anos) com deficiência (física, intelectual, Transtorno do Espectro Autista) e/ou com transtornos de aprendizagem, incluindo seus familiares.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Quais programas e oficinas estão sendo oferecidos atualmente?</button>
+                    <div class="accordion-content">
+                        <p>Atualmente, oferecemos as oficinas de "Corpo", "Musicalização" e "Artes", além de um Serviço de Psicologia para assistidos e familiares. Os programas de Intervenção Precoce, Reabilitação, Recursos Terapêuticos e Educacionais e Assistência à Família estão suspensos aguardando recurso financeiro.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Quais são os dias e horários de atendimento ao público?</button>
+                    <div class="accordion-content">
+                        <p>Os atendimentos ao público ocorrem às terças, quintas e sextas-feiras, nos períodos das 8h às 12h e das 13h às 17h. O horário de funcionamento da Associação é de segunda a sexta, das 8h às 12h e das 13h às 17h.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-category-pane" data-category-pane="participacao-eventos">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">Em quais Conselhos Municipais a APM participa ativamente?</button>
+                    <div class="accordion-content">
+                        <p>A APM tem participação ativa nos Conselhos Municipais de Saúde (CMS), Assistência (CMAS), Direitos da Criança e do Adolescente (CMDCA) e Direitos da Pessoa com Deficiência (CMDCA), entre outros espaços de garantia de direitos.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Qual o impacto da participação da Pestalozzi de Maricá em eventos como o Congresso Nacional das Associações Pestalozzi?</button>
+                    <div class="accordion-content">
+                        <p>A participação em eventos como o XVI Congresso Nacional proporciona aprendizado, ampliação de ideias, debates e inspiração para buscar uma melhor qualidade de vida para pessoas com deficiência. É um momento de troca de informações essenciais para a atuação de voluntários, colaboradores e assistidos, reforçando o lema "Nada por Nós sem Nós".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-category-pane" data-category-pane="voluntariado-doacoes">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button">Como posso fazer uma doação para a Pestalozzi de Maricá?</button>
+                    <div class="accordion-content">
+                        <p>Você pode encontrar informações detalhadas sobre como doar (PIX, transferência bancária, Vakinha online) na nossa página inicial ou na seção "Sua Doação" do nosso site.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button">Como posso me tornar um voluntário na Pestalozzi de Maricá?</button>
+                    <div class="accordion-content">
+                        <p>Para se tornar voluntário, você pode acessar a página "Voluntário" em nosso site, onde encontrará informações sobre como se engajar e as áreas de atuação disponíveis. Sua ajuda faz a diferença!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.accordion-button');
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        button.classList.toggle('active');
-        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
-      });
+    // JavaScript para o carrossel da história
+    document.addEventListener('DOMContentLoaded', function () {
+        const carouselTrack = document.querySelector('.carousel-track');
+        const slides = Array.from(carouselTrack.children);
+        const nextButton = document.querySelector('.carousel-button.next');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        let currentIndex = 0;
+
+        // Cria os indicadores (dots)
+        dotsContainer.innerHTML = ''; // Limpa antes de criar para evitar duplicidade
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                moveToSlide(index);
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carouselTrack.style.transform = `translateX(${offset}%)`;
+
+            // Atualiza os dots
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            // Atualiza as classes 'active' nos slides
+            slides.forEach((slide, index) => {
+                if (index === currentIndex) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        function moveToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Volta para o início
+            }
+            updateCarousel();
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = slides.length - 1; // Vai para o final
+            }
+            updateCarousel();
+        });
+
+        updateCarousel(); // Inicializa o carrossel
     });
-  });
+
+
+    // JavaScript para as abas de Missão, Visão, Valores
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove 'active' de todos os botões e painéis
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                // Adiciona 'active' ao botão clicado
+                button.classList.add('active');
+
+                // Adiciona 'active' ao painel correspondente
+                const targetTab = button.dataset.tab;
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+    });
+
+
+    // JavaScript para o Acordeão (FAQ) e Abas de Categoria
+    document.addEventListener('DOMContentLoaded', function () {
+        const faqTabButtons = document.querySelectorAll('.faq-tab-button');
+        const faqCategoryPanes = document.querySelectorAll('.faq-category-pane');
+        const accordionButtons = document.querySelectorAll('.accordion-button'); // Adicionado novamente para ter certeza
+
+        // Função para fechar todos os acordeões
+        function closeAllAccordions() {
+            accordionButtons.forEach(button => {
+                button.classList.remove('active');
+                const content = button.nextElementSibling;
+                content.style.maxHeight = null;
+            });
+        }
+
+        // Event listener para os botões do acordeão
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const wasActive = button.classList.contains('active');
+
+                // Fecha outros acordeões na mesma categoria (se houver)
+                const currentCategoryPane = button.closest('.faq-category-pane');
+                if (currentCategoryPane) {
+                    currentCategoryPane.querySelectorAll('.accordion-button.active').forEach(activeButton => {
+                        if (activeButton !== button) {
+                            activeButton.classList.remove('active');
+                            activeButton.nextElementSibling.style.maxHeight = null;
+                        }
+                    });
+                }
+
+                // Alterna o estado do acordeão clicado
+                button.classList.toggle('active');
+                if (wasActive) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Event listener para os botões de categoria do FAQ
+        faqTabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetCategory = button.dataset.category;
+
+                // Remove a classe 'active' de todos os botões de categoria
+                faqTabButtons.forEach(btn => btn.classList.remove('active'));
+                // Oculta todos os painéis de categoria
+                faqCategoryPanes.forEach(pane => pane.classList.remove('active'));
+
+                // Adiciona a classe 'active' ao botão clicado
+                button.classList.add('active');
+
+                // Mostra o painel de categoria correspondente
+                const activeCategoryPane = document.querySelector(`.faq-category-pane[data-category-pane="${targetCategory}"]`);
+                if (activeCategoryPane) {
+                    activeCategoryPane.classList.add('active');
+                    // Opcional: Fechar todos os acordeões na nova categoria ao ativá-la
+                    // Isso garante que a categoria comece "limpa"
+                    activeCategoryPane.querySelectorAll('.accordion-button.active').forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.nextElementSibling.style.maxHeight = null;
+                    });
+                }
+            });
+        });
+
+        // Inicializa: Garante que apenas a primeira categoria de FAQ esteja visível por padrão
+        // E que todos os acordeões dentro dela estejam fechados.
+        if (faqTabButtons.length > 0 && faqCategoryPanes.length > 0) {
+            // Remove 'active' de todos os painéis (caso haja algum por HTML)
+            faqCategoryPanes.forEach(pane => pane.classList.remove('active'));
+            // Ativa o primeiro painel de categoria
+            faqCategoryPanes[0].classList.add('active');
+            // Fecha todos os acordeões dentro do primeiro painel
+            faqCategoryPanes[0].querySelectorAll('.accordion-button').forEach(btn => {
+                btn.classList.remove('active');
+                btn.nextElementSibling.style.maxHeight = null;
+            });
+        }
+    });
 </script>
 
 {% endblock content %}
