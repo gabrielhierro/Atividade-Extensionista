@@ -1,28 +1,104 @@
 {% extends "base/base.html" %}
 {% load static %}
-{% block title %}Pestalozzi Maricá{% endblock %}
+{% block title %}Sobre - Pestalozzi Maricá{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'sobre/css/sobre.css' %}">
+{% endblock styles %}
 {% block content %}
-    <section class="hero">
-        <div class="hero-content">
-            <img src={% static "img/logo_nome.png" %} alt="Pestalozzi Maricá" title="Logo Pestalozzi Maricá" class="logo">
-            <div>
-                <h2>Transforme vidas com a Pestalozzi Maricá</h2>
-                <p>Junte-se a nós na inclusão e no cuidado de pessoas com deficiência.</p>
-                <a href={% url "voluntario" %} class="btn-cta">Quero ser voluntário</a>
-            </div>
+
+<section class="hero">
+  <div class="hero-content">
+    <img src="{% static 'img/logo_nome.png' %}" alt="Pestalozzi Maricá" title="Logo Pestalozzi Maricá" class="logo">
+    <div>
+      <h2>Transforme vidas com a Pestalozzi Maricá</h2>
+      <p>Junte-se a nós na inclusão e no cuidado de pessoas com deficiência.</p>
+      <a href="{% url 'voluntario' %}" class="btn-cta">Quero ser voluntário</a>
+    </div>
+  </div>
+</section>
+
+<section class="container fade-in">
+  <h2 class="section-title"><i data-lucide="info"></i> Sobre a Instituição</h2>
+</section>
+
+<section id="sobre" class="container fade-in">
+  <p>
+    No dia 29/11/1984, em reunião realizada na Prefeitura de Maricá, foi fundada a Pestalozzi de Maricá, de natureza jurídica de direito privado sem fins lucrativos.
+    Nestes anos de atuação, a APM tem participação ativa nos Conselhos Municipais (Saúde- CMS, Assistência - CMAS, Direitos da Criança e do Adolescente - CMDCA e Direitos da Pessoa com Deficiência- CMDCA), assim em outros espaços de Garantia de Direito.
+    Com o objetivo de oferecer Planos Individuais de Atendimento de Prevenção, Habilitação e Reabilitação no âmbito da Norma Operacional Básica do Sistema Único de Assistência Social-NOB/SUAS, aos recém-nato de risco; crianças com atraso no desenvolvimento; crianças e adolescentes com deficiência (física/intelectual/transtorno global do desenvolvimento) e/ou com transtorno de aprendizagem; abrangendo as suas famílias, a fim de promover e assegurar o desfrute pleno e equitativo de todos os seus direitos, a interação social, a autonomia e melhoria da qualidade de vida dessas pessoas.
+  </p>
+  <img src="{% static 'img/fachada.jpg' %}" alt="Fachada da Pestalozzi Maricá" title="Fachada da Pestalozzi Maricá">
+</section>
+
+<section class="faq-section container fade-in">
+  <h2 class="section-title"><i data-lucide="help-circle"></i> Perguntas Frequentes</h2>
+
+  <div class="faq-category">
+    <h3>Sobre Nós</h3>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-button">Qual é a missão da Pestalozzi Maricá?</button>
+        <div class="accordion-content">
+          <p>Nossa missão é promover a inclusão e o cuidado de pessoas com deficiência, oferecendo atendimento de qualidade e apoio às suas famílias.</p>
         </div>
-    </section>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-button">Como surgiu a instituição?</button>
+        <div class="accordion-content">
+          <p>A Pestalozzi de Maricá foi fundada em 29 de novembro de 1984, em uma reunião realizada na Prefeitura de Maricá, com o objetivo de atender pessoas com deficiência e suas famílias.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <section class="container fade-in">
-        <h2 class="section-title"><i data-lucide="info"></i> Sobre a Instituição</h2>
-    </section>
+  <div class="faq-category">
+    <h3>Doações</h3>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-button">Como posso fazer uma doação?</button>
+        <div class="accordion-content">
+          <p>Você pode fazer uma doação através do nosso site, clicando no botão "Doe Agora" e seguindo as instruções para transferência bancária ou PIX.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-button">As doações são dedutíveis do imposto de renda?</button>
+        <div class="accordion-content">
+          <p>Sim, as doações feitas à Pestalozzi Maricá podem ser deduzidas do imposto de renda, conforme a legislação vigente. Consulte seu contador para mais informações.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <section id="sobre" class="container fade-in">
-        <p>No dia 29/11/1984, em reunião realizada na Prefeitura de Maricá, foi fundada a Pestalozzi de Maricá, de natureza jurídica de direito privado sem fins lucrativos.
-            Nestes anos de atuação, a APM tem participação ativa nos Conselhos Municipais (Saúde- CMS, Assistência - CMAS, Direitos da Criança e do Adolescente - CMDCA e Direitos da Pessoa com Deficiência- CMDCA), assim em outros espaços de Garantia de Direito.
-            Com o objetivo de oferecer Planos Individuais de Atendimento de Prevenção, Habilitação e Reabilitação no âmbito da Norma Operacional Básica do Sistema Único de Assistência Social-NOB/SUAS, aos recém-nato de risco; crianças com atraso no desenvolvimento; crianças e adolescentes com deficiência (física/intelectual/transtorno global do desenvolvimento) e/ou com transtorno de aprendizagem; abrangendo as suas famílias, a fim de promover e assegurar o desfrute pleno e equitativo de todos os seus direitos, a interação social, a autonomia e melhoria da qualidade de vida dessas pessoas. <br>
-            <button type="submit">Saiba mais</button></p>
+  <div class="faq-category">
+    <h3>Voluntariado</h3>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-button">Como posso me tornar voluntário?</button>
+        <div class="accordion-content">
+          <p>Para se tornar voluntário, acesse a página de voluntariado em nosso site e preencha o formulário de inscrição. Entraremos em contato com mais informações.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-button">Quais são as áreas de atuação para voluntários?</button>
+        <div class="accordion-content">
+          <p>Os voluntários podem atuar em diversas áreas, como apoio pedagógico, eventos, campanhas de arrecadação, entre outras. Entre em contato para saber mais.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <img src= {% static "img/fachada.jpg" %} alt="Fachada da Pestalozzi Maricá" title="Fachada da Pestalozzi Maricá">
-    </section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.accordion-button');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        button.classList.toggle('active');
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
+      });
+    });
+  });
+</script>
+
 {% endblock content %}

@@ -11,12 +11,11 @@
   --font-padrao: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ========== Reset Básico ========== */
+/* ========== Reset e Base ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -26,136 +25,63 @@ body {
   line-height: 1.6;
 }
 
-/* ========== Elementos Gerais ========== */
-a {
-  color: var(--vinho);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-h1, h2, h3 {
-  color: var(--vinho);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-section {
-  padding: 60px 20px;
-}
-
-/* ========== Navbar ========== */
-.navbar {
-  background-color: var(--marrom-escuro);
-  color: var(--branco);
-  padding: 15px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.navbar li {
-  margin: 0 15px;
-}
-
-.navbar a {
-  color: var(--branco);
+/* ========== Elementos Básicos ========== */
+h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  font-size: 16px;
-}
-
-/* ========== Botões ========== */
-button, .btn {
-  background-color: var(--vinho);
-  color: var(--branco);
-  border: none;
-  padding: 10px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-  text-align: center;
-  display: inline-block;
-  text-decoration: none;
-}
-
-button:hover, .btn:hover {
-  background-color: var(--vermelho);
-}
-
-/* ========== Formulários ========== */
-input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: var(--font-padrao);
-}
-
-label {
-  font-weight: bold;
-}
-
-/* ========== Títulos Comuns ========== */
-.section-title {
-  font-size: 28px;
-  margin-bottom: 20px;
-  border-bottom: 3px solid var(--amarelo);
-  display: inline-block;  
-}
-
-/* ========== Rodapé e Cabeçalho ========== */
-header, footer {
-  background-color: var(--marrom-escuro);
-  color: var(--branco);
-  padding: 20px;
-  text-align: center;
-}
-
-footer .footer-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-  text-align: left;
-  margin-top: 20px;
-}
-
-footer .footer-grid div {
-  flex: 1 1 200px;
-}
-
-footer ul {
-  list-style: none;
+  color: var(--marrom-escuro);
+  margin: 0;
   padding: 0;
 }
 
-footer a {
-  color: var(--amarelo);
-  font-size: 14px;
+p {
+  margin-bottom: 1em;
 }
 
-footer a:hover {
-  text-decoration: underline;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ========== Importação dos módulos CSS ========== */
-/* @import url('acesso.css');
-@import url('cadastro.css');
-@import url('portal.css');
-@import url('projetos.css'); */
+/* ========== Botões Globais ========== */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: var(--branco);
+  background-color: var(--vinho);
+}
+
+.btn:hover {
+  background-color: var(--marrom-escuro);
+}
+
+/* ========== Containers ========== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ========== Classes Utilitárias ========== */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

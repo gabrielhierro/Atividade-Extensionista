@@ -1,0 +1,116 @@
+body {
+  font-family: var(--font-padrao);
+  background-color: var(--bege-claro);
+  color: var(--marrom-escuro);
+}
+
+.hero {
+  background-color: var(--amarelo-claro);
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content .logo {
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+.btn-cta {
+  background-color: var(--vinho);
+  color: var(--branco);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 2px;
+  background-color: var(--vinho);
+}
+
+.section-title::before {
+  left: 0;
+}
+
+.section-title::after {
+  right: 0;
+}
+
+.faq-section {
+  margin-top: 3rem;
+}
+
+.faq-category {
+  margin-bottom: 2rem;
+}
+
+.faq-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--vinho);
+}
+
+.accordion {
+  border-top: 1px solid var(--marrom-escuro);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--marrom-escuro);
+}
+
+.accordion-button {
+  background-color: var(--bege-claro);
+  color: var(--marrom-escuro);
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+  background-color: var(--amarelo-claro);
+}
+
+.accordion-button.active {
+  background-color: var(--amarelo-intermediario);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: var(--branco);
+  padding: 0 1rem;
+}
+
+.accordion-content p {
+  padding: 1rem 0;
+}

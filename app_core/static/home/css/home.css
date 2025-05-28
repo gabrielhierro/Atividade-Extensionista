@@ -1,429 +1,322 @@
-.navbar {
+/* ... (seus estilos existentes para hero, sobre, transparencia) ... */
+
+/* ========== Seção Hero ========== */
+.hero {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: var(--vinho);
-}
-
-.nav-links {
-  display: flex;
-  gap: 15px;
-  list-style: none;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Ícone do menu hamburguer */
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  color: white;
-}
-
-/* Sidebar oculta por padrão */
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: var(--vinho);
-  color: white;
-  padding: 20px;
-  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-  transition: right 0.3s ease;
-  z-index: 999;
-}
-
-.sidebar.active {
-  right: 0;
-}
-
-.sidebar button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  float: right;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin: 15px 0;
-}
-
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* === NAVBAR === */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--vinho);
-  padding: 10px 20px;
-}
-
-.navbar img {
-  width: 50px;
-  height: auto;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 12px;
-  transition: background 0.3s;
-}
-
-.nav-links li a:hover {
-  background: var(--laranja);
-  border-radius: 4px;
-}
-
-/* === HAMBURGUER BUTTON === */
-.hamburger {
-  display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* === SIDEBAR MENU === */
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 260px;
-  height: 100%;
-  background-color: var(--vinho);
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  transition: right 0.3s ease-in-out;
-  z-index: 999;
+  padding: 4rem 1rem;
+  background-color: var(--amarelo-claro);
+  text-align: center;
 }
 
-.sidebar.active {
-  right: 0;
+.hero-content {
+  max-width: 800px;
 }
 
-.sidebar-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+.hero .logo {
+  width: 200px;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: var(--vinho);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--marrom-escuro);
+  margin-bottom: 1.5rem;
+}
+
+/* Botão específico do hero */
+.btn-doacao {
+  background-color: var(--amarelo);
+  color: var(--marrom-escuro);
+}
+
+.btn-doacao:hover {
+  background-color: var(--amarelo-intermediario);
+}
+
+/* ========== Seção Sobre ========== */
+#sobre {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 2rem;
 }
 
-.sidebar-menu li {
-  margin: 15px 0;
-}
-
-.sidebar-menu li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  color: white;
-  font-size: 30px;
-  border: none;
-  cursor: pointer;
-}
-
-/* === RESPONSIVO === */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
-/* Oculta o menu horizontal se a tela for pequena */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none !important;
-  }
-
-  .navbar.open .nav-links {
-    display: none;
-  }
-}
-
-/* Estilo do overlay escuro atrás da sidebar */
-#overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
+#sobre img {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 998;
+  max-width: 600px;
+  border-radius: 12px;
 }
 
-/* Mostra o overlay quando ativo */
-#overlay.active {
-  display: block;
+/* Botão "Saiba mais" */
+.btn-saiba-mais {
+  background-color: var(--vinho);
+  color: var(--branco);
 }
 
-/*yago mexendo=======================================================*/
-
-
-.voluntariesse{
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
+.btn-saiba-mais:hover {
+  background-color: var(--vermelho);
 }
 
-.voluntariesse button{
-  margin-top:15px ;
-}
-.voluntariesse img{
-  width: 500px;
-  height: 600px;
-}
-
-#sobre p{
-  font-size: 15px;
-  margin-top: 10px;
-}
-#sobre img{
-  box-shadow: grey 1px 0 14px;
-}
-#sobre button{
-  margin-top: 70px;
-}
-#sobre {
-  justify-content: space-between;
-  display:flex ;
-  gap: 20px;
-}
-
-.hero-content img{
-  width: 200px;
-  height: 100px;
-}
-.hero-content{
-  justify-content: left;
-  display: flex;
-  gap: 3%;
-}
-
- div {
-        background-color: var(--bege-claro);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        font-family: var(--font-padrao);
-    }
-
-    h3 {
-        color: var(--marrom-escuro);
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        gap: 15px;
-    }
-
-    ul li a {
-        font-size: 28px;
-        color: var(--marrom-escuro);
-        text-decoration: none;
-        transition: color 0.3s, transform 0.3s;
-    }
-
-    ul li a:hover {
-        transform: scale(2.1); /* Aumenta o ícone ao passar o mouse */
-    }
-
-    .fab.fa-instagram:hover {
-        color: var(--vinho);
-    }
-
-    .fab.fa-facebook:hover {
-        color: var(--azul-facebook, #1877F2);
-    }
-
-    .opcoes {
-      list-style: none; 
-      padding: 0;
-      display: flex; 
-      gap: 20px; 
-  }
-  
-  .opcoes {
-    list-style: none; /* Remove os pontos de lista */
-    padding: 0;
-    display: flex; /* Usando flexbox */
-    flex-direction: column; /* Alinha os itens na vertical */
-    gap: 10px; /* Espaço entre os itens */
-}
-
-.opcoes li a {
-    color: var(--vinho); /* Cor inicial vinho */
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.opcoes li a:hover {
-    color: var(--amarelo); /* Cor ao passar o mouse */
-    transform: scale(1.1); /* Efeito de aumento */
-}
-
-
-
-
-
-
-
-/* Responsividade ================================================================================= */
-
-@media (max-width: 768px) {
-  /* HERO Section */
-  .hero-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-content img {
-    width: 100px;
-    height: auto;
-  }
-
-  .hero-content div {
-    padding: 10px;
-  }
-
-  /* SOBRE Section */
-  #sobre {
-    flex-direction: column-reverse;
-    align-items: center;
-    text-align: center;
-  }
-
-  #sobre img {
-    width: 90%;
-    height: auto;
-    margin-top: 20px;
-  }
-
-  #sobre button {
-    margin-left: 0;
-    margin-top: 20px;
-  }
-
-  /* VOLUNTARIESSE Section */
-  .voluntariesse {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .voluntariesse img {
-    width: 90%;
-    height: auto;
-  }
-
-  .voluntariesse form {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .cidade-estado {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  /* FOOTER */
-  .footer-grid {
+/* ========== Seção Transparência (NOVA ESTILIZAÇÃO) ========== */
+#transparencia {
+    /* Mantém os paddings e margin-bottom do container fade-in */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centraliza o título e o parágrafo */
+    gap: 2rem; /* Espaçamento entre os elementos da seção */
+    text-align: center; /* Centraliza o texto do título e parágrafo */
+}
+
+#transparencia .section-title {
+    margin-bottom: 0.5rem; /* Ajuste para o espaçamento do título */
+    color: var(--vinho); /* Cor do título para consistência */
+}
+
+.transparency-intro-text {
+    max-width: 800px;
+    margin-bottom: 1.5rem; /* Espaçamento entre o parágrafo e a grade */
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--marrom-escuro);
+}
+
+.transparency-grid {
+    display: grid;
+    /* Em mobile, uma coluna; em desktop, três colunas */
+    grid-template-columns: 1fr; /* Padrão mobile: uma coluna */
+    gap: 1.5rem; /* Espaçamento entre os cards */
+    width: 100%;
+    max-width: 1000px; /* Limite de largura para a grade */
+    margin: 0 auto; /* Centraliza a grade */
+}
+
+.transparency-item {
+    background-color: var(--bege-claro); /* Fundo claro para os cards */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    text-decoration: none; /* Remove sublinhado padrão do link */
+    color: var(--marrom-escuro); /* Cor do texto */
+    display: flex;
+    flex-direction: column; /* Ícone em cima do texto */
+    align-items: center; /* Centraliza conteúdo (ícone e texto) */
     text-align: center;
-    gap: 20px;
-  }
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave no hover */
+    min-height: 120px; /* Altura mínima para uniformidade */
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
+    border: 1px solid var(--bege-claro); /* Borda padrão */
+}
 
-  .footer-grid div {
-    width: 90%;
-  }
+.transparency-item:hover {
+    transform: translateY(-5px); /* Efeito de elevação */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+    border-color: var(--amarelo); /* Borda amarela no hover */
+}
 
-  ul {
-    flex-direction: column;
+.transparency-item i {
+    font-size: 3rem; /* Tamanho do ícone */
+    color: var(--vinho); /* Cor do ícone */
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.transparency-item:hover i {
+    color: var(--vermelho); /* Mudar cor do ícone no hover */
+}
+
+.transparency-item span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* ================== RESPONSIVIDADE (Seção Transparência) ================== */
+
+@media (min-width: 600px) {
+    .transparency-grid {
+        grid-template-columns: 1fr 1fr; /* Duas colunas em tablets */
+    }
+}
+
+@media (min-width: 900px) {
+    .transparency-grid {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas em desktop */
+    }
+}
+
+/* ========== Seção Doação (NOVA) ========== */
+
+#donation-section {
+    padding: 6rem 1rem; /* Padding geral para a seção */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    /* Estilos para a imagem de fundo */
+    background-image: url("/static/img/hands-cupped.png"); /* Nova imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* <--- ESTA LINHA É A CHAVE! */
+}
+
+/* Overlay para escurecer a imagem de fundo e melhorar a legibilidade */
+#donation-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Preto com 40% de opacidade */
+    z-index: 1;
+}
+
+/* Container principal do conteúdo (CTA + Info) */
+.donation-content-wrapper {
+    display: flex;
+    flex-direction: column; /* Padrão mobile: empilhado */
+    align-items: center; /* Centraliza os blocos em mobile */
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto; /* Centraliza o wrapper na seção */
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
+    color: var(--branco); /* Cor padrão do texto (para o CTA) */
+}
+
+/* Bloco de CTA (Call to Action) */
+.donation-cta-text {
+    text-align: center; /* Centraliza o texto em mobile */
+    max-width: 700px; /* Limita a largura do texto */
+}
+
+.donation-cta-text .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--branco);
+    display: flex;
+    justify-content: center; /* Centraliza o ícone e texto do título em mobile */
     align-items: center;
-  }
-
-  ul li a {
-    font-size: 20px;
-  }
+    gap: 0.8rem;
 }
 
-/* Ajuste geral para inputs */
-input, textarea {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-  margin-bottom: 10px;
+.donation-cta-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
 }
 
-/* Botões responsivos */
-button {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
+/* Bloco de Informações de Doação */
+.donation-info-box {
+    width: 100%;
+    max-width: 550px; /* Limita a largura do box de informações */
+    background-color: var(--bege-claro); /* Cor de fundo clara */
+    padding: 2.5rem; /* Padding interno */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    color: var(--marrom-escuro); /* Cor do texto dentro do box */
+}
+
+.donation-info-box h3 {
+    font-size: 1.8rem;
+    color: var(--vinho);
+    margin-bottom: 1.5rem;
+    text-align: center; /* Centraliza títulos dentro do box */
+}
+
+.donation-info-box p {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    text-align: left; /* Alinha parágrafos à esquerda dentro do box */
+}
+
+.donation-info-box ul {
+    list-style: none; /* Remove bolinhas da lista */
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.donation-info-box ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-align: left; /* Alinha itens da lista à esquerda */
+}
+
+.donation-info-box ul li strong {
+    color: var(--vinho); /* Destaca os títulos dos itens da lista */
+}
+
+/* Botão da Vakinha */
+.btn-vakinha {
+    background-color: var(--amarelo);
+    color: var(--marrom-escuro);
+    padding: 14px 30px;
+    font-size: 1.15rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Para o margin-top funcionar e manter centralizado */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.btn-vakinha:hover {
+    background-color: var(--amarelo-intermediario);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================== RESPONSIVIDADE (SEÇÃO DOAÇÃO) ================== */
+
+@media (min-width: 768px) {
+    .donation-content-wrapper {
+        flex-direction: row; /* Desktop: lado a lado */
+        justify-content: center;
+        align-items: flex-start; /* Alinha os topos dos blocos */
+    }
+
+    .donation-cta-text {
+        flex: 1;
+        padding-right: 3rem; /* Espaçamento entre CTA e info box */
+        text-align: left; /* Alinha texto e título à esquerda em desktop */
+    }
+
+    .donation-cta-text .section-title {
+        justify-content: flex-start; /* Alinha o ícone e texto do título à esquerda */
+    }
+
+    .donation-info-box {
+        flex: 1;
+        max-width: 45%; /* Limita a largura do box de informações */
+    }
+
+    .donation-info-box h3 {
+        text-align: left; /* Alinha títulos dentro do box à esquerda em desktop */
+    }
+}
+
+@media (min-width: 1024px) {
+    .donation-content-wrapper {
+        gap: 4rem;
+        max-width: 1100px;
+    }
+
+    .donation-cta-text {
+        max-width: 500px; /* Limita largura do texto CTA em telas grandes */
+    }
+
+    .donation-info-box {
+        max-width: 500px; /* Limita largura do box de informações em telas grandes */
+    }
 }

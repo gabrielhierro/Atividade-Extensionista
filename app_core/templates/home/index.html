@@ -1,97 +1,87 @@
 {% extends "base/base.html" %}
 {% load static %}
 {% block title %}Pestalozzi Maricá{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}" />
+{% endblock styles %}
 {% block content %}
-        <section class="hero">
+    <section class="hero">
         <div class="hero-content">
             <img src={% static "img/logo_nome.png" %} title="Logo Pestalozzi" alt="Pestalozzi Maricá" class="logo">
             <div>
-            <h2>Transforme vidas com a Pestalozzi Maricá</h2>
-            <p>Junte-se a nós na inclusão e no cuidado de pessoas com deficiência.</p>
-            <a href={% url "voluntario" %} class="btn-cta">Quero ser voluntário</a>
+                <h2>Transforme vidas com a Pestalozzi Maricá</h2>
+                <p>Com sua doação, podemos ampliar o cuidado e a inclusão de pessoas com deficiência.</p>
+                <button class="btn btn-doacao" href="#donation-section">Faça sua doação</button> 
             </div>
         </div>
     </section>
-    <section class="container fade-in">
-    <h2 class="section-title"><i data-lucide="info"></i> Sobre a Instituição</h2>
-</section>
-    <section id="sobre" class="container fade-in">
-        <p>No dia 29/11/1984, em reunião realizada na Prefeitura de Maricá, foi fundada a Pestalozzi de Maricá, de natureza jurídica de direito privado sem fins lucrativos.
-            Nestes anos de atuação, a APM tem participação ativa nos Conselhos Municipais (Saúde- CMS, Assistência - CMAS, Direitos da Criança e do Adolescente - CMDCA e Direitos da Pessoa com Deficiência- CMDCA), assim em outros espaços de Garantia de Direito.
-        Com o objetivo de oferecer Planos Individuais de Atendimento de Prevenção, Habilitação e Reabilitação no âmbito da Norma Operacional Básica do Sistema Único de Assistência Social-NOB/SUAS, aos recém-nato de risco; crianças com atraso no desenvolvimento; crianças e adolescentes com deficiência (física/intelectual/transtorno global do desenvolvimento) e/ou com transtorno de aprendizagem; abrangendo as suas famílias, a fim de promover e assegurar o desfrute pleno e equitativo de todos os seus direitos, a interação social, a autonomia e melhoria da qualidade de vida dessas pessoas. <br>
-        <button type="submit">Saiba mais</button></p>
 
+    <section class="container fade-in">
+        <h2 class="section-title"><i data-lucide="info"></i>Quem Somos</h2>
+    </section>
+    <section id="sobre" class="container fade-in">
+        <p>
+        Somos uma organização sem fins lucrativos que atua no cuidado e no desenvolvimento de crianças e adolescentes em situação de vulnerabilidade. Oferecemos atendimento individualizado nas áreas de prevenção, habilitação e reabilitação para recém-nascidos de risco, crianças com atraso no desenvolvimento, deficiência física ou intelectual, transtornos do desenvolvimento e dificuldades de aprendizagem. Nosso trabalho também inclui o apoio às famílias, promovendo inclusão, autonomia e qualidade de vida.
+        </p>
+        <a href="{% url 'sobre' %}" class="btn btn-saiba-mais">Saiba mais</a>
         <img src={% static "img/fachada.jpg" %} alt="Fachada da Pestalozzi Maricá" title="Fachada da Pestalozzi Maricá">
     </section>
 
-    <!-- <section id="historia" class="container fade-in">
-        <h2 class="section-title"><i data-lucide="book-open"></i> Nossa História</h2>
-        <p>Fundada há mais de 30 anos, a Pestalozzi de Maricá tem atuado na educação, reabilitação e apoio às famílias de pessoas com deficiência.</p>
-    </section> -->
-
     <section id="transparencia" class="container fade-in">
         <h2 class="section-title"><i data-lucide="file-text"></i> Transparência</h2>
-        <p>Comprometemo-nos com a transparência total de nossas ações e recursos. Acesse relatórios e balancetes:</p>
-        <a href="/portal/comunicados.html" class="btn">Ver documentos</a>
-    </section>
-
-    <section id="plano" class="container fade-in">
-        <h2 class="section-title"><i data-lucide="target"></i> Plano de Trabalho</h2>
-        <p>Confira nossas metas e estratégias de atuação:</p>
-        <a href="/portal/comunicados.html" class="btn">Ver plano</a>
-    </section>
-
-    <section id="contato" class="container fade-in">
-      <h2 class="section-title"><i data-lucide="mail"></i> Seja Volutário</h2>
-      <!-- <form>
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
-        <button type="submit">Enviar</button>
-      </form> -->
-
-      <div class="voluntariesse">
-
-        <img src={% static "img/logo_cropped.png" %} alt="Logo Pestalozzi" title="Logo Pestalozzi Marica">
-
-
-        <div ><p>Aguarde futuro contato via e-mail assim que tivermos a próxima ação. As vagas são limitadas e as campanhas são sazonais, mas você sempre pode nos ajudar divulgando nosso trabalho de conscientização!
-        </p> 
-
-<form action="/voluntarios.html" method="post">
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required placeholder="exemplo@exemplo.com.br">
-
-            <label for="telefone">Telefone</label>
-            <div class="telefone-group">
-            <input type="text" name="telefone" maxlength="9" placeholder="DDD + Número" required>
-            </div>
-
-            <label for="endereco">Endereço</label>
-            <input type="text" id="endereco" name="endereco" required>
-
-            <div class="cidade-estado">
-            <input type="text" name="cidade" placeholder="Cidade" required>
-            <input type="text" name="estado" placeholder="Estado" required>
-            </div>
+        <p class="transparency-intro-text">Comprometemo-nos com a transparência total de nossas ações e recursos. Acesse nossos documentos financeiros e administrativos para acompanhar de perto o impacto da sua contribuição:</p>
         
-            </select>
-
-            <button type="submit">Enviar</button>
-        </form>
-        
+        <div class="transparency-grid">
+            <a href="https://drive.google.com/drive/folders/1vLkUNGbXwpjo-8bhy2LIddRxMlsT1b69" target="_blank" class="transparency-item">
+                <i data-lucide="file-check"></i> <span>ATA Diretoria</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1YfVRwkYh2gwD-7CIOY2eqwECnhK-OVjb" target="_blank" class="transparency-item">
+                <i data-lucide="scale"></i> <span>Balanço Patrimonial</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1dfcVfVjZEAuTY61legyoVBe15hB5-xqC" target="_blank" class="transparency-item">
+                <i data-lucide="folder-check"></i> <span>Emenda Dep. Otávio Leite / Repasse Pref. Maricá</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1_MI4fNazQsuLG9DPZlw969MuduxurRL1" target="_blank" class="transparency-item">
+                <i data-lucide="clipboard-list"></i> <span>Planos de Ação</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1SMNOM6droh5sP870OpOmj60OdTYW7i2b" target="_blank" class="transparency-item">
+                <i data-lucide="receipt"></i> <span>Termo de Fomento 702/2018 - LOTERJ</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1U1w46lNyDqA_Qt-OB24ECogpu2_Gaa4j" target="_blank" class="transparency-item">
+                <i data-lucide="wallet"></i> <span>Recibos</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1m_a75ogSv0X5_Qck9swWqTkjbmFw73zh" target="_blank" class="transparency-item">
+                <i data-lucide="file-bar-chart-2"></i> <span>Relatório</span>
+            </a>
         </div>
-           
-        
-        </div> <!--volutariesse-->
+    </section>
+
+    <section id="donation-section" class="container fade-in">
+        <div class="donation-content-wrapper">
+            <div class="donation-cta-text">
+                <h2 class="section-title"><i data-lucide="heart"></i> Sua doação faz a diferença!</h2>
+                <p>
+                    Com sua ajuda, podemos continuar oferecendo atendimento especializado e promovendo a inclusão de crianças e adolescentes com deficiência. Cada contribuição é um passo em direção a um futuro mais inclusivo e digno.
+                </p>
+                <p>
+                    Escolha a forma que melhor se adapta a você e seja um parceiro nessa transformação!
+                </p>
+            </div>
+
+            <div class="donation-info-box">
+                <h3>Dados para Doação Bancária</h3>
+                <p><strong>Caixa Econômica Federal:</strong></p>
+                <ul>
+                    <li><strong>Agência:</strong> 1244</li>
+                    <li><strong>Conta:</strong> 1166-0</li>
+                </ul>
+                
+                <h3>Doação Online (Vakinha)</h3>
+                <p>
+                    Clique no link abaixo para fazer sua doação de forma rápida e segura pela plataforma Vakinha:
+                </p>
+                <a href="https://www.vakinha.com.br/vaquinha/vaquinha-pra-pestalozzi-de-marica?fbclid=PAQ0xDSwKjMZFleHRuA2FlQIBxMQABp9xO56ZPsnqfhoHTtiv7bQ-C0qC9F885OIr_y0nENzqLwpdPXp37dMucJp4_aem_M6W3HKh2banF5u0Y1Kbtaw" target="_blank" class="btn btn-vakinha">Doar pela Vakinha</a>
+            </div>
+        </div>
     </section>
 {% endblock content %}
