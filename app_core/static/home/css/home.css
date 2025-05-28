@@ -10,7 +10,7 @@
 .services-text-content ul li i {
     display: inline-flex; /* Para melhor alinhamento com o texto */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; REMOVIDO: Será definido por cada .section-title */
 }
 
 /* Nova classe para seções de conteúdo que podem ter fundos diferentes */
@@ -32,7 +32,7 @@
     font-size: 1.15rem;
     line-height: 1.8;
     color: var(--marrom-escuro);
-    text-align: center;
+    text-align: center; /* Mantido centralizado */
 }
 
 
@@ -97,7 +97,7 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.btn-secondary {
+.btn-secondary { /* Mantido caso haja outros usos, mas agora o "Saiba mais" é primary */
     background-color: var(--vinho); /* Cor secundária para outros botões */
     color: var(--branco);
     padding: 14px 28px;
@@ -114,7 +114,7 @@
 }
 
 
-/* ========== Seção Quem Somos (Resumida) ========== */
+/* ========== Seção Quem Somos (Resumida) - Título Centralizado ========== */
 #about-summary {
     background-color: var(--branco); /* Fundo branco para contraste */
     text-align: center;
@@ -126,6 +126,7 @@
     margin-bottom: 1.5rem;
     color: var(--vinho);
     gap: 0.8rem;
+    justify-content: center; /* GARANTE CENTRALIZAÇÃO DO TÍTULO */
 }
 
 
@@ -140,6 +141,7 @@
     margin-bottom: 3.5rem; /* Mais espaçamento */
     color: var(--vinho);
     gap: 0.8rem;
+    justify-content: center; /* GARANTE CENTRALIZAÇÃO DO TÍTULO */
 }
 
 .mission-grid {
@@ -199,7 +201,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+    background-color: rgba(0, 0, 0, 0.4); /* Levemente mais escuro para contraste */
     z-index: 1;
 }
 
@@ -224,8 +226,8 @@
 .services-content-card .section-title {
     font-size: 2.8rem;
     margin-bottom: 2.5rem;
-    color: var(--vinho); /* Cor do título dentro do card */
-    justify-content: center;
+    color: var(--marrom-escuro); /* Definido explicitamente para ser visível */
+    justify-content: center; /* Centraliza o título do card */
 }
 
 .services-content-card h3 {
@@ -243,26 +245,27 @@
 }
 
 .services-list {
-    list-style: none;
-    padding-left: 0;
+    list-style: disc; /* Adiciona o pontinho */
+    padding-left: 1.5rem; /* Aumenta o padding para o pontinho */
     margin-bottom: 2rem;
+    color: var(--marrom-escuro); /* Garante a cor do texto da lista */
 }
 
 .services-list li {
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
+    /* Remover display flex e gap para deixar o bullet point padrão */
+    /* display: flex; */
+    /* align-items: center; */
+    /* gap: 0.7rem; */
 }
 
 .services-list li i {
-    color: var(--amarelo); /* Cor do ícone da lista */
-    font-size: 1.4rem;
+    display: none; /* Esconde o ícone se o bullet point for preferido */
 }
 
 
-/* ========== Seção Transparência (Ajustes finos no estilo) ========== */
+/* ========== Seção Transparência (Ajustes finos no estilo e Título Centralizado) ========== */
 #transparencia {
     background-color: var(--amarelo-claro); /* Fundo claro para contraste */
     text-align: center;
@@ -273,6 +276,7 @@
     margin-bottom: 2.5rem;
     color: var(--vinho);
     gap: 0.8rem;
+    justify-content: center; /* GARANTE CENTRALIZAÇÃO DO TÍTULO */
 }
 
 .transparency-grid {
@@ -324,7 +328,7 @@
     line-height: 1.4;
 }
 
-/* ========== Seção Doação (Ajustes de classes e responsividade) ========== */
+/* ========== Seção Doação (Com QR Code Pix e ajustes de classes e responsividade) ========== */
 #donation-section {
     background-image: url("/static/img/hands-cupped.png");
     background-size: cover;
@@ -380,10 +384,13 @@
     width: 100%;
     max-width: 550px;
     background-color: var(--bege-claro);
-    padding: 2.5rem;
+    padding: 2.5rem; /* Ajuste para padding consistente */
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     color: var(--marrom-escuro);
+    display: flex; /* Adicionado para controlar o layout interno */
+    flex-direction: column; /* Adicionado para organizar os elementos verticalmente */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
 }
 
 .donation-info-box h3 {
@@ -393,9 +400,9 @@
     text-align: center;
 }
 
-.donation-info-box p {
+.donation-info-box > p { /* Seletor mais específico para os parágrafos diretos */
     font-size: 1.1rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.5rem; /* Aumentado para consistência */
     line-height: 1.6;
     text-align: left;
 }
@@ -403,7 +410,7 @@
 .donation-info-box ul {
     list-style: none;
     padding-left: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; /* Aumentado para consistência */
 }
 
 .donation-info-box ul li {
@@ -416,11 +423,18 @@
     color: var(--vinho);
 }
 
+/* Ajuste específico para o parágrafo antes do botão da Vakinha */
+.donation-info-box p:last-of-type {
+    margin-bottom: 1.5rem; /* Garante espaçamento adequado antes do botão */
+}
+
 /* Botão da Vakinha - Agora usa .btn-primary */
 .btn-vakinha.btn-primary {
     /* Mantém os estilos de .btn-primary, só ajusta o padding se necessário */
     padding: 14px 30px; /* Ajuste para o botão da vakinha */
     font-size: 1.15rem;
+    margin-top: 0.5rem; /* Adiciona uma pequena margem superior para separação */
+    margin-bottom: 0; /* Remove margem inferior padrão para respeitar o padding do pai */
 }
 
 
@@ -438,7 +452,7 @@
         width: 300px;
     }
 
-    /* Section Titles */
+    /* Section Titles (desktop/tablet) */
     .section-title {
         font-size: 3.2rem;
     }
@@ -468,8 +482,15 @@
         text-align: left;
     }
     .services-content-card ul li {
-        justify-content: flex-start; /* Alinha lista à esquerda dentro do card */
+        /* Remover display flex e gap aqui para permitir que o bullet point padrão apareça */
+        display: list-item; /* Reverte para comportamento padrão de item de lista */
+        align-items: flex-start; /* Alinha o conteúdo ao topo do item */
+        gap: 0; /* Remove o gap que estava causando espaçamento extra */
     }
+    .services-list li i {
+        display: none; /* Esconde o ícone se o bullet point for preferido */
+    }
+
 
     /* Transparência */
     .transparency-grid {
@@ -498,6 +519,7 @@
         text-align: left;
     }
 }
+
 
 @media (min-width: 992px) { /* Novo breakpoint para desktop maior */
     .section-title {
