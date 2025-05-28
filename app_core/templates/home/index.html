@@ -5,61 +5,108 @@
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}" />
 {% endblock styles %}
 {% block content %}
-    <section class="hero">
-        <div class="hero-content">
+    <section class="main-hero">
+        <div class="main-hero-content">
             <img src={% static "img/logo_nome.png" %} title="Logo Pestalozzi" alt="Pestalozzi Maricá" class="logo">
-            <div>
-                <h2>Transforme vidas com a Pestalozzi Maricá</h2>
-                <p>Com sua doação, podemos ampliar o cuidado e a inclusão de pessoas com deficiência.</p>
-                <button class="btn btn-doacao" href="#donation-section">Faça sua doação</button> 
+            <h1 class="hero-title">Transforme vidas com a Pestalozzi Maricá</h1>
+            <p class="hero-subtitle">Com sua doação, podemos ampliar o cuidado e a inclusão de pessoas com deficiência.</p>
+            <a href="#donation-section" class="btn btn-primary btn-hero-cta">Faça sua doação</a> 
+        </div>
+    </section>
+
+    <section id="about-summary" class="container fade-in">
+        <h2 class="section-title"><i data-lucide="info"></i>Quem Somos</h2>
+        <p class="section-description">
+            A Pestalozzi Maricá é uma organização sem fins lucrativos dedicada a promover o desenvolvimento e a inclusão de crianças, adolescentes e jovens com deficiência e seus familiares. Nosso trabalho foca em Planos Individuais de Atendimento, abrangendo prevenção, habilitação e reabilitação para assegurar o pleno desfrute de seus direitos, interação social, autonomia e qualidade de vida.
+        </p>
+        <a href="{% url 'sobre' %}" class="btn btn-secondary">Saiba mais sobre nós</a>
+    </section>
+
+    <section id="our-mission" class="content-section fade-in">
+        <div class="container mission-container">
+            <h2 class="section-title text-light"><i data-lucide="target"></i> Nossa Missão</h2>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>Objetivo Geral</h3>
+                    <p>
+                        Oferecer Planos Individuais de Atendimento de Prevenção, Habilitação e Reabilitação, no âmbito da Norma Operacional Básica do Sistema Único de Assistência Social-NOB/SUAS, para recém-nascidos de risco; crianças com atraso no desenvolvimento; crianças e adolescentes com deficiência (física/intelectual/transtorno global do desenvolvimento) e/ou com transtorno de aprendizagem; abrangendo suas famílias, a fim de promover e assegurar o desfrute pleno e equitativo de todos os seus direitos, a interação social, a autonomia e melhoria da qualidade de vida dessas pessoas.
+                    </p>
+                </div>
+                <div class="mission-card">
+                    <h3>Resultado Esperado</h3>
+                    <p>
+                        Promover a Participação Social da Pessoa com Deficiência de forma interativa, assegurando o desfrute pleno e equitativo de seus direitos legais, sua autonomia e de suas famílias.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="container fade-in">
-        <h2 class="section-title"><i data-lucide="info"></i>Quem Somos</h2>
-    </section>
-    <section id="sobre" class="container fade-in">
-        <p>
-        Somos uma organização sem fins lucrativos que atua no cuidado e no desenvolvimento de crianças e adolescentes em situação de vulnerabilidade. Oferecemos atendimento individualizado nas áreas de prevenção, habilitação e reabilitação para recém-nascidos de risco, crianças com atraso no desenvolvimento, deficiência física ou intelectual, transtornos do desenvolvimento e dificuldades de aprendizagem. Nosso trabalho também inclui o apoio às famílias, promovendo inclusão, autonomia e qualidade de vida.
-        </p>
-        <a href="{% url 'sobre' %}" class="btn btn-saiba-mais">Saiba mais</a>
-        <img src={% static "img/fachada.jpg" %} alt="Fachada da Pestalozzi Maricá" title="Fachada da Pestalozzi Maricá">
-    </section>
+    <section id="our-services" class="content-section image-background-section fade-in">
+        <div class="section-overlay"></div>
+        <div class="container services-container">
+            <div class="services-content-card">
+                <h2 class="section-title text-light"><i data-lucide="graduation-cap"></i> Nossos Atendimentos</h2>
+                <h3>Quem Atendemos</h3>
+                <p>
+                    Recém-nascidos de risco, crianças com atraso no desenvolvimento neuropsicomotor, e crianças, adolescentes e jovens (0 a 22 anos) com deficiência física, intelectual, Transtorno do Espectro Autista (TEA), além daqueles com distúrbios de aprendizagem. Nossas famílias também recebem atenção e apoio contínuos.
+                </p>
 
-    <section id="transparencia" class="container fade-in">
-        <h2 class="section-title"><i data-lucide="file-text"></i> Transparência</h2>
-        <p class="transparency-intro-text">Comprometemo-nos com a transparência total de nossas ações e recursos. Acesse nossos documentos financeiros e administrativos para acompanhar de perto o impacto da sua contribuição:</p>
-        
-        <div class="transparency-grid">
-            <a href="https://drive.google.com/drive/folders/1vLkUNGbXwpjo-8bhy2LIddRxMlsT1b69" target="_blank" class="transparency-item">
-                <i data-lucide="file-check"></i> <span>ATA Diretoria</span>
-            </a>
-            <a href="https://drive.google.com/drive/folders/1YfVRwkYh2gwD-7CIOY2eqwECnhK-OVjb" target="_blank" class="transparency-item">
-                <i data-lucide="scale"></i> <span>Balanço Patrimonial</span>
-            </a>
-            <a href="https://drive.google.com/drive/folders/1dfcVfVjZEAuTY61legyoVBe15hB5-xqC" target="_blank" class="transparency-item">
-                <i data-lucide="folder-check"></i> <span>Emenda Dep. Otávio Leite / Repasse Pref. Maricá</span>
-            </a>
-            <a href="https://drive.google.com/drive/folders/1_MI4fNazQsuLG9DPZlw969MuduxurRL1" target="_blank" class="transparency-item">
-                <i data-lucide="clipboard-list"></i> <span>Planos de Ação</span>
-            </a>
-            <a href="https://drive.google.com/drive/folders/1SMNOM6droh5sP870OpOmj60OdTYW7i2b" target="_blank" class="transparency-item">
-                <i data-lucide="receipt"></i> <span>Termo de Fomento 702/2018 - LOTERJ</span>
-            </a>
-            <a href="https://drive.google.com/drive/folders/1U1w46lNyDqA_Qt-OB24ECogpu2_Gaa4j" target="_blank" class="transparency-item">
-                <i data-lucide="wallet"></i> <span>Recibos</span>
-            </a>
-            <a href="https://drive.google.com/drive/folders/1m_a75ogSv0X5_Qck9swWqTkjbmFw73zh" target="_blank" class="transparency-item">
-                <i data-lucide="file-bar-chart-2"></i> <span>Relatório</span>
-            </a>
+                <h3>Programas e Oficinas</h3>
+                <p>
+                    Oferecemos sessões individuais e oficinas diversificadas para um atendimento integral:
+                </p>
+                <ul class="services-list">
+                    <li><i data-lucide="sparkles"></i> Oficina de Corpo: Foco no desenvolvimento motor e consciência corporal.</li>
+                    <li><i data-lucide="music"></i> Oficina de Musicalização: Estímulo através da música e ritmo.</li>
+                    <li><i data-lucide="palette"></i> Oficina de Artes: Expressão criativa e desenvolvimento de habilidades artísticas.</li>
+                </ul>
+                <p>
+                    Disponibilizamos também **Serviço de Psicologia** para fomentar a autonomia dos autodefensores e dar suporte às famílias, promovendo o autocuidado e fortalecendo vínculos.
+                </p>
+                <h3>Dias e Horários de Atendimento</h3>
+                <p>
+                    Terças, quintas e sextas-feiras, nos períodos das 8h às 12h e das 13h às 17h.
+                </p>
+            </div>
         </div>
     </section>
 
-    <section id="donation-section" class="container fade-in">
+    <section id="transparencia" class="content-section fade-in">
+        <div class="container">
+            <h2 class="section-title"><i data-lucide="file-text"></i> Transparência</h2>
+            <p class="section-description">Comprometemo-nos com a transparência total de nossas ações e recursos. Acesse nossos documentos financeiros e administrativos para acompanhar de perto o impacto da sua contribuição:</p>
+            
+            <div class="transparency-grid">
+                <a href="https://drive.google.com/drive/folders/1vLkUNGbXwpjo-8bhy2LIddRxMlsT1b69" target="_blank" class="transparency-item">
+                    <i data-lucide="file-check"></i> <span>ATA Diretoria</span>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1YfVRwkYh2gwD-7CIOY2eqwECnhK-OVjb" target="_blank" class="transparency-item">
+                    <i data-lucide="scale"></i> <span>Balanço Patrimonial</span>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1dfcVfVjZEAuTY61legyoVBe15hB5-xqC" target="_blank" class="transparency-item">
+                    <i data-lucide="folder-check"></i> <span>Emenda Dep. Otávio Leite / Repasse Pref. Maricá</span>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1_MI4fNazQsuLG9DPZlw969MuduxurRL1" target="_blank" class="transparency-item">
+                    <i data-lucide="clipboard-list"></i> <span>Planos de Ação</span>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1SMNOM6droh5sP870OpOmj60OdTYW7i2b" target="_blank" class="transparency-item">
+                    <i data-lucide="receipt"></i> <span>Termo de Fomento 702/2018 - LOTERJ</span>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1U1w46lNyDqA_Qt-OB24ECogpu2_Gaa4j" target="_blank" class="transparency-item">
+                    <i data-lucide="wallet"></i> <span>Recibos</span>
+                </a>
+                <a href="https://drive.google.com/drive/folders/1m_a75ogSv0X5_Qck9swWqTkjbmFw73zh" target="_blank" class="transparency-item">
+                    <i data-lucide="file-bar-chart-2"></i> <span>Relatório</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="donation-section" class="content-section fade-in">
         <div class="donation-content-wrapper">
             <div class="donation-cta-text">
-                <h2 class="section-title"><i data-lucide="heart"></i> Sua doação faz a diferença!</h2>
+                <h2 class="section-title text-light"><i data-lucide="heart"></i> Sua doação faz a diferença!</h2>
                 <p>
                     Com sua ajuda, podemos continuar oferecendo atendimento especializado e promovendo a inclusão de crianças e adolescentes com deficiência. Cada contribuição é um passo em direção a um futuro mais inclusivo e digno.
                 </p>
@@ -80,7 +127,7 @@
                 <p>
                     Clique no link abaixo para fazer sua doação de forma rápida e segura pela plataforma Vakinha:
                 </p>
-                <a href="https://www.vakinha.com.br/vaquinha/vaquinha-pra-pestalozzi-de-marica?fbclid=PAQ0xDSwKjMZFleHRuA2FlQIBxMQABp9xO56ZPsnqfhoHTtiv7bQ-C0qC9F885OIr_y0nENzqLwpdPXp37dMucJp4_aem_M6W3HKh2banF5u0Y1Kbtaw" target="_blank" class="btn btn-vakinha">Doar pela Vakinha</a>
+                <a href="https://www.vakinha.com.br/vaquinha/vaquinha-pra-pestalozzi-de-marica?fbclid=PAQ0xDSwKjMZFleHRuA2FlQIBxMQABp9xO56ZPsnqfhoHTtiv7bQ-C0qC9F885OIr_y0nENzqLwpdPXp37dMucJp4_aem_M6W3HKh2banF5u0Y1Kbtaw" target="_blank" class="btn btn-primary btn-vakinha">Doar pela Vakinha</a>
             </div>
         </div>
     </section>

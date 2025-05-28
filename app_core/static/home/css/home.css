@@ -1,134 +1,321 @@
-/* ... (seus estilos existentes para hero, sobre, transparencia) ... */
+/*
+ * home.css: Estilos específicos para a página inicial (index.html)
+ * Este arquivo complementa global.css, fornecendo layouts e visuais únicos para as seções.
+ */
 
-/* ========== Seção Hero ========== */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 1rem;
-  background-color: var(--amarelo-claro);
-  text-align: center;
+/* ========== Estilos para o Lucide Icons (se necessário) ========== */
+/* Garante que os ícones tenham a cor da seção ou usem a cor padrão definida */
+.section-title i,
+.transparency-item i,
+.services-text-content ul li i {
+    display: inline-flex; /* Para melhor alinhamento com o texto */
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-content {
-  max-width: 800px;
+/* Nova classe para seções de conteúdo que podem ter fundos diferentes */
+.content-section {
+    padding: 6rem 1rem; /* Padding generoso */
+    position: relative; /* Para overlays e fundos fixos */
+    overflow: hidden; /* Garante que conteúdo não vaze */
 }
 
-.hero .logo {
-  width: 200px;
-  margin-bottom: 2rem;
+/* Para títulos dentro de seções com fundo escuro (como o overlay) */
+.text-light {
+    color: var(--branco) !important; /* Força a cor branca */
 }
 
-.hero h2 {
-  font-size: 2.5rem;
-  color: var(--vinho);
-  margin-bottom: 1rem;
+/* Parágrafos de descrição geral de seções */
+.section-description {
+    max-width: 900px;
+    margin: 0 auto 2.5rem auto; /* Centraliza e adiciona margem inferior */
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--marrom-escuro);
+    text-align: center;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  color: var(--marrom-escuro);
-  margin-bottom: 1.5rem;
+
+/* ========== Main Hero Section - Ajustada para melhor alinhamento e impacto visual ========== */
+.main-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 1rem; /* Mais padding para um visual mais aberto */
+    background-color: var(--amarelo-claro); /* Usa variável global */
+    text-align: center;
+    min-height: 85vh; /* Ocupa mais da tela */
+    position: relative;
+    overflow: hidden;
 }
 
-/* Botão específico do hero */
-.btn-doacao {
-  background-color: var(--amarelo);
-  color: var(--marrom-escuro);
-}
-
-.btn-doacao:hover {
-  background-color: var(--amarelo-intermediario);
-}
-
-/* ========== Seção Sobre ========== */
-#sobre {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-#sobre img {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 12px;
-}
-
-/* Botão "Saiba mais" */
-.btn-saiba-mais {
-  background-color: var(--vinho);
-  color: var(--branco);
-}
-
-.btn-saiba-mais:hover {
-  background-color: var(--vermelho);
-}
-
-/* ========== Seção Transparência (NOVA ESTILIZAÇÃO) ========== */
-#transparencia {
-    /* Mantém os paddings e margin-bottom do container fade-in */
+.main-hero-content {
+    max-width: 900px; /* Aumentei o max-width para o conteúdo */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o título e o parágrafo */
-    gap: 2rem; /* Espaçamento entre os elementos da seção */
-    text-align: center; /* Centraliza o texto do título e parágrafo */
+    align-items: center; /* CENTRALIZA TODOS OS ELEMENTOS */
+    justify-content: center;
+    text-align: center; /* Garante que o texto seja centralizado */
+    position: relative;
+    z-index: 2; /* Acima de qualquer elemento de fundo/overlay */
+}
+
+.main-hero-content .logo {
+    width: 250px; /* Aumentei o tamanho do logo */
+    margin-bottom: 2.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem; /* Título maior e mais impactante */
+    color: var(--vinho); /* Usa variável global */
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    font-weight: bold; /* Certifica que é bold */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem; /* Subtítulo maior */
+    color: var(--marrom-escuro); /* Usa variável global */
+    margin-bottom: 3rem; /* Mais espaço para o botão */
+    max-width: 700px; /* Limita a largura para melhor leitura */
+}
+
+/* Botões - Ajustes para a nova classe .btn-primary e .btn-secondary */
+.btn-primary {
+    background-color: var(--amarelo); /* Cor principal para CTAs */
+    color: var(--marrom-escuro);
+    padding: 18px 35px; /* Botão maior */
+    font-size: 1.3rem; /* Texto maior no botão */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: var(--amarelo-intermediario);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: var(--vinho); /* Cor secundária para outros botões */
+    color: var(--branco);
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: var(--vermelho);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ========== Seção Quem Somos (Resumida) ========== */
+#about-summary {
+    background-color: var(--branco); /* Fundo branco para contraste */
+    text-align: center;
+    /* Container padding e max-width já definidos em global.css */
+}
+
+#about-summary .section-title {
+    font-size: 2.8rem; /* Aumentado */
+    margin-bottom: 1.5rem;
+    color: var(--vinho);
+    gap: 0.8rem;
+}
+
+
+/* ========== Nova Seção: Nossa Missão - Estilo de Cards com Fundo Distinto ========== */
+#our-mission {
+    background-color: var(--bege-claro); /* Fundo claro para contraste */
+    text-align: center;
+}
+
+#our-mission .section-title {
+    font-size: 2.8rem;
+    margin-bottom: 3.5rem; /* Mais espaçamento */
+    color: var(--vinho);
+    gap: 0.8rem;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: uma coluna */
+    gap: 2.5rem;
+    max-width: 1000px; /* Limite de largura para a grade */
+    margin: 0 auto;
+}
+
+.mission-card {
+    background-color: var(--branco); /* Fundo branco para os cards */
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha conteúdo ao topo */
+    min-height: 250px; /* Garante altura mínima para os cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.mission-card h3 {
+    font-size: 2.2rem; /* Título do card */
+    color: var(--vinho);
+    margin-bottom: 1.5rem;
+    text-align: center; /* Centraliza o título do card */
+}
+
+.mission-card p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--marrom-escuro);
+}
+
+/* ========== Nova Seção: Nossos Atendimentos - Imagem de Fundo e Conteúdo em Card ========== */
+#our-services {
+    background-image: url("/static/img/blocos-de-letras.jpg"); /* IMAGEM DE FUNDO */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efeito parallax */
+    text-align: center;
+    color: var(--branco); /* Cor padrão do texto para esta seção (será sobrescrita pelo card) */
+}
+
+.section-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+    z-index: 1;
+}
+
+.services-container {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
+    display: flex;
+    justify-content: center; /* Centraliza o card */
+    align-items: center;
+}
+
+.services-content-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
+    padding: 3.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 900px; /* Largura máxima do card de conteúdo */
+    text-align: left; /* Alinha o texto dentro do card */
+    color: var(--marrom-escuro); /* Cor do texto dentro do card */
+}
+
+.services-content-card .section-title {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    color: var(--vinho); /* Cor do título dentro do card */
+    justify-content: center;
+}
+
+.services-content-card h3 {
+    font-size: 2rem;
+    color: var(--vinho);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Centraliza títulos h3 dentro do card */
+}
+
+.services-content-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.services-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+.services-list li {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.services-list li i {
+    color: var(--amarelo); /* Cor do ícone da lista */
+    font-size: 1.4rem;
+}
+
+
+/* ========== Seção Transparência (Ajustes finos no estilo) ========== */
+#transparencia {
+    background-color: var(--amarelo-claro); /* Fundo claro para contraste */
+    text-align: center;
 }
 
 #transparencia .section-title {
-    margin-bottom: 0.5rem; /* Ajuste para o espaçamento do título */
-    color: var(--vinho); /* Cor do título para consistência */
-}
-
-.transparency-intro-text {
-    max-width: 800px;
-    margin-bottom: 1.5rem; /* Espaçamento entre o parágrafo e a grade */
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--marrom-escuro);
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    color: var(--vinho);
+    gap: 0.8rem;
 }
 
 .transparency-grid {
     display: grid;
-    /* Em mobile, uma coluna; em desktop, três colunas */
-    grid-template-columns: 1fr; /* Padrão mobile: uma coluna */
-    gap: 1.5rem; /* Espaçamento entre os cards */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     width: 100%;
-    max-width: 1000px; /* Limite de largura para a grade */
-    margin: 0 auto; /* Centraliza a grade */
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .transparency-item {
-    background-color: var(--bege-claro); /* Fundo claro para os cards */
+    background-color: var(--branco); /* Fundo branco para cards */
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    text-decoration: none; /* Remove sublinhado padrão do link */
-    color: var(--marrom-escuro); /* Cor do texto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: var(--marrom-escuro);
     display: flex;
-    flex-direction: column; /* Ícone em cima do texto */
-    align-items: center; /* Centraliza conteúdo (ícone e texto) */
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave no hover */
-    min-height: 120px; /* Altura mínima para uniformidade */
-    justify-content: center; /* Centraliza verticalmente o conteúdo */
-    border: 1px solid var(--bege-claro); /* Borda padrão */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 120px;
+    justify-content: center;
+    border: 1px solid var(--branco); /* Borda padrão */
 }
 
 .transparency-item:hover {
-    transform: translateY(-5px); /* Efeito de elevação */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
-    border-color: var(--amarelo); /* Borda amarela no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--amarelo);
 }
 
 .transparency-item i {
-    font-size: 3rem; /* Tamanho do ícone */
-    color: var(--vinho); /* Cor do ícone */
+    font-size: 3rem;
+    color: var(--vinho);
     margin-bottom: 0.8rem;
     transition: color 0.3s ease;
 }
 
 .transparency-item:hover i {
-    color: var(--vermelho); /* Mudar cor do ícone no hover */
+    color: var(--vermelho);
 }
 
 .transparency-item span {
@@ -137,38 +324,16 @@
     line-height: 1.4;
 }
 
-/* ================== RESPONSIVIDADE (Seção Transparência) ================== */
-
-@media (min-width: 600px) {
-    .transparency-grid {
-        grid-template-columns: 1fr 1fr; /* Duas colunas em tablets */
-    }
-}
-
-@media (min-width: 900px) {
-    .transparency-grid {
-        grid-template-columns: repeat(3, 1fr); /* Três colunas em desktop */
-    }
-}
-
-/* ========== Seção Doação (NOVA) ========== */
-
+/* ========== Seção Doação (Ajustes de classes e responsividade) ========== */
 #donation-section {
-    padding: 6rem 1rem; /* Padding geral para a seção */
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 50px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-
-    /* Estilos para a imagem de fundo */
-    background-image: url("/static/img/hands-cupped.png"); /* Nova imagem de fundo */
+    background-image: url("/static/img/hands-cupped.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* <--- ESTA LINHA É A CHAVE! */
+    background-attachment: fixed; /* Efeito parallax */
+    text-align: center;
 }
 
-/* Overlay para escurecer a imagem de fundo e melhorar a legibilidade */
 #donation-section::before {
     content: '';
     position: absolute;
@@ -176,36 +341,32 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Preto com 40% de opacidade */
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
-/* Container principal do conteúdo (CTA + Info) */
 .donation-content-wrapper {
     display: flex;
-    flex-direction: column; /* Padrão mobile: empilhado */
-    align-items: center; /* Centraliza os blocos em mobile */
+    flex-direction: column;
+    align-items: center;
     gap: 3rem;
     max-width: 1000px;
-    margin: 0 auto; /* Centraliza o wrapper na seção */
+    margin: 0 auto;
     position: relative;
-    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
-    color: var(--branco); /* Cor padrão do texto (para o CTA) */
+    z-index: 2;
+    color: var(--branco);
 }
 
-/* Bloco de CTA (Call to Action) */
 .donation-cta-text {
-    text-align: center; /* Centraliza o texto em mobile */
-    max-width: 700px; /* Limita a largura do texto */
+    text-align: center;
+    max-width: 700px;
 }
 
 .donation-cta-text .section-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
     color: var(--branco);
-    display: flex;
-    justify-content: center; /* Centraliza o ícone e texto do título em mobile */
-    align-items: center;
+    justify-content: center;
     gap: 0.8rem;
 }
 
@@ -215,33 +376,32 @@
     margin-bottom: 1.5rem;
 }
 
-/* Bloco de Informações de Doação */
 .donation-info-box {
     width: 100%;
-    max-width: 550px; /* Limita a largura do box de informações */
-    background-color: var(--bege-claro); /* Cor de fundo clara */
-    padding: 2.5rem; /* Padding interno */
+    max-width: 550px;
+    background-color: var(--bege-claro);
+    padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    color: var(--marrom-escuro); /* Cor do texto dentro do box */
+    color: var(--marrom-escuro);
 }
 
 .donation-info-box h3 {
     font-size: 1.8rem;
     color: var(--vinho);
     margin-bottom: 1.5rem;
-    text-align: center; /* Centraliza títulos dentro do box */
+    text-align: center;
 }
 
 .donation-info-box p {
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
     line-height: 1.6;
-    text-align: left; /* Alinha parágrafos à esquerda dentro do box */
+    text-align: left;
 }
 
 .donation-info-box ul {
-    list-style: none; /* Remove bolinhas da lista */
+    list-style: none;
     padding-left: 0;
     margin-bottom: 1.5rem;
 }
@@ -249,74 +409,127 @@
 .donation-info-box ul li {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    text-align: left; /* Alinha itens da lista à esquerda */
+    text-align: left;
 }
 
 .donation-info-box ul li strong {
-    color: var(--vinho); /* Destaca os títulos dos itens da lista */
+    color: var(--vinho);
 }
 
-/* Botão da Vakinha */
-.btn-vakinha {
-    background-color: var(--amarelo);
-    color: var(--marrom-escuro);
-    padding: 14px 30px;
+/* Botão da Vakinha - Agora usa .btn-primary */
+.btn-vakinha.btn-primary {
+    /* Mantém os estilos de .btn-primary, só ajusta o padding se necessário */
+    padding: 14px 30px; /* Ajuste para o botão da vakinha */
     font-size: 1.15rem;
-    border-radius: 8px;
-    margin-top: 1.5rem;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: inline-block; /* Para o margin-top funcionar e manter centralizado */
-    text-decoration: none; /* Remove sublinhado */
-}
-
-.btn-vakinha:hover {
-    background-color: var(--amarelo-intermediario);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 
-/* ================== RESPONSIVIDADE (SEÇÃO DOAÇÃO) ================== */
+/* ================== RESPONSIVIDADE ================== */
 
 @media (min-width: 768px) {
-    .donation-content-wrapper {
-        flex-direction: row; /* Desktop: lado a lado */
-        justify-content: center;
-        align-items: flex-start; /* Alinha os topos dos blocos */
+    /* Main Hero Section */
+    .hero-title {
+        font-size: 4.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.6rem;
+    }
+    .main-hero-content .logo {
+        width: 300px;
     }
 
+    /* Section Titles */
+    .section-title {
+        font-size: 3.2rem;
+    }
+
+    /* Nossa Missão */
+    .mission-grid {
+        grid-template-columns: 1fr 1fr; /* Duas colunas em desktop */
+    }
+    .mission-card h3 {
+        font-size: 2.5rem; /* Aumentado em desktop */
+    }
+    .mission-card p {
+        font-size: 1.15rem;
+    }
+
+    /* Nossos Atendimentos */
+    .services-container {
+        justify-content: flex-end; /* Alinha o card de conteúdo para a direita */
+    }
+    .services-content-card {
+        max-width: 60%; /* O card de conteúdo ocupa menos da metade da largura */
+        margin-left: auto; /* Empurra para a direita */
+    }
+    .services-content-card .section-title,
+    .services-content-card h3 {
+        justify-content: flex-start; /* Alinha títulos à esquerda dentro do card */
+        text-align: left;
+    }
+    .services-content-card ul li {
+        justify-content: flex-start; /* Alinha lista à esquerda dentro do card */
+    }
+
+    /* Transparência */
+    .transparency-grid {
+        grid-template-columns: 1fr 1fr; /* Duas colunas em tablets */
+    }
+
+    /* Donation Section */
+    .donation-content-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
     .donation-cta-text {
         flex: 1;
-        padding-right: 3rem; /* Espaçamento entre CTA e info box */
-        text-align: left; /* Alinha texto e título à esquerda em desktop */
+        padding-right: 3rem;
+        text-align: left;
     }
-
     .donation-cta-text .section-title {
-        justify-content: flex-start; /* Alinha o ícone e texto do título à esquerda */
+        justify-content: flex-start;
     }
-
     .donation-info-box {
         flex: 1;
-        max-width: 45%; /* Limita a largura do box de informações */
+        max-width: 45%;
     }
-
     .donation-info-box h3 {
-        text-align: left; /* Alinha títulos dentro do box à esquerda em desktop */
+        text-align: left;
     }
 }
 
-@media (min-width: 1024px) {
-    .donation-content-wrapper {
-        gap: 4rem;
-        max-width: 1100px;
+@media (min-width: 992px) { /* Novo breakpoint para desktop maior */
+    .section-title {
+        font-size: 3.5rem; /* Títulos ainda maiores em telas grandes */
+    }
+    .main-hero-content .logo {
+        width: 350px;
+    }
+    .hero-title {
+        font-size: 5.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.8rem;
     }
 
-    .donation-cta-text {
-        max-width: 500px; /* Limita largura do texto CTA em telas grandes */
+    /* Nossa Missão */
+    .mission-card h3 {
+        font-size: 2.8rem;
+    }
+    .mission-card p {
+        font-size: 1.25rem;
     }
 
-    .donation-info-box {
-        max-width: 500px; /* Limita largura do box de informações em telas grandes */
+    /* Transparência */
+    .transparency-grid {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas em desktop */
+    }
+}
+
+@media (min-width: 1200px) { /* Ajustes para telas muito grandes */
+    /* Nossos Atendimentos */
+    .services-content-card {
+        max-width: 50%; /* Card de conteúdo um pouco menor para mais imagem */
     }
 }
