@@ -1,50 +1,81 @@
+/* Estilos para o fundo geral do site */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    font-family: var(--font-padrao);
+    background-image: url("/static/img/bg_comunicado.jpg"); /* IMAGEM DE FUNDO */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efeito parallax */
 }
 
-.container {
+/* Estilos para o container da aba de comunicados */
+.container.mt-5 { /* Mantendo a classe mt-5 do seu HTML para margem superior */
     max-width: 800px;
-    margin: auto;
-    background: #ffffff;
+    margin: 30px auto; /* Margens superior e inferior, e centralização horizontal */
+    background-color: var(--bege-claro); /* Fundo amarelo claro para o container */
     padding: 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
 }
 
+/* Estilos para cada comunicado */
 .comunicado {
-    border-bottom: 1px solid #ccc;
-    padding: 15px 0;
+    border-bottom: 1px solid var(--amarelo-claro);
+    background-color: var(--branco); /* Fundo branco para cada comunicado */
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 15px; /* Margem inferior para separar os comunicados */
 }
 
-.comunicado h2 {
-    margin: 0 0 10px;
-    font-size: 1.5em;
+.comunicado:hover {
+    transform: translateY(-3px);
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.1);
 }
 
-.comunicado p {
-    margin: 0 0 10px;
-}
-
-.comunicado small {
-    color: #888;
-}
-
-.comunicado-img {
-    width: 150px;
-    height: auto;
-    max-height: 200px;
-    margin-right: 20px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.comunicado-text {
-    flex: 1; /* faz o texto ocupar o restante do espaço */
+.comunicado:last-child {
+    border-bottom: none; /* Mantendo a remoção da borda inferior do último */
+    margin-bottom: 0; /* Removendo a margem inferior do último comunicado */
 }
 
 .card-body.d-flex {
     display: flex;
-    align-items: flex-start; /* alinha topo da imagem com o texto */
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px; /* Adicionando padding interno ao card-body */
+}
+
+/* Estilos para a imagem do comunicado */
+.comunicado-img {
+    width: 120px;
+    height: auto;
+    max-height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid var(--amarelo-intermediario);
+    margin-right: 15px; /* Removi a margem direita padrão e adicionei ao gap do flex container */
+}
+
+/* Estilos para o texto do comunicado */
+.comunicado-text {
+    flex: 1;
+}
+
+.comunicado-text h5 {
+    margin-top: 0;
+    color: var(--vinho);
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+.comunicado-text p.card-text {
+    color: var(--marrom-escuro);
+    line-height: 1.6;
+}
+
+.comunicado-text p.text-muted {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 0;
 }
