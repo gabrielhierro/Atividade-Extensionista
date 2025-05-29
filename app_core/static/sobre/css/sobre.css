@@ -72,17 +72,6 @@ body {
     position: relative; /* Necessário para posicionamento do Lucide icon se houver */
 }
 
-/* **REMOVIDAS AS REGRAS QUE CRIAM AS LINHAS** */
-/* .section-title::before,
-.section-title::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 30%;
-    height: 2px;
-    background-color: var(--vinho);
-} */
-
 
 .section-title i {
     font-size: 2.5rem;
@@ -94,7 +83,8 @@ body {
     padding: 3rem 1rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    margin-top: -4rem; /* Sobe um pouco para sobrepor o hero */
+    margin-top: 4rem; /* Ajustado para espaçamento normal */
+    margin-bottom: 4rem; /* Adicionado para espaçamento após a seção */
     position: relative;
     z-index: 10; /* Garante que fique acima do hero */
     display: flex;
@@ -133,6 +123,7 @@ body {
     color: var(--branco);
     padding: 6rem 1rem;
     text-align: center;
+    margin-bottom: 6rem; /* Adicionado para espaçamento após a seção */
 }
 
 #nossa-historia .section-title {
@@ -185,12 +176,13 @@ body {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.4);
-    color: var(--branco);
+    color: var(--branco); /* Garante que a cor do ícone seja branca */
     border: none;
     padding: 1rem;
     cursor: pointer;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 2rem; /* Aumentado para melhor visibilidade */
+    line-height: 1; /* Garante que o ícone não seja cortado */
     z-index: 10;
     display: flex;
     align-items: center;
@@ -240,6 +232,7 @@ body {
     background-color: var(--bege-claro);
     padding: 6rem 1rem;
     text-align: center;
+    margin-bottom: 6rem; /* Adicionado para espaçamento após a seção */
 }
 
 #mvv .section-title {
@@ -327,7 +320,446 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Efeito parallax */
-    text-align: center;
-    color: var(--branco);
+    /* Remove text-align: center e color: var(--branco); daqui */
     padding: 6rem 1rem;
+    display: flex; /* Adicionado para centralizar o card */
+    justify-content: center; /* Adicionado para centralizar o card */
+    align-items: center; /* Adicionado para centralizar o card */
+    margin-bottom: 6rem; /* Adicionado para espaçamento após a seção */
+    position: relative; /* MUITO IMPORTANTE: Define o contexto de posicionamento para o overlay */
+    overflow: hidden; /* Garante que o overlay não "escape" da seção */
+}
+
+/* Correção do Overlay: */
+.section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Escurece a imagem de fundo */
+    z-index: 1; /* Deve estar abaixo do conteúdo do card */
+    pointer-events: none; /* Adicionado para que o overlay não intercepte cliques */
+}
+
+.services-container {
+    position: relative;
+    z-index: 2; /* Garante que o container esteja acima do overlay */
+    padding: 0 1rem; /* Adiciona padding para o container */
+    /* Remove o `display: flex` e `justify-content` daqui se a seção #atendimentos-programas já está fazendo isso */
+    /* Se você quer centralizar o card dentro de services-container, mantenha aqui ou mova para o card */
+}
+
+.services-content-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+    color: var(--marrom-escuro); /* Cor do texto no card */
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: left; /* Alinha o texto à esquerda dentro do card */
+    max-width: 800px; /* Largura máxima para o card de conteúdo */
+    margin: 0 auto; /* Centraliza o card DENTRO do services-container */
+    position: relative; /* Para garantir que ele respeite o z-index em relação ao overlay */
+    z-index: 3; /* Garante que o card esteja acima do overlay e do services-container */
+}
+
+.services-content-card .section-title {
+    color: var(--vinho); /* Título dentro do card volta para a cor vinho */
+    margin-bottom: 2rem;
+}
+
+.services-content-card h3 {
+    font-size: 1.8rem;
+    color: var(--vinho);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.services-content-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.services-content-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.services-content-card ul li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.services-content-card ul li i {
+    color: var(--amarelo); /* Cor dos ícones nas listas */
+}
+
+/* Listas de programas suspensos (para diferenciar visualmente) */
+.suspended-programs-list li {
+    color: var(--marrom-escuro); /* Cor do texto */
+    font-style: italic; /* Texto em itálico */
+    opacity: 0.8; /* Levemente menos opaco */
+}
+.suspended-programs-list li i {
+    color: var(--vinho); /* Ícone vermelho/vinho para indicar suspensão */
+}
+
+
+/* ========================================= */
+/* Seção: Perguntas Frequentes (FAQ)         */
+/* ========================================= */
+.faq-section {
+    padding: 6rem 1rem; /* Consistente com outras seções */
+    background-color: var(--bege-claro); /* Fundo claro para contraste */
+    text-align: center;
+}
+
+.faq-section .section-title {
+    margin-bottom: 3.5rem; /* Mais espaçamento para o título */
+    color: var(--vinho); /* Usa a cor de destaque para títulos */
+}
+
+/* Estilos para as abas de categoria do FAQ */
+.faq-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px; /* Mais espaçamento entre abas e conteúdo */
+    gap: 12px; /* Espaçamento entre os botões */
+    max-width: 1000px; /* Alinha com o container */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem; /* Adiciona padding para evitar que encoste nas bordas em mobile */
+}
+
+.faq-tab-button {
+    background-color: var(--amarelo-claro); /* Fundo suave para botões inativos */
+    color: var(--marrom-escuro);
+    border: none;
+    padding: 14px 28px; /* Padding ajustado */
+    border-radius: 30px; /* Mais arredondado */
+    cursor: pointer;
+    font-size: 1.05rem; /* Levemente maior */
+    font-weight: 700; /* Mais negrito */
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+}
+
+.faq-tab-button:hover {
+    background-color: var(--amarelo); /* Destaque ao hover */
+    color: var(--vinho);
+}
+
+.faq-tab-button.active {
+    background-color: var(--vinho); /* Cor de destaque para aba ativa */
+    color: var(--branco);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+    transform: translateY(-2px); /* Leve elevação */
+}
+
+/* Conteúdo do FAQ e painéis de categoria */
+.faq-content {
+    max-width: 900px; /* Largura máxima para o conteúdo do acordeão */
+    margin: 0 auto;
+    background-color: var(--branco); /* Fundo branco para o conteúdo */
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1); /* Sombra para o container principal */
+    padding: 20px; /* Padding interno para o conteúdo */
+}
+
+.faq-category-pane {
+    display: none;
+    animation: fadeIn 0.6s ease-out; /* Animação mais suave */
+}
+
+.faq-category-pane.active {
+    display: block;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--bege-claro); /* Linha divisória com cor do tema */
+    margin-bottom: 5px; /* Espaçamento entre os itens */
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.accordion-button {
+    background-color: var(--branco);
+    color: var(--marrom-escuro);
+    cursor: pointer;
+    padding: 18px 25px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1.15rem; /* Tamanho da fonte da pergunta */
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-button:hover {
+    background-color: var(--amarelo-claro); /* Fundo claro ao hover */
+    color: var(--vinho);
+}
+
+.accordion-button.active {
+    background-color: var(--amarelo-claro); /* Mantém o fundo claro quando ativo */
+    color: var(--vinho);
+}
+
+.accordion-button::after {
+    content: '\002B'; /* Sinal de mais */
+    font-weight: bold;
+    font-size: 1.6rem; /* Ícone um pouco maior */
+    color: var(--amarelo); /* Cor do ícone */
+    transition: transform 0.3s ease;
+}
+
+.accordion-button.active::after {
+    content: '\2212'; /* Sinal de menos */
+    transform: rotate(0deg); /* Não rotaciona, apenas muda o sinal */
+    color: var(--vinho); /* Cor do ícone quando ativo */
+}
+
+.accordion-content {
+    background-color: var(--branco); /* Conteúdo com fundo branco */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; /* Transição um pouco mais longa */
+    padding: 0 25px;
+}
+
+.accordion-content p {
+    padding: 15px 0 20px 0; /* Mais padding no final */
+    color: var(--marrom-escuro);
+    line-height: 1.7; /* Mais espaçamento entre linhas */
+    font-size: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    #introducao-sobre {
+        margin-top: 2rem; /* Ajustado para telas menores */
+        margin-bottom: 2rem;
+    }
+
+    .history-carousel {
+        padding: 1.5rem;
+    }
+
+    .carousel-slide h3 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-slide p {
+        font-size: 1rem;
+    }
+
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        padding: 0.8rem;
+    }
+
+    .tabs-container {
+        margin: 2rem auto 0 auto;
+    }
+
+    .tab-button {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .tabs-content {
+        padding: 1.5rem;
+    }
+
+    .values-list li {
+        font-size: 1rem;
+    }
+
+    #atendimentos-programas {
+        padding: 4rem 1rem;
+        margin-bottom: 4rem;
+    }
+
+    .services-content-card {
+        padding: 2rem;
+    }
+
+    .services-content-card .section-title {
+        font-size: 2rem;
+    }
+
+    .services-content-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .services-content-card p,
+    .services-content-card ul li {
+        font-size: 1rem;
+    }
+
+    .faq-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px; /* Reduz gap em mobile */
+    }
+
+    .faq-tab-button {
+        width: 95%; /* Ocupa mais largura em telas menores */
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .faq-content {
+        padding: 15px; /* Reduz padding do container em mobile */
+    }
+
+    .accordion-button {
+        font-size: 1.05rem;
+        padding: 15px 20px;
+    }
+
+    .accordion-button::after {
+        font-size: 1.4rem;
+    }
+
+    .accordion-content p {
+        font-size: 0.95rem;
+        padding: 10px 0 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .hero-content .btn.btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .section-title i {
+        font-size: 1.8rem;
+    }
+
+    #introducao-sobre {
+        padding: 2rem 0.5rem;
+    }
+
+    #introducao-sobre p {
+        font-size: 1rem;
+    }
+
+    #nossa-historia {
+        padding: 4rem 0.5rem;
+    }
+
+    .carousel-slide {
+        padding: 1.5rem;
+    }
+
+    .carousel-slide h3 {
+        font-size: 1.6rem;
+    }
+
+    .carousel-slide p {
+        font-size: 0.95rem;
+    }
+
+    .carousel-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+
+    #mvv {
+        padding: 4rem 0.5rem;
+    }
+
+    .tab-button {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .tabs-content {
+        padding: 1rem;
+    }
+
+    .values-list li {
+        font-size: 0.95rem;
+    }
+
+    #atendimentos-programas {
+        padding: 3rem 0.5rem;
+    }
+
+    .services-content-card {
+        padding: 1.5rem;
+    }
+
+    .services-content-card .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .services-content-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .services-content-card p,
+    .services-content-card ul li {
+        font-size: 0.9rem;
+    }
+
+    .faq-section {
+        padding: 4rem 0.5rem;
+    }
+    .faq-tab-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        border-radius: 25px;
+    }
+
+    .accordion-button {
+        padding: 12px 15px;
+    }
 }

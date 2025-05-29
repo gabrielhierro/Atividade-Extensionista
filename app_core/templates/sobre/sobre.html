@@ -106,7 +106,7 @@
 <section id="atendimentos-programas" class="content-section image-background-section fade-in">
     <div class="section-overlay"></div>
     <div class="container services-container">
-        <div class="services-content-card">
+        <div class="services-content-card"> {# <-- Nova div adicionada aqui #}
             <h2 class="section-title"><i data-lucide="graduation-cap"></i> Nossos Atendimentos e Programas</h2>
             <h3>Público-Alvo</h3>
             <p>
@@ -137,7 +137,7 @@
             <p>
                 Terças, quintas e sextas-feiras, nos períodos das 8h às 12h e das 13h às 17h.
             </p>
-        </div>
+        </div> {# <-- Fechamento da nova div #}
     </div>
 </section>
 
@@ -168,7 +168,7 @@
                         <p>É administrada por uma Diretoria, com apoio e supervisão dos Conselhos Administrativo e Fiscal. Todos os membros são associados eleitos para um mandato de 03 anos.</p>
                     </div>
                 </div>
-                   <div class="accordion-item">
+                <div class="accordion-item">
                     <button class="accordion-button">A Pestalozzi de Maricá segue alguma diretriz nacional?</button>
                     <div class="accordion-content">
                         <p>Sim, segue as diretrizes do Movimento Pestalozziano, sob orientação e supervisão da Federação Nacional das Associações Pestalozzi (FENAPESTALOZZI) e da Federação das Associações Pestalozzi do Estado do Rio de Janeiro (FEASPERJ).</p>
@@ -328,7 +328,7 @@
 
 
     // JavaScript para as abas de Missão, Visão, Valores
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabPanes = document.querySelectorAll('.tab-pane');
 
@@ -353,83 +353,102 @@
     document.addEventListener('DOMContentLoaded', function () {
         const faqTabButtons = document.querySelectorAll('.faq-tab-button');
         const faqCategoryPanes = document.querySelectorAll('.faq-category-pane');
-        const accordionButtons = document.querySelectorAll('.accordion-button'); // Adicionado novamente para ter certeza
 
-        // Função para fechar todos os acordeões
-        function closeAllAccordions() {
-            accordionButtons.forEach(button => {
+        // Função para fechar todos os acordeões em um determinado painel de categoria
+        function closeAllAccordionsInPane(pane) {
+            const accordionButtonsInPane = pane.querySelectorAll('.accordion-button.active');
+            accordionButtonsInPane.forEach(button => {
                 button.classList.remove('active');
                 const content = button.nextElementSibling;
                 content.style.maxHeight = null;
             });
         }
 
-        // Event listener para os botões do acordeão
-        accordionButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const wasActive = button.classList.contains('active');
+        // Função para abrir um acordeão
+        function openAccordion(button) {
+            const content = button.nextElementSibling;
+            button.classList.add('active');
+            content.style.maxHeight = content.scrollHeight + 'px';
+        }
 
-                // Fecha outros acordeões na mesma categoria (se houver)
-                const currentCategoryPane = button.closest('.faq-category-pane');
-                if (currentCategoryPane) {
-                    currentCategoryPane.querySelectorAll('.accordion-button.active').forEach(activeButton => {
-                        if (activeButton !== button) {
-                            activeButton.classList.remove('active');
-                            activeButton.nextElementSibling.style.maxHeight = null;
+        // Função para fechar um acordeão
+        function closeAccordion(button) {
+            const content = button.nextElementSibling;
+            button.classList.remove('active');
+            content.style.maxHeight = null;
+        }
+
+        // Event listener para os botões do acordeão (dentro de qualquer categoria)
+        // Usamos event delegation no container principal do FAQ para botões de acordeão
+        const faqContentContainer = document.querySelector('.faq-content');
+        if (faqContentContainer) {
+            faqContentContainer.addEventListener('click', function (event) {
+                const button = event.target.closest('.accordion-button');
+                if (button) { // Verifica se o clique foi em um botão de acordeão
+                    const content = button.nextElementSibling;
+                    const currentPane = button.closest('.faq-category-pane');
+
+                    // Se este acordeão já está ativo, feche-o
+                    if (button.classList.contains('active')) {
+                        closeAccordion(button);
+                    } else {
+                        // Fechar todos os outros acordeões nesta categoria antes de abrir o atual
+                        if (currentPane) { // Garante que currentPane existe
+                            closeAllAccordionsInPane(currentPane);
                         }
-                    });
-                }
-
-                // Alterna o estado do acordeão clicado
-                button.classList.toggle('active');
-                if (wasActive) {
-                    content.style.maxHeight = null;
-                } else {
-                    content.style.maxHeight = content.scrollHeight + 'px';
+                        // Abrir o acordeão clicado
+                        openAccordion(button);
+                    }
                 }
             });
-        });
+        }
 
         // Event listener para os botões de categoria do FAQ
         faqTabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const targetCategory = button.dataset.category;
+            button.addEventListener('click', function () {
+                const targetCategory = this.dataset.category;
 
-                // Remove a classe 'active' de todos os botões de categoria
+                // 1. Remove a classe 'active' de TODOS os botões de categoria
                 faqTabButtons.forEach(btn => btn.classList.remove('active'));
-                // Oculta todos os painéis de categoria
-                faqCategoryPanes.forEach(pane => pane.classList.remove('active'));
 
-                // Adiciona a classe 'active' ao botão clicado
-                button.classList.add('active');
+                // 2. Oculta TODOS os painéis de categoria (e fecha seus acordeões)
+                faqCategoryPanes.forEach(pane => {
+                    pane.classList.remove('active'); // Remove a classe 'active' que controla o display
+                    // É crucial fechar os acordeões do painel ANTES de escondê-lo para que
+                    // o max-height seja nulo quando ele for reativado.
+                    closeAllAccordionsInPane(pane);
+                });
 
-                // Mostra o painel de categoria correspondente
+                // 3. Adiciona a classe 'active' ao botão clicado
+                this.classList.add('active');
+
+                // 4. Mostra o painel de categoria correspondente
                 const activeCategoryPane = document.querySelector(`.faq-category-pane[data-category-pane="${targetCategory}"]`);
                 if (activeCategoryPane) {
-                    activeCategoryPane.classList.add('active');
-                    // Opcional: Fechar todos os acordeões na nova categoria ao ativá-la
-                    // Isso garante que a categoria comece "limpa"
-                    activeCategoryPane.querySelectorAll('.accordion-button.active').forEach(btn => {
-                        btn.classList.remove('active');
-                        btn.nextElementSibling.style.maxHeight = null;
-                    });
+                    activeCategoryPane.classList.add('active'); // Adiciona a classe 'active' para mostrar
+                    // Os acordeões dentro deste painel já foram fechados pela etapa 2.
                 }
             });
         });
 
-        // Inicializa: Garante que apenas a primeira categoria de FAQ esteja visível por padrão
-        // E que todos os acordeões dentro dela estejam fechados.
-        if (faqTabButtons.length > 0 && faqCategoryPanes.length > 0) {
-            // Remove 'active' de todos os painéis (caso haja algum por HTML)
-            faqCategoryPanes.forEach(pane => pane.classList.remove('active'));
-            // Ativa o primeiro painel de categoria
+        // --- Inicialização ao carregar a página ---
+
+        // Remove 'active' de todos os botões e painéis para um "reset" limpo
+        faqTabButtons.forEach(btn => btn.classList.remove('active'));
+        faqCategoryPanes.forEach(pane => {
+            pane.classList.remove('active');
+            closeAllAccordionsInPane(pane); // Garante que todos os acordeões estejam fechados em todos os painéis
+        });
+
+        // Ativa o primeiro botão de aba
+        if (faqTabButtons.length > 0) {
+            faqTabButtons[0].classList.add('active');
+        }
+
+        // Ativa o primeiro painel de categoria e fecha seus acordeões
+        if (faqCategoryPanes.length > 0) {
             faqCategoryPanes[0].classList.add('active');
-            // Fecha todos os acordeões dentro do primeiro painel
-            faqCategoryPanes[0].querySelectorAll('.accordion-button').forEach(btn => {
-                btn.classList.remove('active');
-                btn.nextElementSibling.style.maxHeight = null;
-            });
+            closeAllAccordionsInPane(faqCategoryPanes[0]); // Fecha os acordeões da primeira aba ativa
         }
     });
 </script>
