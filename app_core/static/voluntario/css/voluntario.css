@@ -1,0 +1,186 @@
+/* ========== Formulário de Voluntários (Novo Estilo) ========== */
+
+#volunteer-section {
+    padding: 6rem 1rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3.125rem;
+    margin-top: 3.125rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background-image: url("/static/img/shapes.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Overlay para escurecer a imagem de fundo e melhorar a legibilidade do texto */
+#volunteer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Estilos para o Wrapper do Formulário (o contêiner do texto e do formulário) */
+.volunteer-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha tudo à esquerda em mobile */
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0; /* Remove padding aqui, será controlado internamente */
+    box-shadow: none;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+/* Novo Estilo para o Bloco de Título e Texto */
+.volunteer-text-content {
+    width: 100%;
+    text-align: left; /* Garante alinhamento à esquerda para todo o conteúdo de texto */
+    color: var(--branco);
+    /* Adicione padding-left para alinhar com o padding do formulário, ou padding geral */
+    padding: 0 1rem; /* Padding horizontal para o conteúdo de texto */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+/* Estilos para o Título da Seção (agora dentro de .volunteer-text-content) */
+.volunteer-text-content .section-title {
+    font-size: 2.5rem;
+    margin-top: 0; /* Zera margem superior */
+    margin-bottom: 1.5rem;
+    /* REMOVIDO: margin-left (não é necessário se o padding está no pai) */
+    /* REMOVIDO: padding-left (não é necessário se o padding está no pai) */
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    /* Adicional: Se o ícone ainda tiver um deslocamento, pode precisar de ajuste de line-height */
+}
+
+/* Estilos para o Bloco de Texto de Informações */
+.volunteer-info-text {
+    max-width: 700px;
+    color: var(--branco);
+}
+
+.volunteer-info-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos para o Formulário em Si */
+.volunteer-form {
+    width: 100%;
+    max-width: 550px;
+    background-color: var(--bege-claro);
+    padding: 2.5rem; /* Padding interno do formulário */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.volunteer-form label {
+    font-weight: bold;
+    color: var(--vinho);
+    margin-bottom: 0.2rem;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.volunteer-form input[type="text"],
+.volunteer-form input[type="email"],
+.volunteer-form input[type="tel"],
+.volunteer-form input[type="number"],
+.volunteer-form textarea {
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--amarelo-intermediario);
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--branco);
+    color: var(--marrom-escuro);
+}
+
+.volunteer-form input:focus,
+.volunteer-form textarea:focus {
+    outline: none;
+    border-color: var(--amarelo);
+    box-shadow: 0 0 0 4px rgba(242, 203, 7, 0.3);
+}
+
+/* Botão de Envio do Formulário de Voluntários */
+.btn-submit-volunteer {
+    background-color: var(--amarelo);
+    color: var(--marrom-escuro);
+    padding: 14px 30px;
+    font-size: 1.15rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit-volunteer:hover {
+    background-color: var(--amarelo-intermediario);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ================== RESPONSIVIDADE ================== */
+
+@media (min-width: 768px) {
+    .volunteer-form-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start; /* Alinha o topo dos elementos flexíveis */
+    }
+
+    .volunteer-text-content {
+        flex: 1;
+        padding-right: 3rem; /* Espaçamento entre texto e formulário */
+        padding-left: 0; /* Zera o padding-left em telas maiores, se já houver flex-start */
+        max-width: 50%; /* Limita a largura do bloco de texto em telas médias */
+        /* O padding do .volunteer-form-wrapper agora é 0, então o padding-left para o texto é controlado aqui */
+    }
+
+    .volunteer-text-content .section-title {
+        /* Garante que o título comece no topo do flex item */
+        /* Ajuste fino da margem para sobrepor margens padrão de h2 */
+        margin-top: 0;
+        margin-left: 0; /* Garante que não haja margin-left aqui */
+        padding-left: 0; /* Garante que não haja padding-left aqui */
+    }
+
+    .volunteer-form {
+        flex: 1;
+        max-width: 45%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .volunteer-form-wrapper {
+        gap: 4rem;
+        max-width: 1100px;
+    }
+
+    .volunteer-text-content {
+        max-width: 500px;
+    }
+
+    .volunteer-form {
+        max-width: 500px;
+    }
+}
