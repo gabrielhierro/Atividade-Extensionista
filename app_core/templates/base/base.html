@@ -31,7 +31,7 @@
         <li><a href="{% url 'sobre' %}">Sobre</a></li>
         <li><a href="{% url 'projeto' %}">Projetos</a></li>
         <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
-        <li><a href="{% url 'voluntario' %}">Voluntário</a></li>
+        <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Abrir menu">
         <i class="fas fa-bars"></i>
@@ -48,7 +48,7 @@
       <li><a href="{% url 'sobre' %}">Sobre</a></li>
       <li><a href="{% url 'projeto' %}">Projetos</a></li>
       <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
-      <li><a href="{% url 'voluntario' %}">Voluntário</a></li>
+      <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
     </ul>
   </div>
 
@@ -111,7 +111,7 @@
           <li><a href="{% url 'sobre' %}">Sobre</a></li>
           <li><a href="{% url 'projeto' %}">Projetos</a></li>
           <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
-          <li><a href="{% url 'voluntario' %}">Voluntário</a></li>
+          <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
         </ul>
       </div>
     </section>
@@ -142,5 +142,6 @@
     });
   </script>
 
+  {% block scripts %}{% endblock %}
 </body>
 </html>

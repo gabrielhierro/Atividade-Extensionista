@@ -138,6 +138,34 @@
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
+/*========================Mensagem de Envio de Form===============================*/
+
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toast-message {
+  background-color: #4BB543; /* Verde de sucesso */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.toast-message.error {
+  background-color: #D9534F; /* Vermelho para erro */
+}
+
+.toast-message.fade-out {
+  opacity: 0;
+}
 
 /* ================== RESPONSIVIDADE ================== */
 
@@ -184,3 +212,5 @@
         max-width: 500px;
     }
 }
+
+

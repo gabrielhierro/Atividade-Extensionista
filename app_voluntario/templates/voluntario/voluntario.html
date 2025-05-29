@@ -1,0 +1,107 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Seja Voluntário{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'voluntario/css/voluntario.css' %}" />
+
+    <!-- <style>
+    .toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toast-message {
+  background-color: #4BB543; /* Verde de sucesso */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.toast-message.error {
+  background-color: #D9534F; /* Vermelho para erro */
+}
+
+.toast-message.fade-out {
+  opacity: 0;
+}
+</style> -->
+{% endblock styles %}
+
+
+{% block content %}
+
+  {% if messages %}
+    <div class="toast-container">
+      {% for message in messages %}
+        <div class="toast-message {{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <section id="volunteer-section" class="container fade-in">
+    <div class="volunteer-form-wrapper">
+      <div class="volunteer-text-content">
+        <h2 class="section-title"><i data-lucide="mail"></i> Seja Voluntário</h2>
+        <div class="volunteer-info-text">
+          <p>
+            Aguarde futuro contato via e-mail assim que tivermos a próxima ação. As vagas são limitadas e as campanhas são sazonais, mas você sempre pode nos ajudar divulgando nosso trabalho de conscientização!
+          </p>
+          <p>
+            Sua paixão e dedicação podem transformar vidas. Junte-se à nossa equipe e faça a diferença!
+          </p>
+        </div>
+      </div>
+
+      {% if form.errors %}
+        <div class="form-errors">
+          {{ form.errors }}
+        </div>
+      {% endif %}
+
+      <form method="post" action="{% url 'app_voluntario:voluntario_view' %}" class="volunteer-form">
+        {% csrf_token %}
+
+        <label for="id_nome_completo">Nome Completo</label>
+        {{ form.nome_completo }}
+
+        <label for="id_email">E-mail</label>
+        {{ form.email }}
+
+        <label for="id_telefone">Telefone / Celular</label>
+        {{ form.telefone }}
+
+        <label for="id_profissao">Profissão</label>
+        {{ form.profissao }}
+
+        <button type="submit" class="btn btn-submit-volunteer">Enviar Inscrição</button>
+      </form>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block scripts %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toasts = document.querySelectorAll('.toast-message');
+
+      setTimeout(() => {
+        toasts.forEach(toast => {
+          toast.classList.add('fade-out');
+        });
+      }, 2500); // Começa a sumir após 2.5 segundos
+
+      setTimeout(() => {
+        toasts.forEach(toast => toast.remove());
+      }, 4000); // Remove após 4 segundos
+    });
+  </script>
+{% endblock scripts %}

@@ -225,3 +225,14 @@ header {
     flex-direction: column;
   }
 }
+
+/* ========== RESPONSIVIDADE DO HEADER ========== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
