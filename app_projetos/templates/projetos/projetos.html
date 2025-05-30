@@ -1,0 +1,65 @@
+{% extends  "base/base.html" %}
+{% load static %}
+{% block title %}Projetos{% endblock title %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'projetos/css/projetos.css' %}" />
+{% endblock styles %}
+{% block content %}
+
+<h1>Nossos Projetos</h1>
+
+<div class="projeto-container">
+    {% for projeto in projetos %}
+    <div class="projeto">
+        <img src="{{ projeto.imagem.url }}" alt="{{ projeto.titulo }}" />
+        <div class="titulo">{{ projeto.titulo }}</div>
+        <div class="descricao-resumida">{{ projeto.descricao|truncatewords:20 }}
+            {% if projeto.descricao|wordcount > 20 %}
+            <span class="ler-mais-btn">... Ler mais</span>
+            {% endif %}
+        </div>
+        {% if projeto.descricao|wordcount > 20 %}
+        <div class="descricao-completa escondida">
+            {{ projeto.descricao }}
+            <span class="ler-menos-btn">Ler menos</span>
+        </div>
+        {% endif %}
+        {% if projeto.link %}
+            <a href="{{ projeto.link }}" target="_blank" class="link">Ver Projeto</a>
+        {% endif %}
+    </div>
+    {% empty %}
+        <p>Não há projetos cadastrados ainda.</p>
+    {% endfor %}
+</div>
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const botoesLerMais = document.querySelectorAll('.ler-mais-btn');
+    const botoesLerMenos = document.querySelectorAll('.ler-menos-btn');
+
+    botoesLerMais.forEach(function(botao) {
+        botao.addEventListener('click', function() {
+            const descricaoResumida = this.parentNode;
+            const descricaoCompleta = descricaoResumida.nextElementSibling;
+
+            descricaoResumida.classList.add('escondida');
+            descricaoCompleta.classList.remove('escondida');
+        });
+    });
+
+    botoesLerMenos.forEach(function(botao) {
+        botao.addEventListener('click', function() {
+            const descricaoCompleta = this.parentNode;
+            const descricaoResumida = descricaoCompleta.previousElementSibling;
+
+            descricaoCompleta.classList.add('escondida');
+            descricaoResumida.classList.remove('escondida');
+        });
+    });
+});
+
+</script>
+{% endblock content %}
