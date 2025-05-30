@@ -88,7 +88,7 @@ h1 {
 }
 
 .ler-mais-btn {
-    color: var(--amarelo-claro);
+    color: var(--vinho);
     cursor: pointer;
     font-weight: bold;
 }
@@ -109,7 +109,7 @@ h1 {
 }
 
 .ler-menos-btn {
-    color: var(--amarelo-claro);
+    color: var(--vinho);
     cursor: pointer;
     font-weight: bold;
     display: block; /* Para ocupar a largura e ficar abaixo do texto */

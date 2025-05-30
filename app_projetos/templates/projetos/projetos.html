@@ -15,7 +15,7 @@
         <div class="titulo">{{ projeto.titulo }}</div>
         <div class="descricao-resumida">{{ projeto.descricao|truncatewords:20 }}
             {% if projeto.descricao|wordcount > 20 %}
-            <span class="ler-mais-btn">... Ler mais</span>
+            <span class="ler-mais-btn">Ler mais</span>
             {% endif %}
         </div>
         {% if projeto.descricao|wordcount > 20 %}

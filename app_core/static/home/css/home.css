@@ -572,9 +572,17 @@
         flex-direction: row; /* Imagem e texto lado a lado */
         align-items: flex-start; /* Alinha o conteúdo ao topo */
     }
+
     .comunicado-img {
-        width: 250px; /* Largura maior da imagem em desktop */
-        height: 180px; /* Altura maior da imagem */
+        width: 120px;
+        /* height: auto;  Remova ou ajuste se necessário */
+        max-height: 150px;
+        border-radius: 10px;
+        object-fit: contain; /* ALTERADO: A imagem se ajusta dentro da caixa sem ser cortada */
+        background-color: #f0f0f0; /* Opcional: cor de fundo para preencher o espaço vazio com 'contain' */
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        border: 1px solid var(--amarelo-intermediario);
+        margin-right: 15px; /* Removi a margem direita padrão e adicionei ao gap do flex container */
     }
 
     /* Transparência */
@@ -830,5 +838,115 @@
     .btn-hero-cta {
         font-size: 1rem;
         padding: 0.8rem 1.5rem;
+    }
+}
+
+
+
+/* ========== AJUSTES DE RESPONSIVIDADE (GERAL) - TENTATIVA MAIS ESPECÍFICA PARA ÍCONES ========== */
+@media (max-width: 767px) {
+    .section-title > i { /* Seleciona APENAS o filho direto 'i' de .section-title */
+        display: none !important;
+    }
+}
+
+/* Diminui ainda mais a fonte dos títulos em telas muito pequenas */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* ========== AJUSTES DE RESPONSIVIDADE (SEÇÕES ESPECÍFICAS) - MANTENDO OS AJUSTES DE FONTES ANTERIORES ========== */
+
+/* Main Hero Section (Mobile ainda menor) */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    .main-hero-content .logo {
+        width: 130px;
+    }
+    .btn-hero-cta {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Quem Somos (Mobile) */
+@media (max-width: 767px) {
+    #about-summary .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Nossa Missão (Mobile) */
+@media (max-width: 767px) {
+    #our-mission .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .mission-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    .mission-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+/* Nossos Atendimentos (Mobile) */
+@media (max-width: 767px) {
+    .services-content-card .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .services-content-card h3 {
+        font-size: 1.6rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+    .services-content-card p,
+    .services-list li {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+/* Último Comunicado (Mobile) */
+@media (max-width: 767px) {
+    .comunicado .card-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+    }
+    .comunicado .card-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
+    }
+}
+
+/* Doação (Mobile) */
+@media (max-width: 767px) {
+    .donation-cta-text .section-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .donation-cta-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    .donation-info-box h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    .donation-info-box > p,
+    .donation-info-box ul li {
+        font-size: 0.95rem;
     }
 }

@@ -80,3 +80,124 @@ body {
     color: #777;
     margin-bottom: 0;
 }
+
+
+/* -------------------------------------- */
+/* MEDIA QUERIES - RESPONSIVIDADE          */
+/* -------------------------------------- */
+
+/* Telas menores que 768px (smartphones na maioria) */
+@media (max-width: 767.98px) {
+    .container.mt-5 {
+        margin: 20px 15px; /* Margem menor nas laterais para telas pequenas */
+        padding: 20px; /* Reduzir o padding interno */
+    }
+
+    .card-body.d-flex {
+        flex-direction: column; /* Empilha a imagem e o texto verticalmente */
+        align-items: center; /* Centraliza itens quando empilhados */
+        text-align: center; /* Centraliza o texto */
+        padding: 10px; /* Reduzir padding interno */
+        gap: 10px; /* Reduzir o espaçamento entre a imagem e o texto */
+    }
+
+    .comunicado-img {
+        width: 100%; /* Imagem ocupa a largura total do comunicado */
+        max-width: 200px; /* Limita a largura máxima da imagem */
+        height: auto;
+        margin-right: 0; /* Remove a margem direita, já que não é mais flex horizontal */
+        margin-bottom: 10px; /* Adiciona um espaço abaixo da imagem */
+    }
+
+    .comunicado-text h5 {
+        font-size: 1.2em; /* Diminui o tamanho do título para caber melhor */
+    }
+
+    .comunicado-text p.card-text {
+        font-size: 0.95em; /* Ajusta o tamanho do parágrafo */
+    }
+
+    .comunicado-text p.text-muted {
+        font-size: 0.8em; /* Ajusta o tamanho da data/hora */
+    }
+}
+
+/* Telas menores que 576px (smartphones muito pequenos) */
+@media (max-width: 575.98px) {
+    .container.mt-5 {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+
+    .comunicado-text h5 {
+        font-size: 1.1em;
+    }
+}
+
+/* Telas entre 768px e 992px (tablets em modo retrato) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container.mt-5 {
+        max-width: 720px; /* Ajusta a largura máxima para tablets */
+        margin: 30px auto;
+        padding: 25px;
+    }
+
+    .card-body.d-flex {
+        gap: 15px; /* Ajusta um pouco o espaçamento para tablets */
+    }
+
+    .comunicado-img {
+        width: 100px; /* Pode reduzir um pouco a imagem para tablets */
+        max-height: 120px;
+    }
+
+    .comunicado-text h5 {
+        font-size: 1.3em; /* Ajusta o tamanho do título */
+    }
+}
+
+/* --- Estilos para o botão Ler Mais/Menos --- */
+
+.descricao-resumida {
+    font-size: 1rem;
+    color: var(--marrom-escuro); /* Ajustado para sua variável de cor */
+    line-height: 1.6;
+    margin-bottom: 5px; /* Adicionando um pequeno espaço abaixo da parte resumida */
+}
+
+.ler-mais-btn {
+    color: var(--vinho); /* Usando sua variável de cor */
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block; /* Para que ele fique na mesma linha do texto resumido se houver espaço */
+    margin-left: 5px; /* Espaço entre o texto truncado e o botão */
+}
+
+.ler-mais-btn:hover {
+    text-decoration: underline;
+}
+
+.descricao-completa {
+    font-size: 1rem;
+    color: var(--marrom-escuro); /* Ajustado para sua variável de cor */
+    line-height: 1.6;
+    margin-top: 10px; /* Espaço acima da descrição completa */
+    margin-bottom: 10px;
+}
+
+.escondida {
+    display: none;
+}
+
+.ler-menos-btn {
+    color: var(--vinho); /* Usando sua variável de cor */
+    cursor: pointer;
+    font-weight: bold;
+    display: block; /* Para ocupar a largura e ficar abaixo do texto */
+    margin-top: 10px; /* Espaço acima do botão */
+    text-align: right; /* Alinhar à direita (opcional) */
+}
+
+.ler-menos-btn:hover {
+    text-decoration: underline;
+}
