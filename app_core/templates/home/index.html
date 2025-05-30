@@ -6,16 +6,17 @@
 {% endblock styles %}
 {% block content %}
     <section class="main-hero">
+        <div class="hero-overlay"></div> {# Adicionada div para o overlay #}
         <div class="main-hero-content">
-            <img src={% static "img/logo_nome.png" %} title="Logo Pestalozzi" alt="Pestalozzi Maricá" class="logo">
+            <img src={% static "img/logo_nome_white.png" %} title="Logo Pestalozzi" alt="Pestalozzi Maricá" class="logo"> {# Logo mantido aqui #}
             <h1 class="hero-title">Transforme vidas com a Pestalozzi Maricá</h1>
             <p class="hero-subtitle">Com sua doação, podemos ampliar o cuidado e a inclusão de pessoas com deficiência.</p>
-            <a href="#donation-section" class="btn btn-primary btn-hero-cta">Faça sua doação</a> 
+            <a href="#donation-section" class="btn btn-primary btn-hero-cta">Transforme um Futuro, Doe Agora!</a>
         </div>
     </section>
 
     <section id="about-summary" class="container fade-in">
-        <h2 class="section-title"><i data-lucide="info"></i>Quem Somos</h2>
+        <h2 class="section-title"><i class="fa-solid fa-circle-info"></i>Quem Somos</h2> {# Changed from data-lucide="info" #}
         <p class="section-description">
             A Pestalozzi Maricá é uma organização sem fins lucrativos dedicada a promover o desenvolvimento e a inclusão de crianças, adolescentes e jovens com deficiência e seus familiares. Nosso trabalho foca em Planos Individuais de Atendimento, abrangendo prevenção, habilitação e reabilitação para assegurar o pleno desfrute de seus direitos, interação social, autonomia e qualidade de vida.
         </p>
@@ -24,7 +25,7 @@
 
     <section id="our-mission" class="content-section fade-in">
         <div class="container mission-container">
-            <h2 class="section-title"><i data-lucide="info"></i>Nossa Missão</h2>
+            <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i>Nossa Missão</h2> {# Changed from data-lucide="info" to something more mission-oriented #}
             <div class="mission-grid">
                 <div class="mission-card">
                     <h3>Objetivo Geral</h3>
@@ -46,7 +47,7 @@
         <div class="section-overlay"></div>
         <div class="container services-container">
             <div class="services-content-card">
-                <h2 class="section-title"><i data-lucide="graduation-cap"></i> Nossos Atendimentos</h2>
+                <h2 class="section-title"><i class="fa-solid fa-user-graduate"></i> Nossos Atendimentos</h2> {# Changed from data-lucide="graduation-cap" #}
                 <h3>Quem Atendemos</h3>
                 <p>
                     Recém-nascidos de risco, crianças com atraso no desenvolvimento neuropsicomotor, e crianças, adolescentes e jovens (0 a 22 anos) com deficiência física, intelectual, Transtorno do Espectro Autista (TEA), além daqueles com distúrbios de aprendizagem. Nossas famílias também recebem atenção e apoio contínuos.
@@ -57,9 +58,9 @@
                     Oferecemos sessões individuais e oficinas diversificadas para um atendimento integral:
                 </p>
                 <ul class="services-list">
-                    <li><i data-lucide="sparkles"></i> Oficina de Corpo: Foco no desenvolvimento motor e consciência corporal.</li>
-                    <li><i data-lucide="music"></i> Oficina de Musicalização: Estímulo através da música e ritmo.</li>
-                    <li><i data-lucide="palette"></i> Oficina de Artes: Expressão criativa e desenvolvimento de habilidades artísticas.</li>
+                    <li><i class="fa-solid fa-lightbulb"></i> Oficina de Corpo: Foco no desenvolvimento motor e consciência corporal.</li> {# Changed from data-lucide="sparkles" to something more relevant #}
+                    <li><i class="fa-solid fa-music"></i> Oficina de Musicalização: Estímulo através da música e ritmo.</li> {# Changed from data-lucide="music" #}
+                    <li><i class="fa-solid fa-palette"></i> Oficina de Artes: Expressão criativa e desenvolvimento de habilidades artísticas.</li> {# Changed from data-lucide="palette" #}
                 </ul>
                 <p>
                     Disponibilizamos também **Serviço de Psicologia** para fomentar a autonomia dos autodefensores e dar suporte às famílias, promovendo o autocuidado e fortalecendo vínculos.
@@ -72,32 +73,53 @@
         </div>
     </section>
 
+    {% if ultimo_comunicado %}
+    <section id="ultimo-comunicado" class="content-section fade-in"> {# Adicionei content-section para padding padrão #}
+        <div class="container"> {# Adicionei um container interno para o conteúdo #}
+            <h2 class="section-title"><i class="fa-solid fa-bullhorn"></i> Último Comunicado</h2>
+            <div class="card mb-3 comunicado">
+                <div class="card-body d-flex align-items-start">
+                    {% if ultimo_comunicado.imagem %}
+                        <img src="{{ ultimo_comunicado.imagem.url }}" alt="Imagem do comunicado" class="comunicado-img">
+                    {% endif %}
+                    <div class="comunicado-text">
+                        <h5 class="card-title">{{ ultimo_comunicado.titulo }}</h5>
+                        <p class="card-text">{{ ultimo_comunicado.mensagem }}</p>
+                        <p class="text-muted">Publicado em {{ ultimo_comunicado.data_publicacao|date:"d/m/Y H:i" }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+
     <section id="transparencia" class="content-section fade-in">
         <div class="container">
-            <h2 class="section-title"><i data-lucide="file-text"></i> Transparência</h2>
+            <h2 class="section-title"><i class="fa-solid fa-file-invoice-dollar"></i> Transparência</h2> {# Changed from data-lucide="file-text" to something more financial/transparency-oriented #}
             <p class="section-description">Comprometemo-nos com a transparência total de nossas ações e recursos. Acesse nossos documentos financeiros e administrativos para acompanhar de perto o impacto da sua contribuição:</p>
             
             <div class="transparency-grid">
                 <a href="https://drive.google.com/drive/folders/1vLkUNGbXwpjo-8bhy2LIddRxMlsT1b69" target="_blank" class="transparency-item">
-                    <i data-lucide="file-check"></i> <span>ATA Diretoria</span>
+                    <i class="fa-solid fa-file-contract"></i> <span>ATA Diretoria</span> {# Changed from data-lucide="file-check" #}
                 </a>
                 <a href="https://drive.google.com/drive/folders/1YfVRwkYh2gwD-7CIOY2eqwECnhK-OVjb" target="_blank" class="transparency-item">
-                    <i data-lucide="scale"></i> <span>Balanço Patrimonial</span>
+                    <i class="fa-solid fa-balance-scale"></i> <span>Balanço Patrimonial</span> {# Changed from data-lucide="scale" #}
                 </a>
                 <a href="https://drive.google.com/drive/folders/1dfcVfVjZEAuTY61legyoVBe15hB5-xqC" target="_blank" class="transparency-item">
-                    <i data-lucide="folder-check"></i> <span>Emenda Dep. Otávio Leite / Repasse Pref. Maricá</span>
+                    <i class="fa-solid fa-folder-open"></i> <span>Emenda Dep. Otávio Leite / Repasse Pref. Maricá</span> {# Changed from data-lucide="folder-check" #}
                 </a>
                 <a href="https://drive.google.com/drive/folders/1_MI4fNazQsuLG9DPZlw969MuduxurRL1" target="_blank" class="transparency-item">
-                    <i data-lucide="clipboard-list"></i> <span>Planos de Ação</span>
+                    <i class="fa-solid fa-list-check"></i> <span>Planos de Ação</span> {# Changed from data-lucide="clipboard-list" #}
                 </a>
                 <a href="https://drive.google.com/drive/folders/1SMNOM6droh5sP870OpOmj60OdTYW7i2b" target="_blank" class="transparency-item">
-                    <i data-lucide="receipt"></i> <span>Termo de Fomento 702/2018 - LOTERJ</span>
+                    <i class="fa-solid fa-receipt"></i> <span>Termo de Fomento 702/2018 - LOTERJ</span> {# Changed from data-lucide="receipt" #}
                 </a>
                 <a href="https://drive.google.com/drive/folders/1U1w46lNyDqA_Qt-OB24ECogpu2_Gaa4j" target="_blank" class="transparency-item">
-                    <i data-lucide="wallet"></i> <span>Recibos</span>
+                    <i class="fa-solid fa-wallet"></i> <span>Recibos</span> {# Changed from data-lucide="wallet" #}
                 </a>
                 <a href="https://drive.google.com/drive/folders/1m_a75ogSv0X5_Qck9swWqTkjbmFw73zh" target="_blank" class="transparency-item">
-                    <i data-lucide="file-bar-chart-2"></i> <span>Relatório</span>
+                    <i class="fa-solid fa-chart-bar"></i> <span>Relatório</span> {# Changed from data-lucide="file-bar-chart-2" #}
                 </a>
             </div>
         </div>
@@ -106,7 +128,7 @@
     <section id="donation-section" class="content-section fade-in">
         <div class="donation-content-wrapper">
             <div class="donation-cta-text">
-                <h2 class="section-title text-light"><i data-lucide="heart"></i> Sua doação faz a diferença!</h2>
+                <h2 class="section-title text-light"><i class="fa-solid fa-heart"></i> Sua doação faz a diferença!</h2> {# Changed from data-lucide="heart" #}
                 <p>
                     Com sua ajuda, podemos continuar oferecendo atendimento especializado e promovendo a inclusão de crianças e adolescentes com deficiência. Cada contribuição é um passo em direção a um futuro mais inclusivo e digno.
                 </p>
