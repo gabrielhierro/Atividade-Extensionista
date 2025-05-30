@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'app_core',
     'app_portal',
     'app_voluntario',
+    'app_projetos',
 ]
 
 MIDDLEWARE = [

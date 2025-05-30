@@ -29,7 +29,8 @@
       </div>
       <ul class="nav-links">
         <li><a href="{% url 'sobre' %}">Sobre</a></li>
-        <li><a href="{% url 'projeto' %}">Projetos</a></li>
+        <li><a href="{% url 'app_projetos:projetos' %}">Projetos</a></li>
+
         <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
         <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
       </ul>
@@ -46,7 +47,8 @@
     </button>
     <ul class="menu-mobile">
       <li><a href="{% url 'sobre' %}">Sobre</a></li>
-      <li><a href="{% url 'projeto' %}">Projetos</a></li>
+      <li><a href="{% url 'app_projetos:projetos' %}">Projetos</a></li>
+
       <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
       <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
     </ul>
@@ -109,7 +111,7 @@
         <h3>Links Úteis</h3>
         <ul>
           <li><a href="{% url 'sobre' %}">Sobre</a></li>
-          <li><a href="{% url 'projeto' %}">Projetos</a></li>
+          <li><a href="{% url 'app_projetos:projetos' %}">Projetos</a></li>
           <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
           <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
         </ul>
