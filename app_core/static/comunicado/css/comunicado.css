@@ -67,6 +67,7 @@ body {
     color: var(--vinho);
     font-weight: bold;
     letter-spacing: -0.5px;
+    font-size: 1.5em; /* Aumentei o tamanho da fonte para 1.5 vezes o tamanho padrão */
 }
 
 .comunicado-text p.card-text {
