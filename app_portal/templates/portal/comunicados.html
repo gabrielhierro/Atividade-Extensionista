@@ -17,7 +17,17 @@
             {% endif %}
             <div class="comunicado-text">
                 <h5 class="card-title">{{ comunicado.titulo }}</h5>
-                <p class="card-text">{{ comunicado.mensagem }}</p>
+                <p class="card-text descricao-resumida">{{ comunicado.mensagem|truncatewords:30 }}</p> {# Ajuste o número de palavras conforme necessário #}
+                {% if comunicado.mensagem|wordcount > 30 %} {# Condição para mostrar "ler mais" #}
+                    <span class="ler-mais-btn" data-target="comunicado-completo-{{ comunicado.id }}">Ler mais</span>
+                {% endif %}
+
+                {% if comunicado.mensagem|wordcount > 30 %}
+                <div class="descricao-completa escondida" id="comunicado-completo-{{ comunicado.id }}">
+                    <p class="card-text">{{ comunicado.mensagem }}</p>
+                    <span class="ler-menos-btn" data-target="comunicado-completo-{{ comunicado.id }}">Ler menos</span>
+                </div>
+                {% endif %}
                 <p class="text-muted">Publicado em {{ comunicado.data_publicacao|date:"d/m/Y H:i" }}</p>
             </div>
         </div>
@@ -26,5 +36,48 @@
         <p>Nenhum comunicado encontrado.</p>
     {% endfor %}
 </div>
+
+
+
+<script>
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Adiciona evento de clique aos botões "Ler mais"
+    document.querySelectorAll('.ler-mais-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const targetId = this.dataset.target; // Pega o ID do comunicado completo
+            const descricaoCompleta = document.getElementById(targetId);
+            const descricaoResumida = this.previousElementSibling; // Pega o parágrafo da descrição resumida
+
+            if (descricaoCompleta && descricaoResumida) {
+                descricaoResumida.classList.add('escondida'); // Esconde a resumida
+                this.classList.add('escondida'); // Esconde o botão "Ler mais"
+                descricaoCompleta.classList.remove('escondida'); // Mostra a completa
+            }
+        });
+    });
+
+    // Adiciona evento de clique aos botões "Ler menos"
+    document.querySelectorAll('.ler-menos-btn').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const targetId = this.dataset.target; // Pega o ID do comunicado completo
+            const descricaoCompleta = document.getElementById(targetId);
+            // Anda para cima no DOM até encontrar o .comunicado e então procura o .descricao-resumida e .ler-mais-btn
+            const comunicadoParent = this.closest('.comunicado-text'); // Ou .card-body
+            const descricaoResumida = comunicadoParent.querySelector('.descricao-resumida');
+            const lerMaisBtn = comunicadoParent.querySelector('.ler-mais-btn');
+
+            if (descricaoCompleta && descricaoResumida && lerMaisBtn) {
+                descricaoCompleta.classList.add('escondida'); // Esconde a completa
+                descricaoResumida.classList.remove('escondida'); // Mostra a resumida
+                lerMaisBtn.classList.remove('escondida'); // Mostra o botão "Ler mais"
+            }
+        });
+    });
+});
+
+
+</script>
 
 {% endblock content %}
