@@ -53,7 +53,5 @@ git clone https://github.com/gabrielhierro/Atividade-Extensionista.git
 cd Atividade-Extensionista
 
 # Instale as dependências
-npm install
 
-# Rode o servidor local
-npm start
+pip install -r requirements.txt
