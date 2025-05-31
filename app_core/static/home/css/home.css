@@ -135,6 +135,7 @@
 .btn-hero-cta {
     /* Herda o estilo do .btn-primary, sem ajustes extras de padding/font-size */
     align-self: flex-start; /* Garante alinhamento à esquerda */
+    scroll-behavior: smooth;
 }
 
 .btn-vakinha.btn-primary {

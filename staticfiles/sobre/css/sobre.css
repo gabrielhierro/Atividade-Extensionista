@@ -82,7 +82,7 @@ body {
 
 .hero-content .btn.btn-primary:hover {
     background-color: var(--amarelo-intermediario); /* Muda de cor ao hover */
-    transform: translateY(-3px); /* Efeito de elevação */
+    transform: translateY(-3px) !important; /* Efeito de elevação */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 

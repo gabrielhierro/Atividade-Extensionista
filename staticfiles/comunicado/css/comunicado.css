@@ -9,13 +9,25 @@ body {
 }
 
 /* Estilos para o container da aba de comunicados */
-.container.mt-5 { /* Mantendo a classe mt-5 do seu HTML para margem superior */
+.container.mt-5 {
     max-width: 800px;
-    margin: 30px auto; /* Margens superior e inferior, e centralização horizontal */
+    /* Ajuste aqui: padding uniforme e margin para centralização */
+    padding: 2.5rem; /* Padding interno uniforme (40px) */
+    margin-top: 3rem; /* Margem superior (48px) */
+    margin-bottom: 3rem; /* Margem inferior (48px) */
+    margin-left: auto;
+    margin-right: auto;
     background-color: var(--bege-claro); /* Fundo amarelo claro para o container */
-    padding: 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
+}
+
+.container.mt-5 h1 {
+    color: var(--vinho); /* Cor do título */
+    font-size: 2.5rem; /* Tamanho do título */
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 1.5rem; /* Espaçamento abaixo do título (24px) */
+    padding-bottom: 12px; 
 }
 
 /* Estilos para cada comunicado */
@@ -25,7 +37,7 @@ body {
     border-radius: 12px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
     transition: transform 0.2s ease-in-out;
-    margin-bottom: 15px; /* Margem inferior para separar os comunicados */
+    margin-bottom: 1.5rem; /* Margem inferior para separar os comunicados (24px) */
 }
 
 .comunicado:hover {
@@ -41,8 +53,8 @@ body {
 .card-body.d-flex {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    padding: 15px; /* Adicionando padding interno ao card-body */
+    gap: 1.5rem; /* Espaçamento entre imagem e texto (24px) */
+    padding: 1.25rem; /* Adicionando padding interno ao card-body (20px) */
 }
 
 /* Estilos para a imagem do comunicado */
@@ -54,7 +66,7 @@ body {
     object-fit: cover;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
     border: 1px solid var(--amarelo-intermediario);
-    margin-right: 15px; /* Removi a margem direita padrão e adicionei ao gap do flex container */
+    /* margin-right removido, agora controlado por gap no card-body.d-flex */
 }
 
 /* Estilos para o texto do comunicado */
@@ -63,7 +75,8 @@ body {
 }
 
 .comunicado-text h5 {
-    margin-top: 0;
+    margin-top: 0; /* Garante que não há margem superior extra do h5 */
+    margin-bottom: 0.75rem; /* Espaçamento abaixo do título do comunicado (12px) */
     color: var(--vinho);
     font-weight: bold;
     letter-spacing: -0.5px;
@@ -73,60 +86,68 @@ body {
 .comunicado-text p.card-text {
     color: var(--marrom-escuro);
     line-height: 1.6;
+    margin-bottom: 0.75rem; /* Espaçamento abaixo do parágrafo de texto (12px) */
 }
 
 .comunicado-text p.text-muted {
     font-size: 0.9em;
     color: #777;
+    margin-top: 1rem; /* Espaçamento acima da data/hora (16px) */
     margin-bottom: 0;
 }
 
 
 /* -------------------------------------- */
-/* MEDIA QUERIES - RESPONSIVIDADE          */
+/* MEDIA QUERIES - RESPONSIVIDADE          */
 /* -------------------------------------- */
 
 /* Telas menores que 768px (smartphones na maioria) */
 @media (max-width: 767.98px) {
     .container.mt-5 {
-        margin: 20px 15px; /* Margem menor nas laterais para telas pequenas */
-        padding: 20px; /* Reduzir o padding interno */
+        margin: 2rem 1rem; /* Margem menor nas laterais para telas pequenas (32px top/bottom, 16px left/right) */
+        padding: 1.5rem; /* Reduzir o padding interno (24px) */
+    }
+
+    .container .section-title {
+        margin-bottom: 1.5rem; /* Reduzir espaçamento do título em mobile (24px) */
     }
 
     .card-body.d-flex {
         flex-direction: column; /* Empilha a imagem e o texto verticalmente */
         align-items: center; /* Centraliza itens quando empilhados */
         text-align: center; /* Centraliza o texto */
-        padding: 10px; /* Reduzir padding interno */
-        gap: 10px; /* Reduzir o espaçamento entre a imagem e o texto */
+        padding: 1rem; /* Reduzir padding interno (16px) */
+        gap: 0.75rem; /* Reduzir o espaçamento entre a imagem e o texto (12px) */
     }
 
     .comunicado-img {
         width: 100%; /* Imagem ocupa a largura total do comunicado */
         max-width: 200px; /* Limita a largura máxima da imagem */
         height: auto;
-        margin-right: 0; /* Remove a margem direita, já que não é mais flex horizontal */
-        margin-bottom: 10px; /* Adiciona um espaço abaixo da imagem */
+        margin-bottom: 0.75rem; /* Adiciona um espaço abaixo da imagem (12px) */
     }
 
     .comunicado-text h5 {
-        font-size: 1.2em; /* Diminui o tamanho do título para caber melhor */
+        font-size: 1.3em; /* Diminui o tamanho do título para caber melhor */
+        margin-bottom: 0.5rem; /* Reduzir espaçamento (8px) */
     }
 
     .comunicado-text p.card-text {
         font-size: 0.95em; /* Ajusta o tamanho do parágrafo */
+        margin-bottom: 0.5rem; /* Reduzir espaçamento (8px) */
     }
 
     .comunicado-text p.text-muted {
         font-size: 0.8em; /* Ajusta o tamanho da data/hora */
+        margin-top: 0.75rem; /* Reduzir espaçamento (12px) */
     }
 }
 
 /* Telas menores que 576px (smartphones muito pequenos) */
 @media (max-width: 575.98px) {
     .container.mt-5 {
-        margin: 15px 10px;
-        padding: 15px;
+        margin: 1.5rem 0.75rem; /* Margem ainda menor (24px top/bottom, 12px left/right) */
+        padding: 1rem; /* Reduzir o padding interno (16px) */
     }
 
     .comunicado-text h5 {
@@ -138,12 +159,12 @@ body {
 @media (min-width: 768px) and (max-width: 991.98px) {
     .container.mt-5 {
         max-width: 720px; /* Ajusta a largura máxima para tablets */
-        margin: 30px auto;
-        padding: 25px;
+        margin: 2.5rem auto; /* Mantém a margem de desktop, centraliza */
+        padding: 2rem; /* Padding ligeiramente menor (32px) */
     }
 
     .card-body.d-flex {
-        gap: 15px; /* Ajusta um pouco o espaçamento para tablets */
+        gap: 1rem; /* Ajusta um pouco o espaçamento para tablets (16px) */
     }
 
     .comunicado-img {
@@ -160,17 +181,18 @@ body {
 
 .descricao-resumida {
     font-size: 1rem;
-    color: var(--marrom-escuro); /* Ajustado para sua variável de cor */
+    color: var(--marrom-escuro);
     line-height: 1.6;
-    margin-bottom: 5px; /* Adicionando um pequeno espaço abaixo da parte resumida */
+    margin-bottom: 0.5rem; /* Pequeno espaço abaixo da parte resumida (8px) */
 }
 
 .ler-mais-btn {
-    color: var(--vinho); /* Usando sua variável de cor */
+    color: var(--vinho);
     cursor: pointer;
     font-weight: bold;
-    display: inline-block; /* Para que ele fique na mesma linha do texto resumido se houver espaço */
-    margin-left: 5px; /* Espaço entre o texto truncado e o botão */
+    display: inline-block;
+    margin-left: 0.5rem; /* Espaço entre o texto truncado e o botão (8px) */
+    margin-bottom: 0.5rem; /* Garante que não cole no próximo elemento */
 }
 
 .ler-mais-btn:hover {
@@ -179,10 +201,10 @@ body {
 
 .descricao-completa {
     font-size: 1rem;
-    color: var(--marrom-escuro); /* Ajustado para sua variável de cor */
+    color: var(--marrom-escuro);
     line-height: 1.6;
-    margin-top: 10px; /* Espaço acima da descrição completa */
-    margin-bottom: 10px;
+    margin-top: 1rem; /* Espaço acima da descrição completa (16px) */
+    margin-bottom: 1rem; /* Espaço abaixo da descrição completa (16px) */
 }
 
 .escondida {
@@ -190,12 +212,12 @@ body {
 }
 
 .ler-menos-btn {
-    color: var(--vinho); /* Usando sua variável de cor */
+    color: var(--vinho);
     cursor: pointer;
     font-weight: bold;
-    display: block; /* Para ocupar a largura e ficar abaixo do texto */
-    margin-top: 10px; /* Espaço acima do botão */
-    text-align: right; /* Alinhar à direita (opcional) */
+    display: block;
+    margin-top: 0.75rem; /* Espaço acima do botão (12px) */
+    text-align: right;
 }
 
 .ler-menos-btn:hover {

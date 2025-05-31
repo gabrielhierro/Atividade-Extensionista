@@ -1,4 +1,4 @@
-{% extends  "base/base.html" %}
+{% extends "base/base.html" %}
 {% load static %}
 {% block title %}Projetos{% endblock title %}
 {% block styles %}
@@ -6,36 +6,62 @@
 {% endblock styles %}
 {% block content %}
 
-<h1>Nossos Projetos</h1>
-
-<div class="projeto-container">
-    {% for projeto in projetos %}
-    <div class="projeto">
-        <img src="{{ projeto.imagem.url }}" alt="{{ projeto.titulo }}" />
-        <div class="titulo">{{ projeto.titulo }}</div>
-        <div class="descricao-resumida">{{ projeto.descricao|truncatewords:20 }}
-            {% if projeto.descricao|wordcount > 20 %}
-            <span class="ler-mais-btn">Ler mais</span>
-            {% endif %}
-        </div>
-        {% if projeto.descricao|wordcount > 20 %}
-        <div class="descricao-completa escondida">
-            {{ projeto.descricao }}
-            <span class="ler-menos-btn">Ler menos</span>
-        </div>
-        {% endif %}
-        {% if projeto.link %}
-            <a href="{{ projeto.link }}" target="_blank" class="link">Ver Projeto</a>
-        {% endif %}
+<section class="projetos-hero content-section">
+    <div class="hero-overlay"></div>
+    <div class="projetos-hero-content">
+        <h1 class="hero-title text-light">Nossos Projetos Transformadores</h1>
+        <p class="hero-subtitle text-light">Conheça as iniciativas da Pestalozzi que impactam vidas e constroem um futuro melhor para nossa comunidade. Cada projeto é um passo em direção à inclusão e ao desenvolvimento.</p>
+        <a href="#projetos-list" class="btn btn-primary btn-projetos-cta"><i class="fa fa-arrow-down" aria-hidden="true"></i> Ver Projetos</a>
     </div>
-    {% empty %}
-        <p>Não há projetos cadastrados ainda.</p>
-    {% endfor %}
-</div>
+</section>
+
+<section id="projetos-list" class="content-section light-bg">
+    <h2 class="section-title">
+        <i class="fas fa-list-alt"></i> Projetos Atuais
+    </h2>
+    <p class="section-description">
+        Explore a diversidade de nossas ações e descubra como a Pestalozzi de Maricá atua em diversas frentes para promover a saúde, educação, inclusão social e o bem-estar de pessoas com deficiência intelectual e múltipla.
+    </p>
+
+    <div class="projetos-grid">
+        {% for projeto in projetos %}
+        <div class="projeto-card">
+            <img src="{{ projeto.imagem.url }}" alt="{{ projeto.titulo }}" class="projeto-img" />
+            <div class="card-content">
+                <h3 class="projeto-titulo">{{ projeto.titulo }}</h3>
+                <div class="projeto-descricao-resumida">{{ projeto.descricao|truncatewords:25 }}
+                    {% if projeto.descricao|wordcount > 25 %}
+                    <span class="ler-mais-btn">Ler mais</span>
+                    {% endif %}
+                </div>
+                {% if projeto.descricao|wordcount > 25 %}
+                <div class="projeto-descricao-completa escondida">
+                    {{ projeto.descricao }}
+                    <span class="ler-menos-btn">Ler menos</span>
+                </div>
+                {% endif %}
+                {% if projeto.link %}
+                    <a href="{{ projeto.link }}" target="_blank" class="btn btn-secondary projeto-link">Saiba Mais</a>
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+            <p class="no-projects-message">Não há projetos cadastrados ainda. Volte em breve para ver nossas novas iniciativas!</p>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="cta-section content-section dark-bg">
+    <div class="section-overlay"></div>
+    <div class="cta-content">
+        <h2 class="cta-title text-light">Seja um Impulsionador de Sonhos</h2>
+        <p class="cta-description text-light">Nossos projetos dependem do seu apoio para continuar transformando vidas. Cada doação faz a diferença!</p>
+        <a href="{% url 'home' %}#donation-section" class="btn btn-primary cta-button">Como Doar</a>
+    </div>
+</section>
 
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function() {
     const botoesLerMais = document.querySelectorAll('.ler-mais-btn');
     const botoesLerMenos = document.querySelectorAll('.ler-menos-btn');
@@ -44,9 +70,17 @@ document.addEventListener('DOMContentLoaded', function() {
         botao.addEventListener('click', function() {
             const descricaoResumida = this.parentNode;
             const descricaoCompleta = descricaoResumida.nextElementSibling;
+            const card = this.closest('.projeto-card'); // Pega o card pai
 
             descricaoResumida.classList.add('escondida');
             descricaoCompleta.classList.remove('escondida');
+
+            // Ajustar o height do card dinamicamente após expandir
+            if (card) {
+                // Remove min-height para permitir que o card se ajuste
+                card.style.minHeight = 'unset';
+                card.style.height = 'auto';
+            }
         });
     });
 
@@ -54,12 +88,19 @@ document.addEventListener('DOMContentLoaded', function() {
         botao.addEventListener('click', function() {
             const descricaoCompleta = this.parentNode;
             const descricaoResumida = descricaoCompleta.previousElementSibling;
+            const card = this.closest('.projeto-card'); // Pega o card pai
 
             descricaoCompleta.classList.add('escondida');
             descricaoResumida.classList.remove('escondida');
+
+            // Restaura o min-height original do card
+            if (card) {
+                // Você pode definir um min-height fixo aqui ou recalcular com base no conteúdo resumido
+                card.style.minHeight = '350px'; // Exemplo: restaurar para um min-height adequado
+                card.style.height = 'auto'; // Ajusta a altura novamente
+            }
         });
     });
 });
-
 </script>
 {% endblock content %}

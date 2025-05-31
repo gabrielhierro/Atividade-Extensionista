@@ -8,7 +8,7 @@
     <section class="main-hero">
         <div class="hero-overlay"></div> {# Adicionada div para o overlay #}
         <div class="main-hero-content">
-            <img src={% static "img/donate.png" %} title="Logo Pestalozzi" alt="Pestalozzi Maricá" class="logo"> {# Logo mantido aqui #}
+            <img src={% static "img/donate_branco.png" %} title="Logo Pestalozzi" alt="Pestalozzi Maricá" class="logo"> {# Logo mantido aqui #}
             <h1 class="hero-title">Transforme vidas com a Pestalozzi Maricá</h1>
             <p class="hero-subtitle">Com sua doação, podemos ampliar o cuidado e a inclusão de pessoas com deficiência.</p>
             <a href="#donation-section" class="btn btn-primary btn-hero-cta">Transforme um Futuro, Doe Agora!</a>
@@ -124,3 +124,30 @@
         </div>
     </section>
 {% endblock content %}
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Seleciona todos os links de âncora que apontam para IDs na mesma página
+        // Você pode ser mais específico: document.querySelector('.btn-hero-cta')
+        const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+
+        smoothScrollLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Impede o comportamento padrão de salto
+                
+                const targetId = this.getAttribute('href'); // Pega o ID (ex: "#donation-section")
+                const targetElement = document.querySelector(targetId); // Seleciona o elemento alvo
+
+                if (targetElement) {
+                    // Usa scrollIntoView para rolagem suave
+                    // O comportamento 'smooth' aqui é o mesmo que 'scroll-behavior: smooth' no CSS
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start' // Alinha o topo do elemento com o topo da viewport
+                    });
+                }
+            });
+        });
+    });
+</script>
+{% endblock scripts %}
