@@ -1,0 +1,263 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-padrao);
+    background-color: var(--branco);
+    color: var(--marrom-escuro);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ========== HEADER (NAVBAR) ========== */
+
+header {
+    background-color: var(--vinho);
+    /* O header já ocupa 100% por padrão, mas explicitamos aqui se necessário */
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; /* Mantemos o padding horizontal */
+    /* REMOVIDAS as propriedades max-width e margin: 0 auto; */
+    /* Agora a .navbar vai ocupar 100% da largura do header, que já ocupa 100% da tela */
+    position: relative;
+    /* Adiciona um padding interno para controlar a largura do conteúdo, se desejar */
+    /* Exemplo: max-width para o conteúdo interno, mas a barra continua full width */
+    /* max-width: 1200px; /* Se você quer que o conteúdo interno da nav tenha um limite */
+    /* margin: 0 auto; /* E centralizá-lo dentro da nav de largura total */
+}
+
+/* Criamos um contêiner interno para o conteúdo da navbar para limitar sua largura */
+/* Isso é uma prática comum para manter o conteúdo alinhado, mas o background full-width */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupa 100% da largura da .navbar */
+    max-width: 1200px; /* Limita a largura do CONTEÚDO interno */
+    margin: 0 auto; /* Centraliza o conteúdo interno */
+}
+
+
+.logo img {
+    height: 80px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: var(--branco);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--amarelo);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--branco);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* MENU OVERLAY (MOBILE FULLSCREEN) */
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--vinho);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s ease-in-out;
+    z-index: 1000;
+}
+
+.menu-overlay.active {
+    left: 0;
+}
+
+.menu-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.5rem;
+}
+
+.menu-mobile a {
+    color: var(--branco);
+    font-weight: bold;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--branco);
+    cursor: pointer;
+}
+
+/* ========== FOOTER ========== */
+
+.footer {
+    background-color: var(--marrom-escuro);
+    color: var(--branco);
+    padding: 4rem 2rem;
+}
+
+.footer-contato {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-info {
+    flex: 1 1 300px;
+}
+
+.footer-info h2 {
+    color: var(--amarelo);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-info p {
+    margin-bottom: 2rem;
+    color: var(--amarelo-claro);
+}
+
+.footer-item {
+    margin-bottom: 1rem;
+}
+
+.footer-item i {
+    margin-right: 0.5rem;
+    color: var(--amarelo-intermediario);
+}
+
+.footer-item a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.footer-redes {
+    margin-top: 2rem;
+}
+
+.footer-redes h3 {
+    color: var(--amarelo);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-redes a {
+    margin-right: 1rem;
+    color: var(--amarelo);
+    font-size: 1.2rem;
+}
+
+.footer-mapa {
+    flex: 1 1 300px;
+}
+
+.footer-mapa iframe {
+    border: 0;
+    border-radius: 8px;
+    width: 100%;
+    height: 300px;
+}
+
+.footer-divider {
+    margin: 3rem 0;
+    border-color: var(--amarelo-intermediario);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: 0.95rem;
+}
+
+.footer-links h3 {
+    color: var(--amarelo);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.footer-direitos {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--amarelo-intermediario);
+}
+
+/* ========== RESPONSIVIDADE DO FOOTER ========== */
+@media (max-width: 600px) {
+    .footer-contato {
+        flex-direction: column;
+    }
+}
+
+/* ========== RESPONSIVIDADE DO HEADER ========== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Em mobile, a navbar não precisa de um container interno, o padding já resolve */
+    .navbar-container {
+        max-width: unset; /* Remove o limite de largura em mobile */
+        margin: 0; /* Remove a centralização em mobile */
+        padding: 0; /* Remove o padding extra se houver */
+    }
+}

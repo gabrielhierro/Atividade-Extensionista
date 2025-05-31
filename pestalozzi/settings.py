@@ -123,10 +123,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-STATICFILES_DIRS = [
-    # BASE_DIR / "static",  # Aponta para a pasta 'static' do projeto
-    os.path.join(BASE_DIR, 'app_core', 'static'),
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",  # Aponta para a pasta 'static' do projeto
+#     os.path.join(BASE_DIR, 'app_core', 'static'),
+# ]
 
 # Default primary key field typevv
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
