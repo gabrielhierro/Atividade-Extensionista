@@ -1,0 +1,118 @@
+/* Estilos gerais */
+body {
+    font-family: var(--font-padrao);
+    background-color: var(--bege-claro); /* Um fundo claro para o body */
+    color: var(--marrom-escuro);
+    margin: 0;
+    padding: 0;
+    /* Para centralizar o conteúdo verticalmente e horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que ocupa a altura total da viewport */
+    /* REMOVIDO: background-image: url("/static/img/404.png"); */
+    /* REMOVIDO: background-size, background-repeat, background-position */
+    overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}
+
+.content-wrapper-404 {
+    display: flex; /* Para alinhar a imagem e o texto lado a lado */
+    align-items: center; /* Centraliza verticalmente os itens */
+    gap: 3rem; /* Espaço entre a imagem e o texto */
+    background-color: var(--branco); /* Fundo branco sólido para o container */
+    border-radius: 10px;
+    padding: 3rem 4rem; /* Padding interno, maior nas laterais */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    max-width: 900px; /* Largura máxima para o container */
+    width: 90%;
+    text-align: left; /* Alinhamento do texto padrão */
+}
+
+/* Estilos para a imagem 404 que estará no HTML */
+.error-image-404 {
+    flex-shrink: 0; /* Não permite que a imagem encolha */
+    width: 280px; /* Tamanho da imagem ao lado do texto */
+    height: auto;
+    object-fit: contain;
+    /* Adiciona uma pequena margem à direita para telas muito grandes se o gap não for o suficiente */
+    margin-right: 1.5rem;
+}
+
+
+.text-container-404 {
+    flex-shrink: 1; /* Permite que o texto encolha se necessário, mas não muito */
+    flex-grow: 1; /* Permite que o texto cresça */
+    max-width: 400px; /* Limita a largura do bloco de texto */
+}
+
+.title-404 {
+    color: var(--vinho); /* Cor primária da Pestalozzi */
+    font-size: 4.5rem; /* Título maior */
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Menos espaço abaixo do título */
+    line-height: 1; /* Linha mais apertada para o título */
+}
+
+.message-404 {
+    font-size: 1.6rem; /* Mensagem um pouco maior */
+    color: var(--marrom-escuro);
+    margin-bottom: 2rem; /* Espaço abaixo da mensagem */
+}
+
+.back-home-btn-404 {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--vinho);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 8px; /* Cantos levemente mais arredondados */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-home-btn-404:hover {
+    background-color: var(--marrom-escuro);
+    transform: translateY(-2px); /* Efeito de leve levantamento */
+}
+
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .content-wrapper-404 {
+        flex-direction: column; /* Empilha imagem e texto em telas menores */
+        text-align: center;
+        padding: 2.5rem 3rem;
+        gap: 2rem;
+    }
+    .error-image-404 {
+        width: 200px; /* Reduz o tamanho da imagem em mobile */
+        margin-right: 0; /* Remove a margem direita quando empilhado */
+        margin-bottom: 1.5rem; /* Adiciona margem abaixo da imagem */
+    }
+}
+
+@media (max-width: 600px) {
+    .title-404 {
+        font-size: 3.5rem;
+    }
+    .message-404 {
+        font-size: 1.3rem;
+    }
+    .content-wrapper-404 {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .title-404 {
+        font-size: 3rem;
+    }
+    .message-404 {
+        font-size: 1.1rem;
+    }
+    .back-home-btn-404 {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}

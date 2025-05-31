@@ -1,0 +1,19 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}Página Não Encontrada - Pestalozzi Maricá{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'not_found/css/404.css' %}">
+{% endblock styles %}
+{% block content %}
+
+<div class="content-wrapper-404">
+    <img src="{% static 'img/404.png' %}" alt="Página Não Encontrada - Erro 404" class="error-image-404">
+
+    <div class="text-container-404">
+        <h1 class="title-404">Ops!</h1>
+        <p class="message-404">Parece que esta página não existe.<br>A URL que você tentou acessar não foi encontrada.</p>
+        <a href="{% url 'home' %}" class="back-home-btn-404">Voltar para a Página Inicial</a>
+    </div>
+</div>
+
+{% endblock content %}

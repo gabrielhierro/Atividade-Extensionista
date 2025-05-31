@@ -7,3 +7,6 @@ def home(request):
 
 def sobre(request):
     return render(request, 'sobre/sobre.html')
+
+def not_found(request, exception):
+    return render(request, 'templates/not_found/404.html', status=404)
