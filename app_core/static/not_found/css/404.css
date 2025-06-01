@@ -1,31 +1,39 @@
-/* Estilos gerais */
-body {
-    font-family: var(--font-padrao);
-    background-color: var(--bege-claro); /* Um fundo claro para o body */
-    color: var(--marrom-escuro);
-    margin: 0;
-    padding: 0;
-    /* Para centralizar o conteúdo verticalmente e horizontalmente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Garante que ocupa a altura total da viewport */
-    /* REMOVIDO: background-image: url("/static/img/404.png"); */
-    /* REMOVIDO: background-size, background-repeat, background-position */
-    overflow: hidden; /* Evita barras de rolagem desnecessárias */
-}
+/* 404.css */
 
+/*
+   ATENÇÃO: Remova QUALQUER estilo para 'body', 'html', 'header', 'footer'
+   ou para o container principal do seu base.html (ex: '.main-content-container')
+   que você possa ter adicionado ANTERIORMENTE aqui.
+   Este CSS deve estilizar APENAS o '.content-wrapper-404' e seus elementos internos.
+*/
+
+/* Estilos para o .content-wrapper-404 (o container principal da página 404) */
 .content-wrapper-404 {
-    display: flex; /* Para alinhar a imagem e o texto lado a lado */
-    align-items: center; /* Centraliza verticalmente os itens */
+    /* Centraliza o conteúdo (imagem e texto) horizontalmente e verticalmente */
+    /* dentro deste container, que por sua vez será centralizado pelo base.html */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente a imagem e o texto entre si */
+    justify-content: center; /* Centraliza horizontalmente a imagem e o texto entre si */
+    
     gap: 3rem; /* Espaço entre a imagem e o texto */
-    background-color: var(--branco); /* Fundo branco sólido para o container */
+    background-color: var(--branco); /* Fundo branco sólido para o container do 404 */
     border-radius: 10px;
-    padding: 3rem 4rem; /* Padding interno, maior nas laterais */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
-    max-width: 900px; /* Largura máxima para o container */
-    width: 90%;
+    padding: 3rem 4rem; /* Padding interno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra */
+    max-width: 900px; /* Largura máxima para o container do 404 */
+    width: 90%; /* Ocupa 90% da largura disponível */
     text-align: left; /* Alinhamento do texto padrão */
+    box-sizing: border-box; /* Garante que padding não adicione largura extra */
+
+    /* Garante que o wrapper não seja espremido */
+    flex-shrink: 0;
+    flex-grow: 0;
+    
+    /* Centraliza a div horizontalmente dentro do seu pai (o block content do base.html) */
+    /* Este 'margin: auto' funcionará se o pai (o container do block content)
+       for um flex item ou tiver uma largura definida. */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Estilos para a imagem 404 que estará no HTML */
@@ -37,7 +45,6 @@ body {
     /* Adiciona uma pequena margem à direita para telas muito grandes se o gap não for o suficiente */
     margin-right: 1.5rem;
 }
-
 
 .text-container-404 {
     flex-shrink: 1; /* Permite que o texto encolha se necessário, mas não muito */
@@ -75,7 +82,6 @@ body {
     background-color: var(--marrom-escuro);
     transform: translateY(-2px); /* Efeito de leve levantamento */
 }
-
 
 /* Responsividade */
 @media (max-width: 900px) {
