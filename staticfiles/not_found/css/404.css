@@ -1,69 +1,54 @@
 /* 404.css */
 
-/*
-   ATENÇÃO: Remova QUALQUER estilo para 'body', 'html', 'header', 'footer'
-   ou para o container principal do seu base.html (ex: '.main-content-container')
-   que você possa ter adicionado ANTERIORMENTE aqui.
-   Este CSS deve estilizar APENAS o '.content-wrapper-404' e seus elementos internos.
-*/
-
 /* Estilos para o .content-wrapper-404 (o container principal da página 404) */
 .content-wrapper-404 {
-    /* Centraliza o conteúdo (imagem e texto) horizontalmente e verticalmente */
-    /* dentro deste container, que por sua vez será centralizado pelo base.html */
     display: flex;
-    align-items: center; /* Centraliza verticalmente a imagem e o texto entre si */
-    justify-content: center; /* Centraliza horizontalmente a imagem e o texto entre si */
+    align-items: center;
+    justify-content: center;
     
     gap: 3rem; /* Espaço entre a imagem e o texto */
-    background-color: var(--branco); /* Fundo branco sólido para o container do 404 */
+    background-color: var(--branco);
     border-radius: 10px;
-    padding: 3rem 4rem; /* Padding interno */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra */
-    max-width: 900px; /* Largura máxima para o container do 404 */
-    width: 90%; /* Ocupa 90% da largura disponível */
-    text-align: left; /* Alinhamento do texto padrão */
-    box-sizing: border-box; /* Garante que padding não adicione largura extra */
+    padding: 3rem 4rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 900px;
+    width: 90%;
+    text-align: left;
+    box-sizing: border-box;
 
-    /* Garante que o wrapper não seja espremido */
     flex-shrink: 0;
     flex-grow: 0;
-    
-    /* Centraliza a div horizontalmente dentro do seu pai (o block content do base.html) */
-    /* Este 'margin: auto' funcionará se o pai (o container do block content)
-       for um flex item ou tiver uma largura definida. */
     margin-left: auto;
     margin-right: auto;
 }
 
 /* Estilos para a imagem 404 que estará no HTML */
 .error-image-404 {
-    flex-shrink: 0; /* Não permite que a imagem encolha */
-    width: 280px; /* Tamanho da imagem ao lado do texto */
+    flex-shrink: 0;
+    width: 280px;
     height: auto;
     object-fit: contain;
-    /* Adiciona uma pequena margem à direita para telas muito grandes se o gap não for o suficiente */
     margin-right: 1.5rem;
 }
 
 .text-container-404 {
-    flex-shrink: 1; /* Permite que o texto encolha se necessário, mas não muito */
-    flex-grow: 1; /* Permite que o texto cresça */
-    max-width: 400px; /* Limita a largura do bloco de texto */
+    flex-shrink: 1;
+    flex-grow: 1;
+    max-width: 400px;
 }
 
 .title-404 {
-    color: var(--vinho); /* Cor primária da Pestalozzi */
-    font-size: 4.5rem; /* Título maior */
+    color: var(--vinho);
+    font-size: 4.5rem;
     font-weight: bold;
-    margin-bottom: 0.5rem; /* Menos espaço abaixo do título */
-    line-height: 1; /* Linha mais apertada para o título */
+    margin-bottom: 0.5rem;
+    line-height: 1;
 }
 
 .message-404 {
-    font-size: 1.6rem; /* Mensagem um pouco maior */
+    font-size: 1.6rem;
     color: var(--marrom-escuro);
-    margin-bottom: 2rem; /* Espaço abaixo da mensagem */
+    margin-bottom: 2rem;
 }
 
 .back-home-btn-404 {
@@ -72,7 +57,7 @@
     background-color: var(--vinho);
     color: var(--branco);
     text-decoration: none;
-    border-radius: 8px; /* Cantos levemente mais arredondados */
+    border-radius: 8px;
     font-weight: bold;
     font-size: 1.1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -80,21 +65,21 @@
 
 .back-home-btn-404:hover {
     background-color: var(--marrom-escuro);
-    transform: translateY(-2px); /* Efeito de leve levantamento */
+    transform: translateY(-2px);
 }
 
 /* Responsividade */
 @media (max-width: 900px) {
     .content-wrapper-404 {
-        flex-direction: column; /* Empilha imagem e texto em telas menores */
+        flex-direction: column;
         text-align: center;
         padding: 2.5rem 3rem;
         gap: 2rem;
     }
     .error-image-404 {
-        width: 200px; /* Reduz o tamanho da imagem em mobile */
-        margin-right: 0; /* Remove a margem direita quando empilhado */
-        margin-bottom: 1.5rem; /* Adiciona margem abaixo da imagem */
+        width: 200px;
+        margin-right: 0;
+        margin-bottom: 1.5rem;
     }
 }
 

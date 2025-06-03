@@ -2,148 +2,152 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% block title %}Pestalozzi de Maricá{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'global/css/global.css' %}" />
-  <link rel="stylesheet" href="{% static 'base/css/base.css' %}" />
-  {% block styles %}
-  {% endblock styles %}
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-..."
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Pestalozzi de Maricá{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'global/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'base/css/base.css' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/site.webmanifest' %}">
+    {% block styles %}
+    {% endblock styles %}
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..."
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="{% url 'home' %}">
-          <img src="{% static 'img/logo_nome_white.png' %}" alt="Logo Pestalozzi" />
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="{% url 'sobre' %}">Sobre</a></li>
-        <li><a href="{% url 'app_projetos:projetos' %}">Projetos</a></li>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/logo_nome_white.png' %}" alt="Logo Pestalozzi" />
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'sobre' %}">Sobre</a></li>
+                <li><a href="{% url 'app_projetos:projetos' %}">Projetos</a></li>
 
-        <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
-        <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </nav>
-  </header>
+                <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
+                <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
 
   <!-- MENU MOBILE -->
-  <div class="menu-overlay" id="menuOverlay">
-    <button class="close-btn" id="closeMenu" aria-label="Fechar menu">
-      <i class="fas fa-times"></i>
-    </button>
-    <ul class="menu-mobile">
-      <li><a href="{% url 'sobre' %}">Sobre</a></li>
-      <li><a href="{% url 'app_projetos:projetos' %}">Projetos</a></li>
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-btn" id="closeMenu" aria-label="Fechar menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="menu-mobile">
+            <li><a href="{% url 'sobre' %}">Sobre</a></li>
+            <li><a href="{% url 'app_projetos:projetos' %}">Projetos</a></li>
 
-      <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
-      <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
-    </ul>
-  </div>
+            <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
+            <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
+        </ul>
+    </div>
 
   <!-- CONTEÚDO PRINCIPAL -->
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <section id="contato" class="footer-contato">
-      <div class="footer-info">
-        <h2>ENTRE EM CONTATO</h2>
-        <p>Estamos sempre prontos para ajudar e ouvir você. Entre em contato conosco através dos canais abaixo.</p>
+    <footer class="footer">
+        <section id="contato" class="footer-contato">
+            <div class="footer-info">
+                <h2>ENTRE EM CONTATO</h2>
+                <p>Estamos sempre prontos para ajudar e ouvir você. Entre em contato conosco através dos canais abaixo.</p>
 
-        <div class="footer-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:pestalozzidemarica@hotmail.com">pestalozzidemarica@hotmail.com</a>
+                <div class="footer-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:pestalozzidemarica@hotmail.com">pestalozzidemarica@hotmail.com</a>
+                </div>
+
+                <div class="footer-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+552126378836">(21) 2637-8836</a>
+                </div>
+
+                <div class="footer-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/5521989013789" target="_blank">(21) 98901-3789</a>
+                </div>
+
+                <div class="footer-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>R. Doutor Pedro da Cunha, 1148, Lote 7E - Araçatiba, Maricá - RJ, 24900-000</span>
+                </div>
+
+                <div class="footer-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Seg - Sex: 09:00h às 17:00h | Sáb e Dom: Fechado</span>
+                </div>
+
+                <div class="footer-redes">
+                    <h3>Redes Sociais</h3>
+                    <a href="https://www.facebook.com/pestalozzimarica"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/pestalozzimarica/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-mapa">
+                <iframe class="footer-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.715263497033!2d-42.82922072468911!3d-22.92387087924299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99ed7f33cd68ef%3A0xf7937052c652bc62!2sAssocia%C3%A7%C3%A3o%20Pestalozzi%20de%20Maric%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1748365892029!5m2!1spt-BR!2sbr" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <hr class="footer-divider">
+
+        <section class="footer-links">
+            <div>
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="{% url 'sobre' %}">Sobre</a></li>
+                    <li><a href="{% url 'app_projetos:projetos' %}">Projetos</a></li>
+                    <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
+                    <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="footer-direitos">
+            &copy; 2025 Pestalozzi de Maricá. Todos os direitos reservados.
         </div>
+    </footer>
 
-        <div class="footer-item">
-          <i class="fas fa-phone"></i>
-          <a href="tel:+552126378836">(21) 2637-8836</a>
-        </div>
+    <!-- JS -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const closeMenu = document.getElementById("closeMenu");
+        const menuOverlay = document.getElementById("menuOverlay");
 
-        <div class="footer-item">
-          <i class="fab fa-whatsapp"></i>
-          <a href="https://wa.me/5521989013789" target="_blank">(21) 98901-3789</a>
-        </div>
+        hamburger.addEventListener("click", () => {
+            menuOverlay.classList.add("active");
+        });
 
-        <div class="footer-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>R. Doutor Pedro da Cunha, 1148, Lote 7E - Araçatiba, Maricá - RJ, 24900-000</span>
-        </div>
+        closeMenu.addEventListener("click", () => {
+            menuOverlay.classList.remove("active");
+        });
 
-        <div class="footer-item">
-          <i class="fas fa-clock"></i>
-          <span>Seg - Sex: 09:00h às 17:00h | Sáb e Dom: Fechado</span>
-        </div>
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                menuOverlay.classList.remove("active");
+            }
+        });
+    </script>
 
-        <div class="footer-redes">
-          <h3>Redes Sociais</h3>
-          <a href="https://www.facebook.com/pestalozzimarica"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/pestalozzimarica/"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-mapa">
-        <iframe class="footer-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.715263497033!2d-42.82922072468911!3d-22.92387087924299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99ed7f33cd68ef%3A0xf7937052c652bc62!2sAssocia%C3%A7%C3%A3o%20Pestalozzi%20de%20Maric%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1748365892029!5m2!1spt-BR!2sbr" loading="lazy"></iframe>
-      </div>
-    </section>
-
-    <hr class="footer-divider">
-
-    <section class="footer-links">
-      <div>
-        <h3>Links Úteis</h3>
-        <ul>
-          <li><a href="{% url 'sobre' %}">Sobre</a></li>
-          <li><a href="{% url 'app_projetos:projetos' %}">Projetos</a></li>
-          <li><a href="{% url 'app_portal:comunicados' %}">Portal de Comunicados</a></li>
-          <li><a href="{% url 'app_voluntario:voluntario_view' %}">Voluntário</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="footer-direitos">
-      &copy; 2025 Pestalozzi de Maricá. Todos os direitos reservados.
-    </div>
-  </footer>
-
-  <!-- JS -->
-  <script>
-    const hamburger = document.getElementById("hamburger");
-    const closeMenu = document.getElementById("closeMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
-
-    hamburger.addEventListener("click", () => {
-      menuOverlay.classList.add("active");
-    });
-
-    closeMenu.addEventListener("click", () => {
-      menuOverlay.classList.remove("active");
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        menuOverlay.classList.remove("active");
-      }
-    });
-  </script>
-
-  {% block scripts %}{% endblock %}
+    {% block scripts %}{% endblock %}
 </body>
 </html>
