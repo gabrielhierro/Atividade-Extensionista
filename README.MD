@@ -13,8 +13,7 @@
 
 ## 🌐 Acesse o Site
 
-> [**Clique aqui para ver o projeto online**](https://link-sera-adicionado-em-breve.com)  
-> *(O endereço será adicionado assim que o projeto estiver publicado.)*
+> [**Clique aqui para ver o projeto online**](https://gabrielhierro.pythonanywhere.com)
 
 ---
 
@@ -29,29 +28,59 @@ A proposta vai além da aparência: buscamos tornar o site mais funcional, objet
 ## 🔍 Funcionalidades
 
 - Página institucional com informações da ONG
-- Aba de projetos estáticos (sem adição ou exclusão dinâmica)
+- Aba de projetos com gerenciamento dinâmico pelo administrador (adicionar, editar e remover)
 - Formulário de cadastro para novos voluntários
-- Portal de comunicados com controle total pelo administrador (postar, editar e remover)
-- Layout organizado com conteúdos distribuídos em páginas específicas para facilitar a navegação
+- Portal de comunicados com controle total pelo administrador
+- Layout responsivo e organizado, com conteúdos distribuídos em páginas específicas
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
+- ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) **Python 3**
+- ![Django](https://img.shields.io/badge/-Django-092E20?style=flat&logo=django&logoColor=white) **Django**
+- ![SQLite](https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white) **SQLite**
 - ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white) **HTML5**
 - ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white) **CSS3**
 - ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) **JavaScript**
-- ![SQLite](https://img.shields.io/badge/-SQLite-003B57?style=flat&logo=sqlite&logoColor=white) **SQLite**
+- ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white) **Bootstrap**
+- ![Font Awesome](https://img.shields.io/badge/-Font%20Awesome-528DD7?style=flat&logo=fontawesome&logoColor=white) **Font Awesome**
 
 ---
 
 ## 🧪 Como rodar o projeto localmente
 
+Siga os passos abaixo para rodar o projeto Django em sua máquina local:
+
 ```bash
-# Clone o repositório
+# 1. Clone este repositório
 git clone https://github.com/gabrielhierro/Atividade-Extensionista.git
 cd Atividade-Extensionista
 
-# Instale as dependências
+# 2. Crie um ambiente virtual
+python -m venv venv
 
+# 3. Ative o ambiente virtual
+# No Windows:
+venv\Scripts\activate
+
+# No macOS/Linux:
+source venv/bin/activate
+
+# 4. Instale as dependências
 pip install -r requirements.txt
+
+# 5. Altere o modo de depuração
+# No arquivo pestalozzi/settings.py, altere:
+# DEBUG = False
+# para:
+# DEBUG = True
+
+# 6. Aplique as migrações do banco de dados
+python manage.py migrate
+
+# 7. (Opcional) Crie um superusuário para acessar o admin
+python manage.py createsuperuser
+
+# 8. Rode o servidor de desenvolvimento
+python manage.py runserver

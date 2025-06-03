@@ -64,25 +64,20 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Script para as mensagens toast (mantenha o que você já tem)
             const toasts = document.querySelectorAll('.toast-message');
 
             setTimeout(() => {
                 toasts.forEach(toast => {
                     toast.classList.add('fade-out');
                 });
-            }, 2500); // Começa a sumir após 2.5 segundos
+            }, 2500);
 
             setTimeout(() => {
                 toasts.forEach(toast => toast.remove());
-            }, 4000); // Remove após 4 segundos
+            }, 4000);
 
-            // NOVO SCRIPT PARA A MÁSCARA DE TELEFONE
             var SPMaskBehavior = function (val) {
-                // Remove todos os caracteres não numéricos
                 val = val.replace(/\D/g, '');
-                // Se tiver 11 dígitos (celular com 9º dígito), usa a máscara de 11 dígitos
-                // Caso contrário (10 dígitos para telefone fixo ou celular sem 9º dígito), usa a máscara de 10 dígitos + o 9º opcional
                 return val.length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
             },
             spOptions = {
@@ -90,13 +85,8 @@
                     field.mask(SPMaskBehavior.apply({}, arguments), options);
                 }
             };
-
-            // Aplica a máscara dinâmica ao campo de telefone
-            // O ID do campo gerado pelo Django será 'id_telefone'
             $('#id_telefone').mask(SPMaskBehavior, spOptions);
 
-            // Garante que a máscara seja aplicada imediatamente se já houver um valor
-            // (ex: após um erro de validação do formulário, o valor é preenchido novamente)
             $('#id_telefone').trigger('input');
         });
     </script>

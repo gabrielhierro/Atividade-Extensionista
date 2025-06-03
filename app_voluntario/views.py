@@ -8,7 +8,7 @@ def voluntario_view(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Obrigado! Sua inscrição foi salva com sucesso.')
-            return redirect('app_voluntario:voluntario_view')  # redireciona para a mesma página para "limpar" o form
+            return redirect('app_voluntario:voluntario_view')
     else:
         form = VoluntarioForm()
 

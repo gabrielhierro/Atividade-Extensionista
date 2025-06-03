@@ -70,14 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
         botao.addEventListener('click', function() {
             const descricaoResumida = this.parentNode;
             const descricaoCompleta = descricaoResumida.nextElementSibling;
-            const card = this.closest('.projeto-card'); // Pega o card pai
+            const card = this.closest('.projeto-card');
 
             descricaoResumida.classList.add('escondida');
             descricaoCompleta.classList.remove('escondida');
 
-            // Ajustar o height do card dinamicamente após expandir
             if (card) {
-                // Remove min-height para permitir que o card se ajuste
                 card.style.minHeight = 'unset';
                 card.style.height = 'auto';
             }
@@ -88,16 +86,14 @@ document.addEventListener('DOMContentLoaded', function() {
         botao.addEventListener('click', function() {
             const descricaoCompleta = this.parentNode;
             const descricaoResumida = descricaoCompleta.previousElementSibling;
-            const card = this.closest('.projeto-card'); // Pega o card pai
+            const card = this.closest('.projeto-card');
 
             descricaoCompleta.classList.add('escondida');
             descricaoResumida.classList.remove('escondida');
 
-            // Restaura o min-height original do card
             if (card) {
-                // Você pode definir um min-height fixo aqui ou recalcular com base no conteúdo resumido
-                card.style.minHeight = '350px'; // Exemplo: restaurar para um min-height adequado
-                card.style.height = 'auto'; // Ajusta a altura novamente
+                card.style.minHeight = '350px';
+                card.style.height = 'auto';
             }
         });
     });

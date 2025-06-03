@@ -5,8 +5,7 @@ app_name = 'app_portal'
 
 
 urlpatterns = [
-    # A URL que o template quer acessar:
-    path('comunicados/', views.comunicado, name='comunicados'),  # plural 'comunicados/' para ficar coerente
+    path('comunicados/', views.comunicado, name='comunicados'),
 
     # Outras URLs do app portal:
     path('', views.lista_comunicados, name='lista_comunicados'),

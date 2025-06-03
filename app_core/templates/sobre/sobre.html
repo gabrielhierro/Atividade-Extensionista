@@ -8,9 +8,8 @@
 {% block content %}
 
 <section class="hero">
-    <div class="hero-overlay"></div> {# Adicionada div para o overlay #}
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-        {# <img src="{% static 'img/logo_nome.png' %}" alt="Pestalozzi Maricá" title="Logo Pestalozzi Maricá" class="logo"> REMOVIDO #}
         <div>
             <h2>Seja a Mudança na Vida de Alguém.</h2>
             <p>Descubra como sua paixão e tempo podem construir um amanhã mais inclusivo conosco.</p>
@@ -145,30 +144,30 @@
 
 <section id="transparencia" class="content-section fade-in">
     <div class="container">
-        <h2 class="section-title"><i class="fa-solid fa-file-invoice-dollar"></i> Transparência</h2> {# Changed from data-lucide="file-text" to something more financial/transparency-oriented #}
+        <h2 class="section-title"><i class="fa-solid fa-file-invoice-dollar"></i> Transparência</h2>
         <p class="section-description">Comprometemo-nos com a transparência total de nossas ações e recursos. Acesse nossos documentos financeiros e administrativos para acompanhar de perto o impacto da sua contribuição:</p>
         
         <div class="transparency-grid">
             <a href="https://drive.google.com/drive/folders/1vLkUNGbXwpjo-8bhy2LIddRxMlsT1b69" target="_blank" class="transparency-item">
-                <i class="fa-solid fa-file-contract"></i> <span>ATA Diretoria</span> {# Changed from data-lucide="file-check" #}
+                <i class="fa-solid fa-file-contract"></i> <span>ATA Diretoria</span>
             </a>
             <a href="https://drive.google.com/drive/folders/1YfVRwkYh2gwD-7CIOY2eqwECnhK-OVjb" target="_blank" class="transparency-item">
-                <i class="fa-solid fa-balance-scale"></i> <span>Balanço Patrimonial</span> {# Changed from data-lucide="scale" #}
+                <i class="fa-solid fa-balance-scale"></i> <span>Balanço Patrimonial</span>
             </a>
             <a href="https://drive.google.com/drive/folders/1dfcVfVjZEAuTY61legyoVBe15hB5-xqC" target="_blank" class="transparency-item">
-                <i class="fa-solid fa-folder-open"></i> <span>Emenda Dep. Otávio Leite / Repasse Pref. Maricá</span> {# Changed from data-lucide="folder-check" #}
+                <i class="fa-solid fa-folder-open"></i> <span>Emenda Dep. Otávio Leite / Repasse Pref. Maricá</span>
             </a>
             <a href="https://drive.google.com/drive/folders/1_MI4fNazQsuLG9DPZlw969MuduxurRL1" target="_blank" class="transparency-item">
-                <i class="fa-solid fa-list-check"></i> <span>Planos de Ação</span> {# Changed from data-lucide="clipboard-list" #}
+                <i class="fa-solid fa-list-check"></i> <span>Planos de Ação</span>
             </a>
             <a href="https://drive.google.com/drive/folders/1SMNOM6droh5sP870OpOmj60OdTYW7i2b" target="_blank" class="transparency-item">
-                <i class="fa-solid fa-receipt"></i> <span>Termo de Fomento 702/2018 - LOTERJ</span> {# Changed from data-lucide="receipt" #}
+                <i class="fa-solid fa-receipt"></i> <span>Termo de Fomento 702/2018 - LOTERJ</span>
             </a>
             <a href="https://drive.google.com/drive/folders/1U1w46lNyDqA_Qt-OB24ECogpu2_Gaa4j" target="_blank" class="transparency-item">
-                <i class="fa-solid fa-wallet"></i> <span>Recibos</span> {# Changed from data-lucide="wallet" #}
+                <i class="fa-solid fa-wallet"></i> <span>Recibos</span>
             </a>
             <a href="https://drive.google.com/drive/folders/1m_a75ogSv0X5_Qck9swWqTkjbmFw73zh" target="_blank" class="transparency-item">
-                <i class="fa-solid fa-chart-bar"></i> <span>Relatório</span> {# Changed from data-lucide="file-bar-chart-2" #}
+                <i class="fa-solid fa-chart-bar"></i> <span>Relatório</span>
             </a>
         </div>
     </div>
@@ -271,7 +270,7 @@
                 <div class="accordion-item">
                     <button class="accordion-button">Como posso fazer uma doação para a Pestalozzi de Maricá?</button>
                     <div class="accordion-content">
-                        <p>Você pode encontrar informações detalhadas sobre como doar (PIX, transferência bancária, Vakinha online) na nossa página inicial ou na seção "Sua Doação" do nosso site.</p>
+                        <p>Você pode encontrar informações detalhadas sobre como doar (PIX, transferência bancária, Vakinha online) na nossa <a href="{% url 'home' %}#donation-section">página inicial (clique) 👈</a>.</p>
                     </div>
                 </div>
                 <div class="accordion-item">
@@ -296,7 +295,7 @@
         let currentIndex = 0;
 
         // Cria os indicadores (dots)
-        dotsContainer.innerHTML = ''; // Limpa antes de criar para evitar duplicidade
+        dotsContainer.innerHTML = '';
         slides.forEach((_, index) => {
             const dot = document.createElement('span');
             dot.classList.add('dot');
@@ -355,7 +354,7 @@
             updateCarousel();
         });
 
-        updateCarousel(); // Inicializa o carrossel
+        updateCarousel();
     });
 
 
@@ -366,14 +365,11 @@
 
         tabButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Remove 'active' de todos os botões e painéis
                 tabButtons.forEach(btn => btn.classList.remove('active'));
                 tabPanes.forEach(pane => pane.classList.remove('active'));
 
-                // Adiciona 'active' ao botão clicado
                 button.classList.add('active');
 
-                // Adiciona 'active' ao painel correspondente
                 const targetTab = button.dataset.tab;
                 document.getElementById(targetTab).classList.add('active');
             });
@@ -411,76 +407,59 @@
         }
 
         // Event listener para os botões do acordeão (dentro de qualquer categoria)
-        // Usamos event delegation no container principal do FAQ para botões de acordeão
         const faqContentContainer = document.querySelector('.faq-content');
         if (faqContentContainer) {
             faqContentContainer.addEventListener('click', function (event) {
                 const button = event.target.closest('.accordion-button');
-                if (button) { // Verifica se o clique foi em um botão de acordeão
+                if (button) {
                     const content = button.nextElementSibling;
                     const currentPane = button.closest('.faq-category-pane');
 
-                    // Se este acordeão já está ativo, feche-o
                     if (button.classList.contains('active')) {
                         closeAccordion(button);
                     } else {
-                        // Fechar todos os outros acordeões nesta categoria antes de abrir o atual
-                        if (currentPane) { // Garante que currentPane existe
+                        if (currentPane) {
                             closeAllAccordionsInPane(currentPane);
                         }
-                        // Abrir o acordeão clicado
                         openAccordion(button);
                     }
                 }
             });
         }
 
-        // Event listener para os botões de categoria do FAQ
         faqTabButtons.forEach(button => {
             button.addEventListener('click', function () {
                 const targetCategory = this.dataset.category;
 
-                // 1. Remove a classe 'active' de TODOS os botões de categoria
                 faqTabButtons.forEach(btn => btn.classList.remove('active'));
 
-                // 2. Oculta TODOS os painéis de categoria (e fecha seus acordeões)
                 faqCategoryPanes.forEach(pane => {
-                    pane.classList.remove('active'); // Remove a classe 'active' que controla o display
-                    // É crucial fechar os acordeões do painel ANTES de escondê-lo para que
-                    // o max-height seja nulo quando ele for reativado.
+                    pane.classList.remove('active');
                     closeAllAccordionsInPane(pane);
                 });
 
-                // 3. Adiciona a classe 'active' ao botão clicado
                 this.classList.add('active');
 
-                // 4. Mostra o painel de categoria correspondente
                 const activeCategoryPane = document.querySelector(`.faq-category-pane[data-category-pane="${targetCategory}"]`);
                 if (activeCategoryPane) {
-                    activeCategoryPane.classList.add('active'); // Adiciona a classe 'active' para mostrar
-                    // Os acordeões dentro deste painel já foram fechados pela etapa 2.
+                    activeCategoryPane.classList.add('active');
                 }
             });
         });
 
-        // --- Inicialização ao carregar a página ---
-
-        // Remove 'active' de todos os botões e painéis para um "reset" limpo
         faqTabButtons.forEach(btn => btn.classList.remove('active'));
         faqCategoryPanes.forEach(pane => {
             pane.classList.remove('active');
-            closeAllAccordionsInPane(pane); // Garante que todos os acordeões estejam fechados em todos os painéis
+            closeAllAccordionsInPane(pane);
         });
 
-        // Ativa o primeiro botão de aba
         if (faqTabButtons.length > 0) {
             faqTabButtons[0].classList.add('active');
         }
 
-        // Ativa o primeiro painel de categoria e fecha seus acordeões
         if (faqCategoryPanes.length > 0) {
             faqCategoryPanes[0].classList.add('active');
-            closeAllAccordionsInPane(faqCategoryPanes[0]); // Fecha os acordeões da primeira aba ativa
+            closeAllAccordionsInPane(faqCategoryPanes[0]);
         }
     });
 </script>

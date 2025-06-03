@@ -1,7 +1,4 @@
-/*
- * sobre.css: Estilos específicos para a página "Sobre" (sobre.html)
- * Complementa global.css.
- */
+/* Estilos da página sobre */
 
 body {
     font-family: var(--font-padrao);
@@ -11,19 +8,19 @@ body {
 
 /* Seção Hero - AGORA COM IMAGEM DE FUNDO E OVERLAY */
 .hero {
-    background-image: url("/static/img/close-de-diversas-pessoas-dando-as-maos.jpg"); /* IMAGEM DE FUNDO */
+    background-image: url("/static/img/close-de-diversas-pessoas-dando-as-maos.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Mantém a imagem fixa ao rolar */
-    padding: 6rem 1rem; /* Mais padding para um visual mais aberto */
+    background-attachment: fixed;
+    padding: 6rem 1rem;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 70vh; /* Altura mínima para o hero */
-    position: relative; /* Necessário para posicionamento do overlay */
-    overflow: hidden; /* Garante que o overlay não vaze */
+    min-height: 70vh;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Overlay para escurecer a imagem de fundo */
@@ -34,9 +31,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Sombra escura, ajuste a opacidade (0.0 a 1.0) conforme necessário */
-    z-index: 1; /* Garante que o overlay esteja acima da imagem de fundo */
-    pointer-events: none; /* Permite que o mouse interaja com o conteúdo abaixo do overlay */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-content {
@@ -45,62 +42,59 @@ body {
     align-items: center;
     max-width: 900px;
     width: 100%;
-    position: relative; /* Garante que o conteúdo esteja acima do overlay */
-    z-index: 2; /* Garante que o conteúdo esteja acima do overlay */
-    color: var(--branco); /* Define cor padrão para o texto interno, pode ser sobrescrita */
+    position: relative;
+    z-index: 2;
+    color: var(--branco);
 }
 
-/* REMOVIDO: .hero-content .logo */
-
 .hero-content h2 {
-    font-size: 3.5rem; /* Título maior */
-    color: var(--amarelo); /* Cor de destaque para o título sobre o fundo escuro */
+    font-size: 3.5rem;
+    color: var(--amarelo);
     margin-bottom: 1.2rem;
     line-height: 1.1;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para o texto para melhor legibilidade */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content p {
-    font-size: 1.6rem; /* Subtítulo maior */
-    color: var(--branco); /* Texto branco sobre o fundo escuro */
+    font-size: 1.6rem;
+    color: var(--branco);
     margin-bottom: 2.5rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para o texto para melhor legibilidade */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* Botão CTA no Hero - Usando classes globais */
-/* Mantido o padding e font-size aqui, mas considere que `home.css` já pode definir um `.btn-primary` grande */
 .hero-content .btn.btn-primary {
-    background-color: var(--amarelo); /* Usa a cor amarela do tema */
-    color: var(--marrom-escuro); /* Texto escuro no botão amarelo */
-    padding: 18px 35px; /* Padding ajustado para ser grande */
-    font-size: 1.3rem; /* Tamanho da fonte ajustado */
-    border-radius: 8px; /* Borda arredondada */
+    background-color: var(--amarelo);
+    color: var(--marrom-escuro);
+    padding: 18px 35px;
+    font-size: 1.3rem;
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content .btn.btn-primary:hover {
-    background-color: var(--amarelo-intermediario); /* Muda de cor ao hover */
-    transform: translateY(-3px) !important; /* Efeito de elevação */
+    background-color: var(--amarelo-intermediario);
+    transform: translateY(-3px) !important;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 
 .container {
-    max-width: 1000px; /* Aumentado max-width para containers */
+    max-width: 1000px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
 /* Título de seção geral */
 .section-title {
-    font-size: 2.8rem; /* Aumentado */
+    font-size: 2.8rem;
     margin-bottom: 2.5rem;
     color: var(--vinho);
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza o título */
+    justify-content: center;
     gap: 0.8rem;
     text-align: center;
     position: relative;
@@ -356,7 +350,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* REMOVIDO: margin-bottom: 6rem; */ /* <--- REMOVA ESTA LINHA */
     position: relative;
     overflow: hidden;
 }
@@ -440,11 +433,8 @@ body {
 /* ========== Seção Transparência (Ajustes finos no estilo e Título Centralizado) ========== */
 #transparencia {
     background-color: var(--amarelo-claro);
-    /* ADICIONADO: padding-top e padding-bottom para espaçamento interno */
-    padding-top: 6rem; /* Ajuste este valor conforme o espaçamento desejado no topo */
-    padding-bottom: 6rem; /* Ajuste este valor conforme o espaçamento desejado na parte inferior */
-    /* REMOVIDO: text-align: center; daqui para dar mais controle ao grid */
-    /* Garante que não há margin-top empurrando a seção para baixo */
+    padding-top: 6rem;
+    padding-bottom: 6rem;
     margin-top: 0;
 }
 
@@ -458,10 +448,10 @@ body {
     gap: 0.8rem;
 }
 
-#transparencia .section-description { /* Adicionado para centralizar a descrição */
+#transparencia .section-description {
     text-align: center;
-    max-width: 800px; /* Limita a largura para melhor legibilidade */
-    margin: 0 auto 3rem auto; /* Centraliza e adiciona margem inferior */
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
     font-size: 1.15rem;
     line-height: 1.7;
     color: var(--marrom-escuro);
@@ -469,12 +459,9 @@ body {
 
 .transparency-grid {
     display: grid;
-    /* Ajustado para layout responsivo com múltiplas colunas */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
-    /* Removido max-width aqui para permitir que ele preencha o container pai */
-    width: 100%; /* Garante que ocupe 100% do container pai */
-    /* Removido margin: 0 auto; pois a grade vai preencher o container */
+    width: 100%;
 }
 
 .transparency-item {
@@ -487,10 +474,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Mantém o texto dentro do item centralizado */
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* AJUSTE AQUI: Aumente o min-height para acomodar o conteúdo mais longo e padronizar */
-    min-height: 160px; /* <--- AUMENTE ESTE VALOR */
+    min-height: 160px;
     justify-content: center;
     border: 1px solid var(--branco);
 }
@@ -657,14 +643,14 @@ body {
 /* Responsividade */
 @media (max-width: 768px) {
     .hero {
-        min-height: 60vh; /* Ajustado para telas menores */
+        min-height: 60vh;
     }
     .hero-content h2 {
-        font-size: 2.8rem; /* Ajustado */
+        font-size: 2.8rem;
     }
 
     .hero-content p {
-        font-size: 1.3rem; /* Ajustado */
+        font-size: 1.3rem;
     }
 
     .section-title {
@@ -735,7 +721,7 @@ body {
     }
 
     .transparency-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajustado para telas menores */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .faq-tabs {
@@ -772,19 +758,19 @@ body {
 
 @media (max-width: 480px) {
     .hero {
-        min-height: 50vh; /* Ajustado para celulares menores */
-        padding: 4rem 1rem; /* Reduz padding em celulares */
+        min-height: 50vh;
+        padding: 4rem 1rem;
     }
     .hero-content h2 {
-        font-size: 2.2rem; /* Ajustado */
+        font-size: 2.2rem;
     }
 
     .hero-content p {
-        font-size: 1.2rem; /* Ajustado */
+        font-size: 1.2rem;
     }
 
     .hero-content .btn.btn-primary {
-        padding: 1rem 2rem; /* Mantém um bom tamanho de botão */
+        padding: 1rem 2rem;
         font-size: 1.2rem;
     }
 

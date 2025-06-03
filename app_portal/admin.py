@@ -4,8 +4,6 @@ from .models import Comunicado
 
 # Register your models here.
 
-
-
 @admin.register(Comunicado)
 class ComunicadoAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'data_publicacao')

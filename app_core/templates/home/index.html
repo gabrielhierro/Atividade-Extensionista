@@ -6,9 +6,9 @@
 {% endblock styles %}
 {% block content %}
     <section class="main-hero">
-        <div class="hero-overlay"></div> {# Adicionada div para o overlay #}
+        <div class="hero-overlay"></div>
         <div class="main-hero-content">
-            <img src={% static "img/donate_branco.png" %} title="Logo Pestalozzi" alt="Pestalozzi Maricá" class="logo"> {# Logo mantido aqui #}
+            <img src={% static "img/donate_branco.png" %} title="Logo Pestalozzi" alt="Pestalozzi Maricá" class="logo">
             <h1 class="hero-title">Transforme vidas com a Pestalozzi Maricá</h1>
             <p class="hero-subtitle">Com sua doação, podemos ampliar o cuidado e a inclusão de pessoas com deficiência.</p>
             <a href="#donation-section" class="btn btn-primary btn-hero-cta">Transforme um Futuro, Doe Agora!</a>
@@ -16,7 +16,7 @@
     </section>
 
     <section id="about-summary" class="container fade-in">
-        <h2 class="section-title"><i class="fa-solid fa-circle-info"></i>Quem Somos</h2> {# Changed from data-lucide="info" #}
+        <h2 class="section-title"><i class="fa-solid fa-circle-info"></i>Quem Somos</h2>
         <p class="section-description">
             A Pestalozzi Maricá é uma organização sem fins lucrativos dedicada a promover o desenvolvimento e a inclusão de crianças, adolescentes e jovens com deficiência e seus familiares. Nosso trabalho foca em Planos Individuais de Atendimento, abrangendo prevenção, habilitação e reabilitação para assegurar o pleno desfrute de seus direitos, interação social, autonomia e qualidade de vida.
         </p>
@@ -25,7 +25,7 @@
 
     <section id="our-mission" class="content-section fade-in">
         <div class="container mission-container">
-            <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i>Nossa Missão</h2> {# Changed from data-lucide="info" to something more mission-oriented #}
+            <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i>Nossa Missão</h2>
             <div class="mission-grid">
                 <div class="mission-card">
                     <h3>Objetivo Geral</h3>
@@ -47,7 +47,7 @@
         <div class="section-overlay"></div>
         <div class="container services-container">
             <div class="services-content-card">
-                <h2 class="section-title"><i class="fa-solid fa-user-graduate"></i> Nossos Atendimentos</h2> {# Changed from data-lucide="graduation-cap" #}
+                <h2 class="section-title"><i class="fa-solid fa-user-graduate"></i> Nossos Atendimentos</h2>
                 <h3>Quem Atendemos</h3>
                 <p>
                     Recém-nascidos de risco, crianças com atraso no desenvolvimento neuropsicomotor, e crianças, adolescentes e jovens (0 a 22 anos) com deficiência física, intelectual, Transtorno do Espectro Autista (TEA), além daqueles com distúrbios de aprendizagem. Nossas famílias também recebem atenção e apoio contínuos.
@@ -58,9 +58,9 @@
                     Oferecemos sessões individuais e oficinas diversificadas para um atendimento integral:
                 </p>
                 <ul class="services-list">
-                    <li><i class="fa-solid fa-lightbulb"></i> Oficina de Corpo: Foco no desenvolvimento motor e consciência corporal.</li> {# Changed from data-lucide="sparkles" to something more relevant #}
-                    <li><i class="fa-solid fa-music"></i> Oficina de Musicalização: Estímulo através da música e ritmo.</li> {# Changed from data-lucide="music" #}
-                    <li><i class="fa-solid fa-palette"></i> Oficina de Artes: Expressão criativa e desenvolvimento de habilidades artísticas.</li> {# Changed from data-lucide="palette" #}
+                    <li><i class="fa-solid fa-lightbulb"></i> Oficina de Corpo: Foco no desenvolvimento motor e consciência corporal.</li>
+                    <li><i class="fa-solid fa-music"></i> Oficina de Musicalização: Estímulo através da música e ritmo.</li>
+                    <li><i class="fa-solid fa-palette"></i> Oficina de Artes: Expressão criativa e desenvolvimento de habilidades artísticas.</li>
                 </ul>
                 <p>
                     Disponibilizamos também **Serviço de Psicologia** para fomentar a autonomia dos autodefensores e dar suporte às famílias, promovendo o autocuidado e fortalecendo vínculos.
@@ -74,8 +74,8 @@
     </section>
 
     {% if ultimo_comunicado %}
-    <section id="ultimo-comunicado" class="content-section fade-in"> {# Adicionei content-section para padding padrão #}
-        <div class="container"> {# Adicionei um container interno para o conteúdo #}
+    <section id="ultimo-comunicado" class="content-section fade-in">
+        <div class="container">
             <h2 class="section-title"><i class="fa-solid fa-bullhorn"></i> Último Comunicado</h2>
             <div class="card mb-3 comunicado">
                 <div class="card-body d-flex align-items-start">
@@ -96,7 +96,7 @@
     <section id="donation-section" class="content-section fade-in">
         <div class="donation-content-wrapper">
             <div class="donation-cta-text">
-                <h2 class="section-title text-light"><i class="fa-solid fa-heart"></i> Sua doação faz a diferença!</h2> {# Changed from data-lucide="heart" #}
+                <h2 class="section-title text-light"><i class="fa-solid fa-heart"></i> Sua doação faz a diferença!</h2>
                 <p>
                     Com sua ajuda, podemos continuar oferecendo atendimento especializado e promovendo a inclusão de crianças e adolescentes com deficiência. Cada contribuição é um passo em direção a um futuro mais inclusivo e digno.
                 </p>
@@ -128,22 +128,19 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Seleciona todos os links de âncora que apontam para IDs na mesma página
-        // Você pode ser mais específico: document.querySelector('.btn-hero-cta')
         const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
 
         smoothScrollLinks.forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault(); // Impede o comportamento padrão de salto
+                e.preventDefault();
                 
-                const targetId = this.getAttribute('href'); // Pega o ID (ex: "#donation-section")
-                const targetElement = document.querySelector(targetId); // Seleciona o elemento alvo
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    // Usa scrollIntoView para rolagem suave
-                    // O comportamento 'smooth' aqui é o mesmo que 'scroll-behavior: smooth' no CSS
                     targetElement.scrollIntoView({
                         behavior: 'smooth',
-                        block: 'start' // Alinha o topo do elemento com o topo da viewport
+                        block: 'start'
                     });
                 }
             });
