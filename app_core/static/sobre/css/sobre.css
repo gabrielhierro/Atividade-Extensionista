@@ -72,6 +72,10 @@ body {
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .hero-content .btn.btn-primary:hover {
@@ -143,7 +147,7 @@ body {
 }
 
 /* ========================================= */
-/* Nova Seção: Nossa História (Carrossel)    */
+/* Nova Seção: Nossa História (Carrossel)    */
 /* ========================================= */
 #nossa-historia {
     background-color: var(--vinho);
@@ -253,7 +257,7 @@ body {
 }
 
 /* ========================================= */
-/* Seção: Missão, Visão e Valores (Tabs)     */
+/* Seção: Missão, Visão e Valores (Tabs)     */
 /* ========================================= */
 #mvv {
     background-color: var(--bege-claro);
@@ -338,7 +342,7 @@ body {
 }
 
 /* ========================================= */
-/* Seção: Nossos Atendimentos e Programas    */
+/* Seção: Nossos Atendimentos e Programas    */
 /* ========================================= */
 #atendimentos-programas {
     background-image: url("/static/img/blocos-de-letras.jpg");
@@ -430,7 +434,7 @@ body {
     color: var(--vinho);
 }
 
-/* ========== Seção Transparência (Ajustes finos no estilo e Título Centralizado) ========== */
+/* ========== Seção Transparência ========== */
 #transparencia {
     background-color: var(--amarelo-claro);
     padding-top: 6rem;
@@ -505,7 +509,7 @@ body {
 }
 
 /* ========================================= */
-/* Seção: Perguntas Frequentes (FAQ)         */
+/* Seção: Perguntas Frequentes (FAQ)         */
 /* ========================================= */
 .faq-section {
     padding: 6rem 1rem;
@@ -657,6 +661,10 @@ body {
         font-size: 2.2rem;
     }
 
+    #transparencia .section-title {
+        font-size: 2.2rem;
+    }
+
     #introducao-sobre {
         margin-top: 2rem;
         margin-bottom: 2rem;
@@ -770,13 +778,17 @@ body {
     }
 
     .hero-content .btn.btn-primary {
-        padding: 1rem 2rem;
-        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
     }
 
     .section-title {
         font-size: 1.8rem;
         margin-bottom: 2rem;
+    }
+
+    #transparencia .section-title {
+        font-size: 1.8rem; 
     }
 
     .section-title i {
@@ -854,7 +866,7 @@ body {
     }
 
     .transparency-grid {
-        grid-template-columns: 1fr; /* Força uma coluna em telas muito pequenas */
+        grid-template-columns: 1fr;
     }
 
     .faq-section {
@@ -868,5 +880,40 @@ body {
 
     .accordion-button {
         padding: 12px 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-content .btn.btn-primary {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.6rem;
+        gap: 0.5rem;
+    }
+    .section-title i {
+        font-size: 1.6rem;
+    }
+    #transparencia .section-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 325px) {
+    .hero-content .btn.btn-primary {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.9rem;
+        white-space: normal;
+        word-break: break-word;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .section-title i {
+        font-size: 1.5rem;
+    }
+    #transparencia .section-title {
+        font-size: 1.5rem;
     }
 }
