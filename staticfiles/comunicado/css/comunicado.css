@@ -26,7 +26,7 @@ body {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 1.5rem;
-    padding-bottom: 12px; 
+    padding-bottom: 12px;
 }
 
 /* Estilos para cada comunicado */
@@ -54,6 +54,7 @@ body {
     align-items: flex-start;
     gap: 1.5rem;
     padding: 1.25rem;
+    flex-wrap: wrap;
 }
 
 /* Estilos para a imagem do comunicado */
@@ -65,11 +66,13 @@ body {
     object-fit: cover;
     box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
     border: 1px solid var(--amarelo-intermediario);
+    flex-shrink: 0;
 }
 
 /* Estilos para o texto do comunicado */
 .comunicado-text {
     flex: 1;
+    min-width: 0;
 }
 
 .comunicado-text h5 {
@@ -79,12 +82,17 @@ body {
     font-weight: bold;
     letter-spacing: -0.5px;
     font-size: 1.5em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .comunicado-text p.card-text {
     color: var(--marrom-escuro);
     line-height: 1.6;
     margin-bottom: 0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .comunicado-text p.text-muted {
@@ -96,7 +104,7 @@ body {
 
 
 /* -------------------------------------- */
-/* MEDIA QUERIES - RESPONSIVIDADE          */
+/* MEDIA QUERIES - RESPONSIVIDADE         */
 /* -------------------------------------- */
 
 /* Telas menores que 768px (smartphones na maioria) */
@@ -104,10 +112,6 @@ body {
     .container.mt-5 {
         margin: 2rem 1rem;
         padding: 1.5rem;
-    }
-
-    .container .section-title {
-        margin-bottom: 1.5rem;
     }
 
     .card-body.d-flex {
@@ -123,6 +127,12 @@ body {
         max-width: 200px;
         height: auto;
         margin-bottom: 0.75rem;
+    }
+
+    .comunicado-text {
+        flex: none;
+        width: 100%;
+        min-width: auto;
     }
 
     .comunicado-text h5 {
@@ -148,10 +158,15 @@ body {
         padding: 1rem;
     }
 
+    .container.mt-5 h1 {
+        font-size: 1.8rem;
+    }
+
     .comunicado-text h5 {
         font-size: 1.1em;
     }
 }
+
 
 /* Telas entre 768px e 992px (tablets em modo retrato) */
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -203,6 +218,9 @@ body {
     line-height: 1.6;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .escondida {

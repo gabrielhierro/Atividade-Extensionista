@@ -54,6 +54,7 @@ body {
     align-items: flex-start;
     gap: 1.5rem;
     padding: 1.25rem;
+    flex-wrap: wrap;
 }
 
 /* Estilos para a imagem do comunicado */
@@ -91,6 +92,7 @@ body {
     margin-bottom: 0.75rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .comunicado-text p.text-muted {
@@ -125,6 +127,12 @@ body {
         max-width: 200px;
         height: auto;
         margin-bottom: 0.75rem;
+    }
+
+    .comunicado-text {
+        flex: none;
+        width: 100%;
+        min-width: auto;
     }
 
     .comunicado-text h5 {
@@ -212,6 +220,7 @@ body {
     margin-bottom: 1rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .escondida {
