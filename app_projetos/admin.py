@@ -3,4 +3,4 @@ from .models import Projeto
 
 @admin.register(Projeto)
 class ProjetoAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'link')
+    list_display = ('id', 'titulo', 'link')

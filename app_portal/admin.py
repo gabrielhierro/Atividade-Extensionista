@@ -6,6 +6,6 @@ from .models import Comunicado
 
 @admin.register(Comunicado)
 class ComunicadoAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'data_publicacao')
+    list_display = ('id', 'titulo', 'data_publicacao')
     ordering = ('-data_publicacao',)
     search_fields = ('titulo', 'mensagem')

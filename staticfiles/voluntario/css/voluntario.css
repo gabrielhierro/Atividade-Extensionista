@@ -136,31 +136,46 @@
 }
 
 /* Mensagem de Envio de Form */
+
 .toast-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .toast-message {
-  background-color: #4BB543;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 6px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  margin-bottom: 10px;
-  opacity: 1;
-  transition: opacity 1.5s ease-in-out;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.toast-message.success {
+    background-color: #4CAF50; /* verde */
 }
 
 .toast-message.error {
-  background-color: #D9534F;
+    background-color: #f44336; /* vermelho */
 }
 
 .toast-message.fade-out {
-  opacity: 0;
+    opacity: 0;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
 
 /* ================== RESPONSIVIDADE ================== */
 

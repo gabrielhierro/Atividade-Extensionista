@@ -18,6 +18,8 @@
         </div>
     {% endif %}
 
+    
+
     <section id="volunteer-section" class="container fade-in">
         <div class="volunteer-form-wrapper">
             <div class="volunteer-text-content">
@@ -32,11 +34,7 @@
                 </div>
             </div>
 
-            {% if form.errors %}
-                <div class="form-errors">
-                    {{ form.errors }}
-                </div>
-            {% endif %}
+
 
             <form method="post" action="{% url 'app_voluntario:voluntario_view' %}" class="volunteer-form">
                 {% csrf_token %}
@@ -47,8 +45,13 @@
                 <label for="id_email">E-mail</label>
                 {{ form.email }}
 
+                <label for="id_cpf">CPF</label>
+                {{ form.cpf }}
+
                 <label for="id_telefone">Telefone / Celular</label>
-                {{ form.telefone }} <label for="id_profissao">Profissão</label>
+                {{ form.telefone }} 
+                
+                <label for="id_profissao">Profissão</label>
                 {{ form.profissao }}
 
                 <button type="submit" class="btn btn-submit-volunteer">Enviar Inscrição</button>
@@ -88,6 +91,9 @@
             $('#id_telefone').mask(SPMaskBehavior, spOptions);
 
             $('#id_telefone').trigger('input');
+
+            $('#id_cpf').mask('000.000.000-00');
+
         });
     </script>
 {% endblock scripts %}
