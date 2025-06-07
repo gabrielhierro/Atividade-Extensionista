@@ -26,7 +26,7 @@
     z-index: 1;
 }
 
-/* Estilos para o Wrapper do Formulário (o contêiner do texto e do formulário) */
+/* Estilos para o Wrapper do Formulário */
 .volunteer-form-wrapper {
     display: flex;
     flex-direction: column;
@@ -50,7 +50,7 @@
     box-sizing: border-box;
 }
 
-/* Estilos para o Título da Seção (agora dentro de .volunteer-text-content) */
+/* Estilos para o Título da Seção */
 .volunteer-text-content .section-title {
     font-size: 2.5rem;
     margin-top: 0;

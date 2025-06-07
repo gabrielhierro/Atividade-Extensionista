@@ -1,6 +1,6 @@
 from django import forms
 from .models import Voluntario
-from validate_docbr import CPF
+from validate_docbr import CPF  # type: ignore
 
 class VoluntarioForm(forms.ModelForm):
     class Meta:

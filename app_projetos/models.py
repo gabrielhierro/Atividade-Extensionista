@@ -9,7 +9,6 @@ class Projeto(models.Model):
     def __str__(self):
         return self.titulo
 
-
     class Meta:
         verbose_name = 'Projeto'
         verbose_name_plural = 'Projetos'
